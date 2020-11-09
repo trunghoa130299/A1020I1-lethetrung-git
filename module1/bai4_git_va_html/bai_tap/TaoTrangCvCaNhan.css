@@ -1,0 +1,28 @@
+body{
+    margin: auto;
+    padding: 20px;
+    font-size: 18px;
+    background: ghostwhite;
+}
+ul li {
+    font-weight: bold;
+    font-size: 24px;
+    font-style: italic;
+}
+a{
+    color: green;
+    text-decoration: none;
+    background: transparent;
+}
+a:hover{
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:link{
+    color: yellow;
+    background: transparent;
+    text-decoration: none;
+}
+
+

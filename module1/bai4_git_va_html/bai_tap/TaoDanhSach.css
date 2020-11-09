@@ -7,13 +7,6 @@ body{
 li h2{
     color: crimson;
 }
-#a1{
-    color: darkmagenta;
-}
-#a2{
-    color: darkblue;
-}
-#a3{
-    color: darkviolet;
-
+ol li{
+    color: blue;
 }
