@@ -1,0 +1,22 @@
+#id1{
+    float: left;
+}
+#id2{
+    float: right;
+}
+th{
+    background: yellow;
+}
+.table1{
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    text-align: center;
+}.table2{
+    margin-right: auto;
+    margin-left: auto;
+ }
+ span{
+     color: blue;
+ }
