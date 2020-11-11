@@ -1,6 +1,25 @@
-.rol-35{
-    float: left;
+.content{
+    font-size: 20px;
 }
-.rol-45{
-    float: left;
+.content:hover{
+    background: bisque;
+    font-size: 20px;
 }
+table{
+    width: 50%;
+}
+table, td ,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td{
+    padding: 5px;
+    text-align: center;
+}
+th{
+    background: darkgray;
+}
+tr:nth-child(odd){
+    background: darkgray;
+}
+
