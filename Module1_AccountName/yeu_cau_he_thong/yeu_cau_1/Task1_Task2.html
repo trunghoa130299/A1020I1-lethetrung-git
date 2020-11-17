@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+</head>
+<body>
+<form method="get" action="Task1.html">
+    <label>Nhập vào Tên</label>
+    <input id="name" type="text"><br><br>
+    <label>Nhập Vào Số CMND</label>
+    <input id="cmnd" type="text"><br><br>
+    <label>Ngày Sinh</label>
+    <input id="birthofday" type="date"><br><br>
+    <label>Email</label>
+    <input id="email"  type="text"><br><br>
+    <label>Địa Chỉ</label>
+    <input id="address" type="text"><br><br>
+    <label>Loại Customer</label>
+    <select id="typecustomer">
+        <option value="diamond">Diamond</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="member">Member</option>
+    </select><br><br>
+    <label>Giảm Giá</label>
+    <input id="discount" type="text"><br><br>
+    <label>Số Lượng Đi Kèm</label>
+    <input id ="amount" type="text"><br><br>
+    <label>Số Ngày Thuê</label>
+    <input id="rentdays" type="text"><br><br>
+    <label>Loại Dịch Vụ</label>
+    <select id="typeofservice">
+        <option value="500">Villa</option>
+        <option value="300">House</option>
+        <option value="100">Room</option>
+    </select><br><br>
+    <label>Loại Phòng Thuê</label>
+    <select id="typeofroom">
+        <option value="vip">Vip</option>
+        <option value="business">Business</option>
+        <option value="normal">Normal</option>
+    </select><br><br>
+    <input type="button" onclick="tongtien()" value="Tổng Tiền">
+</form>
+</body>
+<script>
+    function tongtien() {
+        let typeofservice = parseInt(document.getElementById("typeofservice").value);
+        let rentdays = parseInt(document.getElementById("rentdays").value);
+        let discount = parseInt(document.getElementById("discount").value);
+        let Smoney= typeofservice * rentdays * (1 - discount /100);
+        alert("Số Tiền Phải Trả : " + Smoney);
+    }
+</script>
+</html>

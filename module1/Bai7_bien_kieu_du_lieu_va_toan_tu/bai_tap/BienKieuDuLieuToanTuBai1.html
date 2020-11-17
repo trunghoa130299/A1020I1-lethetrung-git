@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    var vatli;
+    var hoahoc;
+    var sinhhoc;
+    vatli=prompt("nhap diem vat li");
+    hoahoc=prompt("nhap diem hoa hoc");
+    sinhhoc=prompt("nhap diem sinh hoc");
+    var v = parseInt(vatli);
+    var h = parseInt(hoahoc);
+    var s = parseInt(sinhhoc);
+    var average = ( v + h + s) /3;
+    var tong = v + h + s ;
+    document.write('diem trung binh =' + average);
+    document.write('<br/>');
+    document.write('tong diem = ' + tong);
+</script>
+</body>
+</html>

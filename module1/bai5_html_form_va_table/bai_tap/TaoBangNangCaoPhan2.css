@@ -1,5 +1,5 @@
 th{
-    border: 1px solid black;
+    border: 1px solid deepskyblue;
 }
 h1{
     text-align: center;
@@ -35,4 +35,7 @@ sub{
 #th-3{
     background-color: blue;
     color: ghostwhite;
+}
+tr td{
+    text-align: center;
 }

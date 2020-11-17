@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Máy Tính</title>
+</head>
+<body>
+<form>
+    <input  id="so1"type="text" >
+    <input  id="so2" type="text">
+    <br><br>
+    <input  type="button" onclick="mycong()" value="Myaddition(+)">
+    <input  type="button" onclick="mytru()" value="Subtraction(-)">
+    <input  type="button" onclick="mynhan()" value="Multiplication(X)">
+    <input  type="button" onclick="mychia()" value="Division(/)">
+</form>
+</body>
+<script>
+    function mycong() {
+        let so1= parseInt(document.getElementById("so1").value);
+        let so2= parseInt(document.getElementById("so2").value);
+        let tong = so1+so2;
+        alert(" " + tong);
+    }
+    function mytru() {
+        let so1= parseInt(document.getElementById("so1").value);
+        let so2= parseInt(document.getElementById("so2").value);
+        let hieu= so1-so2;
+        alert("" + hieu );
+    }
+    function mynhan() {
+        let so1= parseInt(document.getElementById("so1").value);
+        let so2= parseInt(document.getElementById("so2").value);
+        let nhan= so1*so2;
+        alert("" + nhan );
+    }
+    function mychia() {
+        let so1= parseInt(document.getElementById("so1").value);
+        let so2= parseInt(document.getElementById("so2").value);
+        let chia= so1/so2;
+        alert("" + chia );
+    }
+</script>
+</html>
