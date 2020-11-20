@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input  id="amount"  type="text"  >
+<input type="button" value="Tính Số Ngày" onclick="myClick()">
+</body>
+<script>
+    function myClick() {
+        let a = parseInt(document.getElementById("amount").value);
+        switch (a) {
+            case 1:
+                alert("Tháng 1 có 31 Ngày");
+                break;
+            case 2:
+                alert("Tháng 2 có 28 hoặc 29 ngày");
+                break;
+            case 3:
+                alert("Tháng 3 có 31 Ngày");
+                break;
+            case 4:
+                alert("Tháng 4 có 30 Ngày");
+                break;
+            case 5:
+                alert("Tháng 5 có 31 Ngày");
+                break;
+            case 6:
+                alert("Tháng 6 có 30 Ngày");
+                break;
+            case 7:
+                alert("Tháng 7 có 31 Ngày");
+                break;
+            case 8:
+                alert("Tháng 8 có 31 Ngày");
+                break;
+            case  9:
+                alert("Tháng 9 có 30 Ngày ");
+                break;
+            case 10:
+                alert("Tháng 10 có 31 Ngày");
+                break;
+            case 11:
+                alert("Tháng 11 có 30 Ngày");
+                break;
+            case 12:
+                alert("Tháng 12 có 31 Ngày");
+                break;
+        }
+
+    }
+</script>
+</html>
