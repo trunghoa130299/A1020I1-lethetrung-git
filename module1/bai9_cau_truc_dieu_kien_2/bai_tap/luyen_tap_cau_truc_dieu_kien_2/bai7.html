@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhap vao so a "));
+    let b = parseInt(prompt("nhap vao so b"));
+    let c = parseInt(prompt("nhap vao so c"));
+    let delta= b*b- 4*a*c;
+        if (delta < 0) {
+            document.write("phuong trinh vo nghiem");
+        }else if (delta == 0) {
+            var x= -b/(2*a);
+            document.write("phuong trinh co 2 nghiem x1=x2=" +x);
+        } else {
+            var x1=(-b + Math.sqrt(delta)) / (2 * a);
+            var x2=(-b - Math.sqrt(delta)) / (2 * a);
+           document.write("phuong trinh co nghiem x1 la " +x1 +"<br/>");
+           document.write("x2 la " +x2);
+        }
+</script>
+</body>
+</html>
