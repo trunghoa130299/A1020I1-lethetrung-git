@@ -13,14 +13,12 @@
 </head>
 <body>
 <script>
-    var i=parseInt(prompt("nhap vao 1 so nguyen duong"));
-    var sum=1;
-    while (i <=sum){
-        sum *=i;
-        i++;
-        console.log(sum)
+    let number=parseInt(prompt("nhap vao 1 so nguyen duong"));
+    let sum=1;
+    for (let i=number;i>0;i--){
+        sum = sum *i;
     }
-
+    console.log(sum)
 </script>
 </body>
 </html>

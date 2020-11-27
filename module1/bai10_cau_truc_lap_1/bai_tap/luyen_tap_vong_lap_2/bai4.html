@@ -11,11 +11,11 @@
     let res='';
     for (let i = 0; i<=h; i++) {
         for (let j = 0; j <= w; j++) {
-            if (i == 0 || i == h) {
+            if (i === 0 || i === h) {
                 res += '*';
             } else {
-                if (j == 0 || j == w) {
-                    result += '*';
+                if (j === 0 || j === w) {
+                    res += '*';
                 } else {
                     res += '&nbsp&nbsp;';
                 }
@@ -23,8 +23,10 @@
 
         }
         res += '<br/>'
-        document.write(res);
+
     }
+    document.write(res);
+
 </script>
 </body>
 </html>
