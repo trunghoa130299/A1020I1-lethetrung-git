@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n =parseInt(prompt("nhap vao so luong day so fibonaci"));
+    var i;
+    var fib = [];
+    fib[0] = 0;
+    fib[1] = 1;
+    for (i = 2; i <= n; i++) {
+        fib[i] = fib[i - 2] + fib[i - 1];
+        console.log(fib[i]);
+    }
+</script>
+</body>
+</html>

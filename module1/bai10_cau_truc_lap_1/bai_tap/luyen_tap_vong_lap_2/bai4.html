@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let h=parseInt(prompt("nhap vao chieu cao"));
+    let w=parseInt(prompt("nhap vao chieu rong"));
+    let res='';
+    for (let i = 0; i<=h; i++) {
+        for (let j = 0; j <= w; j++) {
+            if (i == 0 || i == h) {
+                res += '*';
+            } else {
+                if (j == 0 || j == w) {
+                    result += '*';
+                } else {
+                    res += '&nbsp&nbsp;';
+                }
+            }
+
+        }
+        res += '<br/>'
+        document.write(res);
+    }
+</script>
+</body>
+</html>

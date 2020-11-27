@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=2;
+    let count=0;
+    while (count<20){
+        let check=true;
+        for( let i=2;i<num;i++){
+            if (num % i ===0){
+                check=false;
+                break;
+            }
+        }if (check){
+            document.write(","+num);
+            count++;
+        }num++;
+    }
+</script>
+</body>
+</html>
