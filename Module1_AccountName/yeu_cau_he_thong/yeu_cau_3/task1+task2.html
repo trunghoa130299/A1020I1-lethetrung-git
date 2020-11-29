@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    let  inputname=prompt("Nhập vào tên  : ");
+    let  inputname=prompt("Nhập vào tên : ");
     inputname=inputname.trim();
     inputname=inputname.toLocaleLowerCase();
     let outputname="";
@@ -24,9 +24,8 @@
     while (true) {
         while (true){
              email=prompt("Nhập vào email");
-            let format = /^[a-z\_\.\-]{2,20}\@[a-z\_\-]{2,20}\.[a-z]{2,9}$/;
-
-            if (format.test(email)){
+            let re = /^[a-z\_\.\-]{2,20}\@[a-z\_\-]{2,20}\.[a-z]{2,9}$/;
+            if (re.test(email)){
                 break;
             }else {
                 alert("Email is invalid . Please try again !")
@@ -43,8 +42,8 @@
         }
         while (true){
             birthday=prompt("Nhập vào ngày sinh (DD/MM/MMMM):");
-            let format=/^[1-31]{1,2}\/[1-12]{1,2}\/[1000-9999]{4}$/;
-            if (format.test(birthday)){
+            let re=/^[0-31]{1,2}\/[0-12]{1,2}\/[1000-9999]{4}$/;
+            if (re.test(birthday)){
                 break;
             }else alert("Birthday is invalid . Please try again !");
         }
