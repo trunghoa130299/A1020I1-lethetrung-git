@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var term = "abc@abc.abc";
+    // var re = RegExp("^([a-z@a-z.a-z]{5,})$");
+    // if (re.test(term)) {
+    //     console.log("Valid");
+    // } else {
+    //     console.log("Invalid");
+    // }
+    // var format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+    // //            ^                                    ^
+    // document.write(format.test("My@string-with(some%text)") + "<br/>");
+    // document.write(format.test("My string with spaces") + "<br/>");
+    // document.write(format.test("MyStringContainingNoSpecialChars"));
+    while (true){
+         birthday=prompt("nhập vào ngày sinh :");
+         let re= /^[a-z0-9\_\.\-]{2,20}\@[a-z0-9\_\-]{2,20}\.[a-z]{2,9}$/;
+        if(re.test(birthday)){
+            break;
+        }else alert("invalid");
+    }
+    alert("tên :" + birthday);
+</script>
+</body>
+</html>

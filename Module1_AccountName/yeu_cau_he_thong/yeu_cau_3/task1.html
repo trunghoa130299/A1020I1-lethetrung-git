@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    while (true) {
+        while (true){
+            myname =prompt("Nhập Vào Tên : ");
+            let re = RegExp("^([a-z]{3,})$");
+            if (re.test(myname)){
+                break;
+            }else alert("Your Name is invalid . Please try again !");
+        }
+        while (true){
+             email=prompt("Nhập vào email");
+            let format = /^[a-z\_\.\-]{2,20}\@[a-z\_\-]{2,20}\.[a-z]{2,9}$/;
+
+            if (format.test(email)){
+                break;
+            }else {
+                alert("Email is invalid . Please try again !")
+            }
+        }
+        while (true) {
+            cmnd = parseInt(prompt("Nhập vào CMND :"));
+            let re = RegExp("^([0-9]{8})$");
+            if (re.test(cmnd)) {
+                break;
+            } else {
+                alert("CMND is invalid . Please try again");
+            }
+        }
+        while (true){
+            birthday=prompt("Nhập vào ngày sinh (DD/MM/MMMM):");
+            let format=/^[1-31]{1,2}\/[1-12]{1,2}\/[1000-9999]{4}$/;
+            if (format.test(birthday)){
+                break;
+            }else alert("Birthday is invalid . Please try again !");
+        }
+        while (true){
+            rentDays=parseInt(prompt("Nhập Số Ngày Thuê :"));
+            if (Number.isInteger(rentDays)){
+                break;
+            }else alert("Rentdays is invalid . Please try again !");
+        }
+        while (true){
+            quantityIncluded=parseInt(prompt("Nhập Số Người Đi Kèm :"));
+            if (Number.isInteger(quantityIncluded)){
+                break
+            }else alert("QuantityIncluded is invalid . Please try again !");
+        }
+        break;
+    }
+    alert(`Tên : ${myname}
+Email : ${email}
+CMND : ${cmnd}
+Birthday : ${birthday}
+Số Ngày Thuê : ${rentDays}
+Số Người Đi Kèm : ${quantityIncluded}`);
+
+</script>
 </body>
 </html>
