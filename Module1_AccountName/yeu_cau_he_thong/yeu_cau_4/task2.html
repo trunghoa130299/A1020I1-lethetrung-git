@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrName=[];
+    let amount=parseInt(prompt("Nhập Số Lượng Người dùng muốn thêm :"));
+    for (let i =1 ; i <= amount;i++){
+        arrName[i]=prompt("Nhập Tên :" );
+    }
+    arrName.sort();
+    for (let i =1 ; i <= amount;i++){
+        alert(arrName);
+        break;
+    }
+</script>
+</body>
+</html>

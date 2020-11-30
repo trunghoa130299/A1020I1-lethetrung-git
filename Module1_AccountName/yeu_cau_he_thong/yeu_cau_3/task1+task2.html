@@ -21,7 +21,6 @@
             outputname +=" "
         }
     }
-    while (true) {
         while (true){
              email=prompt("Nhập vào email");
             let re = /^[a-z\_\.\-]{2,20}\@[a-z\_\-]{2,20}\.[a-z]{2,9}$/;
@@ -58,8 +57,6 @@
             if (Number.isInteger(quantityIncluded)){
                 break
             }else alert("QuantityIncluded is invalid . Please try again !");
-        }
-        break;
     }
     alert(`Tên : ${outputname}
 Email : ${email}
