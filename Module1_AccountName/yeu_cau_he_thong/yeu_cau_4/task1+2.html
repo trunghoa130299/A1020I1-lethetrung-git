@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers=[];
+    while (true) {
+        let choose= parseInt(prompt("1. Add Name Customer " + "\n" +
+            "2.Delete Customer"));
+        switch (choose) {
+            case 1: {
+                let customer = [];
+                let amount = parseInt(prompt("Nhập Số Lượng Người dùng muốn thêm :"));
+                for (let i = 0; i < amount; i++) {
+                    customer = new Array(3);
+                    let name = prompt("Nhập vào tên :");
+                    let address = prompt("Nhập vào địa chỉ :");
+                    let number = parseInt(prompt("Nhập số điện thoại :"));
+                    customer[0] = name;
+                    customer[1] = address;
+                    customer[2] = number;
+                    arrNameCustomers.push(customer);
+                }
+                arrNameCustomers.sort();
+                let string = "";
+                for (let i = 0; i < arrNameCustomers.length; i++) {
+                    string += (i + 1 + ".Tên " + arrNameCustomers[i][0] + " - Địa chỉ " + arrNameCustomers[i][1] + " - Số điện thoại " + arrNameCustomers[i][2] + "\n");
+                }
+                alert(string);
+                break;
+            }
+            case 2 : {
+                let string = "";
+                for (let i = 0; i < arrNameCustomers.length; i++) {
+                    string += (i + 1 + ".Tên " + arrNameCustomers[i][0] + " - Địa chỉ " + arrNameCustomers[i][1] + " - Số điện thoại " + arrNameCustomers[i][2] + "\n");
+                }
+                let choose2 = prompt(string);
+                arrNameCustomers.splice(choose2 -1,1);
+                let string2 = "";
+                for (let i = 0; i < arrNameCustomers.length; i++) {
+                    string2 += (i + 1 + ".Tên " + arrNameCustomers[i][0] + " - Địa chỉ " + arrNameCustomers[i][1] + " - Số điện thoại " + arrNameCustomers[i][2] + "\n");
+                }
+                alert(string2);
+                break;
+            }
+            default :
+                alert("Fail");
+        }
+    }
+</script>
+</body>
+</html>

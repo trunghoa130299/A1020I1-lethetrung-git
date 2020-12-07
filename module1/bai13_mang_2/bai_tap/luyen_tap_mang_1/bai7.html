@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=new Array(10);
+    let index;
+    let check=true;
+    let so=parseInt(prompt("nhap vao so V : "));
+    for (let i=0;i<a.length;i++){
+        a[i]=parseInt(prompt("nhap cac phan tu " +i));
+    }
+    for (let i=0;i<a.length;i++){
+        if (a[i]==so){
+            index=i;
+            a.splice(index,1);
+            check=true;
+        }else {
+            check=false;
+        }
+    }
+    if(check){
+        alert(a)
+    }else alert("V k thuoc day so");
+</script>
+</body>
+</html>

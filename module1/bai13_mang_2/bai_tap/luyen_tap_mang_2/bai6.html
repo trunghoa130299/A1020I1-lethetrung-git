@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so=parseInt(prompt("nhap vao so luong ki tu"));
+    let a=[];
+    for (let i=0;i<so;i++){
+        a[i]=prompt("nhap cac phan tu " + i);
+    }
+    for (let i =0;i<a.length;i++){
+        if (a[i]=='-'){
+            a[i]='_';
+        }
+    }
+    console.log(a)
+</script>
+</body>
+</html>

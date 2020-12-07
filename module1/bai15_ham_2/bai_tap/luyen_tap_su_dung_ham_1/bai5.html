@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=["Polaris"," Aldebaran"," Deneb", "Vega"," Altair"," Dubhe" ,"Regulus"];
+    let b=["Ursa Minor"," Tarurus", "Cygnus", "Lyra"," Aquila", "Ursa Major" ," Leo"];
+    let nameStar=prompt("nhap ten ngoi sao");
+    searchNameStar(nameStar);
+    function searchNameStar(name) {
+        let check=true;
+        let index;
+        for (let i=0;i<a.length;i++){
+            if (a[i]==nameStar){
+                index=i;
+                check=true;
+                break;
+            }
+        }
+        if (check){
+            alert(b[index])
+        }else {
+            alert("not")
+        }
+
+    }
+</script>
+</body>
+</html>

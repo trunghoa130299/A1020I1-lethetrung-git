@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a =parseInt(prompt("nhap so thu nhat"));
+    let b=parseInt(prompt("nhap so thu hai"));
+    function doiCho(number) {
+        let temp = a;
+        a=b;
+        b=temp;
+        return ("ket qua " + a + b);
+    }
+    console.log(doiCho(a,b))
+</script>
+</body>
+</html>

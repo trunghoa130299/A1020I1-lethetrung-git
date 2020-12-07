@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt("nhap vao so thu nhat"));
+    let b=parseInt(prompt("nhap vao so thu hai"));
+    let c=parseInt(prompt("nhap vao so thu ba"));
+    function kiemTra() {
+        if (a >b && a > c){
+            return a;
+        }else {
+            if (b > c){
+                return b;
+            }else
+                return c;
+        }
+    }
+    console.log(kiemTra(a,b,c))
+</script>
+</body>
+</html>

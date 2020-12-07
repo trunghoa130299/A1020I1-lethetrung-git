@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhapSo=parseInt(prompt("nhap vao so luong day so "));
+    let arrSo=[];
+    let count=0;
+    for (let i =0;i<nhapSo;i++){
+        arrSo[i]=parseInt(prompt("nhap vao tung phan tu") + i);
+    }
+    for (let i=0;i<arrSo.length;i++){
+        if (arrSo[i]<0){
+            count++;
+        }
+    }
+    console.log(count)
+</script>
+</body>
+</html>

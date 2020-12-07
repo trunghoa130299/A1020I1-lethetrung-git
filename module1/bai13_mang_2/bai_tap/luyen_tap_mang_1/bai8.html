@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=new Array(10);
+    for (let i=0;i<array.length;i++){
+        array[i]=parseInt(prompt("nhap vao phan tu " +i));
+    }
+    array.sort(function (a,b) {
+        return b-a;
+    })
+    console.log(array);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let amout=parseInt(prompt("nhap vao so luong pha tu "));
+    let arraynum=[];
+    let sum=0;
+    for (let i =0 ; i< amout;i++){
+        arraynum[i] =parseInt(prompt("Nhap vao so :" + i));
+    }
+    let max=arraynum[0];
+    let index;
+    for (let i =1;i<arraynum.length;i++){
+        if (arraynum[i]>max){
+            max=arraynum[i];
+            index=i;
+        }
+    }
+    for (let i=0;i<arraynum.length;i++){
+        sum+=arraynum[i];
+    }
+    console.log("so lon nhat la " + index);
+    console.log("trung binh cong " + (sum/amout))
+</script>
+</body>
+</html>

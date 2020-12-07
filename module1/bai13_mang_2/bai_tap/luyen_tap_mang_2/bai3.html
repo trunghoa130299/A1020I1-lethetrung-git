@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so=parseInt(prompt("nhap so ki tu trong mang "));
+    let a=[];
+    for (let i=0;i<so;i++){
+        a[i]=prompt("nhap phan tu " +i);
+    }
+    let check=false;
+    let count=0;
+    for (let i=0;i<a.length;i++){
+        if (!isNaN(a[i])){
+            check=true;
+            count++;
+        }
+    }
+    console.log("so ki tu so la " + count)
+</script>
+</body>
+</html>

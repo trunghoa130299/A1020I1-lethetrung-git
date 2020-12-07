@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let newarray = new Array(10);
+    for (let i = 0; i < newarray.length; i++) {
+        newarray[i] = parseInt(prompt("Nhập vào số :" + i));
+    }
+    let max=newarray[0];
+    let index;
+    for (let i = 1; i < newarray.length; i++) {
+        if (newarray[i] > max) {
+            max=newarray[i];
+            index=i;
+        }
+    }
+    alert("so lon nhat la " + max + " vi tri " +index)
+</script>
+</body>
+</html>

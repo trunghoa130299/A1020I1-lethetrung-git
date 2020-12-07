@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=prompt("nhap vao 1 ki tu bat ki");
+    let b=parseInt(prompt("nhap vao so luong phan tu "));
+    let array=[];
+    for (let i =0;i<b ;i++){
+        array[i]=prompt("nhap ki tu thu" +i);
+    }
+    function kiemTra(kitu) {
+        let dem=0;
+        for (let i=0;i<array.length;i++){
+            if (array[i]==a){
+                dem++;
+            }else {
+                return -1;
+            }
+        }
+        return dem;
+    }
+    console.log(kiemTra(a))
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add New Product</h3>
+        <input type="text" id="nhap" placeholder="New Product">
+        <input type="button" value="Add" onclick="add()" style="background-color: #4CAF50">
+<h3>Display All Product</h3>
+<label>Số Lượng Sản Phẩm :</label><label id="soLuong"></label>
+<p id="ketQua"></p>
+</body>
+<script>
+    let array = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];
+    hienThi();
+
+    function hienThi() {
+        let bang = '<table border="1">\n' +
+            '    <tr style="background-color: pink">\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Tên Sản Phẩm</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '    </tr>'
+        for (let i = 0; i < array.length; i++) {
+            bang += ' <tr style="background-color: deeppink">\n' +
+                '        <th>' + (i + 1) + '</th>\n' +
+                '        <th>' + array[i] + '</th>\n' +
+                '        <th><input type="button" onclick="sua(' + i + ')" value="Sửa" style="background-color: #4CAF50"></th>\n' +
+                '        <th><input type="button" onclick="xoa(' + i + ')" value="Xóa" style="background-color: #4CAF50"></th>\n' +
+                '    </tr>'
+        }
+        bang += '</table>';
+        document.getElementById("ketQua").innerHTML = bang;
+        document.getElementById("soLuong").innerHTML = array.length;
+    }
+
+    function add() {
+        let addSp = document.getElementById("nhap").value;
+        if (addSp !== "") {
+            array.push(addSp);
+        }
+        hienThi();
+    }
+
+    function sua(id) {
+        let idSua = prompt("Nhập tên " + array[id]);
+        if (idSua !== "" && idSua != null) {
+            array[id] = idSua;
+        }
+        hienThi();
+    }
+
+    function xoa(id) {
+        let xoaSP=confirm("Bạn có muốn xóa sản phẩm không");
+        if (xoaSP){
+            array.splice(id, 1);
+        }
+        hienThi();
+    }
+</script>
+</html>

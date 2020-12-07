@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array= new Array(10);
+    let so=parseInt(prompt("nhap so nguyen v"));
+    let check=true;
+    for (let i=0;i<array.length;i++){
+        array[i]=parseInt(prompt("Nhap phan tu thu " + i));
+    }
+    for (let i =0; i<array.length;i++){
+        if (array[i]==so){
+            check=true;
+        }
+    }
+    if (check){
+        alert("V thuoc mang tren");
+    }else {
+        alert("V k thuoc mang tren")
+    }
+</script>
+</body>
+</html>
