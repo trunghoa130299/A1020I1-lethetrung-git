@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="400px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+    let res = document.getElementById('result');
+
+    class Rectangle {
+        constructor(cd, cr) {
+            this.cd = cd;
+            this.cr = cr;
+        }
+
+        getChuVi() {
+            return (this.cd + this.cr) * 2;
+        }
+
+        getDienTich() {
+            return this.cd * this.cr;
+        }
+    }
+    let chieudai=parseInt(prompt("nhap chieu dai "));
+    let chieurong=parseInt(prompt("nhap chieu rong "));
+    let rectangle1 = new Rectangle(chieudai, chieurong);
+    console.log(rectangle1.cd);
+    console.log(rectangle1.cr);
+    console.log(rectangle1.getChuVi());
+    console.log(rectangle1.getDienTich());
+
+    function hienthi(kq){
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        context.beginPath();
+        context.lineWidth = "5";
+        context.strokeStyle = "red";
+        context.rect(20, 20, chieudai, chieurong);
+        context.stroke();
+    }
+    hienthi();
+
+</script>
+</body>
+</html>

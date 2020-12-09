@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomer=[];
+    displayMainMenu();
+    function displayMainMenu() {
+        while (true) {
+            let menu = parseInt(prompt("1.Add New Customer" + "\n" +
+                "2.Display Information Customer" + "\n" +
+                "3.Edit Information Customer" + "\n" +
+                "4.Delete Customer" + "\n" +
+                "5.Exit"));
+            switch (menu) {
+                case 1:
+                    addNewCustomer();
+                    break;
+                case 2:
+                    displayCustomers();
+                    break;
+                case 3:
+                    editCustomer();
+                    break;
+                case 4:
+                    deleteCustomer();
+                    break;
+                default :
+                    alert("Invalid");
+            }
+        }
+    }
+    function addNewCustomer() {
+        let amount=parseInt(prompt("Nhập số lượng customer muốn thêm "));
+        let customer=[];
+        for (let i=0;i<amount;i++){
+            customer =new Array(11);
+            let name=prompt("Nhập vào tên :");
+            let cmnd=prompt("Nhập cmnd :");
+            let birthday=prompt("Nhập ngày sinh :");
+            let email=prompt("Nhập Email :");
+            let address=prompt("Nhập địa chỉ :");
+            let typeOfService=prompt("Nhập loại dịch vụ :");
+            let typeOfRoom=prompt("Nhập loại room :");
+            let typeOfCustomer=prompt("Nhập loại khách hàng :");
+            let discount=prompt("Giảm giá :");
+            let quantityInclude=parseInt(prompt("Nhập số lượng đi kèm :"));
+            let rentDays=parseInt(prompt("Nhập số ngày :"));
+            customer[0]=name;
+            customer[1]=cmnd;
+            customer[2]=birthday;
+            customer[3]=email;
+            customer[4]=address;
+            customer[5]=typeOfService;
+            customer[6]=typeOfRoom;
+            customer[7]=typeOfCustomer;
+            customer[8]=discount;
+            customer[9]=quantityInclude;
+            customer[10]=rentDays;
+            arrListCustomer.push(customer);
+        }
+
+    }
+    function displayCustomers() {
+        let string="";
+        for (let i =0;i<arrListCustomer.length;i++){
+            string += ( "1.Tên : " + arrListCustomer[i][0] + "\n" +
+                            "2.CMND : " + arrListCustomer[i][1] + "\n" +
+                            "3.Ngày sinh : " + arrListCustomer[i][2] + "\n" +
+                            "4.Email : " + arrListCustomer[i][3] + "\n" +
+                            "5.Địa chỉ : " + arrListCustomer[i][4] + "\n" +
+                            "6.Loại dịch vụ : " +arrListCustomer[i][5] + "\n" +
+                            "7.Loại phòng : " +  arrListCustomer[i][6] +"\n"+
+                            "8.Loại khách hàng : " +arrListCustomer[i][7] + "\n" +
+                            "9.Giảm giá : "+arrListCustomer[i][8] + "\n"+
+                            "10.Số lượng đi kèm : " +arrListCustomer[i][9] +"\n"+
+                            "11.Số Ngày : " + arrListCustomer[i][10]
+            );
+            alert(string);
+        }
+    }
+    function editCustomer() {
+
+    }
+
+    function deleteCustomer() {
+
+    }
+</script>
+</body>
+</html>
