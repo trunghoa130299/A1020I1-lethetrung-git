@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor(weight) {
+            this.weight=weight;
+        }
+        decrease(){
+            this.weight--;
+        }
+        isEmpty(){
+            if (this.weight===0){
+                return true
+            }else {
+                return false
+            }
+        }
+    }
+    class Human{
+        constructor(name,gender,weight) {
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        eatApple(apple){
+            if (!apple.isEmpty()){
+                this.weight +=1;
+                apple.decrease();
+                console.log(  this.name + " eat apple ");
+                console.log("cân nặng là : " + this.weight)
+            }
+        }
+    }
+    function theStory() {
+        let adam= new Human('adam','male',50 );
+        let eva= new Human('eva','female',45);
+        let apple= new Apple(10);
+        while (apple.weight >0){
+            adam.eatApple(apple);
+            eva.eatApple(apple);
+        }
+        console.log("Apple are already eaten");
+    }
+    theStory();
+</script>
+</body>
+</html>
