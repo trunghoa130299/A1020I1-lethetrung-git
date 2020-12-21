@@ -1,71 +1,84 @@
-let Customer = function () {
-    this.setName = function (name) {
+class Customer {
+    constructor() {
+        this.name="";
+        this.cmnd="";
+        this.birthday="";
+        this.email="";
+        this.address="";
+        this.quantityIncluded="";
+        this.typeService="";
+        this.typeRoom="";
+        this.typeCustomer="";
+        this.rentDays="";
+        this.discount="";
+    }
+    setName(name) {
         this.name = name;
     };
-    this.getName = function () {
+    getName() {
         return this.name;
     };
-    this.setCMND = function (cmnd) {
+    setCMND(cmnd) {
         this.cmnd = cmnd;
     };
-    this.getCMND = function () {
+    getCMND() {
         return this.cmnd;
     };
-    this.setBirthday = function (birthday) {
+    setBirthday(birthday) {
         this.birthday = birthday;
     };
-    this.getBirthday = function () {
+    getBirthday() {
         return this.birthday;
     };
-    this.setEmail = function (email) {
+    setEmail(email) {
         this.email = email;
     };
-    this.getEmail = function () {
+    getEmail() {
         return this.email;
     };
-    this.setAddress = function (address) {
+    setAddress(address) {
         this.address = address;
     };
-    this.getAddress = function () {
+    getAddress() {
         return this.address;
     };
-    this.setTypeCustomer=function (typeCustomer) {
+    setTypeCustomer(typeCustomer) {
         this.typeCustomer=typeCustomer;
     };
-    this.getTypeCustomer=function () {
+    getTypeCustomer() {
         return this.typeCustomer;
     };
-    this.setDiscount=function (discount) {
+    setDiscount(discount) {
         this.discount=discount;
     };
-    this.getDiscount=function () {
+    getDiscount() {
         return this.discount;
     };
-    this.setQuantityIncluded=function (quantityIncluded) {
+    setQuantityIncluded(quantityIncluded) {
         this.quantityIncluded=quantityIncluded;
     };
-    this.getQuantityIncluded=function () {
+    getQuantityIncluded() {
         return this.quantityIncluded;
     };
-    this.setTypeRoom=function (typeRoom) {
+    setTypeRoom(typeRoom) {
         this.typeRoom=typeRoom;
     };
-    this.getTypeRoom=function () {
+    getTypeRoom() {
         return this.typeRoom;
     };
-    this.setRentDays=function (rentDays) {
+    setRentDays(rentDays) {
         this.rentDays=rentDays;
     };
-    this.getRentDays=function () {
+    getRentDays() {
         return this.rentDays;
     };
-    this.setTypeService=function (typeService) {
+    setTypeService(typeService) {
         this.typeService=typeService;
     };
-    this.getTypeService=function () {
+    getTypeService() {
         return this.typeService;
     };
-    this.totalPays=function () {
+    totalPays() {
         let money=0;
         if(this.getTypeService()==="Villa"){
             money=500;

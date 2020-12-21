@@ -40,10 +40,11 @@
     function displayTotalPays() {
         let temp="";
         for(let i=0;i<listCustomer.length;i++){
-            temp+=i+ ". Tên" + listCustomer[i].getName() + "\n";
+            temp+=i+ ". Tên " + listCustomer[i].getName() + "\n";
         }
         let chooseDisplay=parseInt(prompt(temp));
-        alert("Tổng tiền phải trả : " + listCustomer[chooseDisplay].totalPays())
+        alert("Tổng tiền phải trả : " + listCustomer[chooseDisplay].totalPays());
+        displayMainMenu();
     }
 
     function addNewCustomer() {
@@ -94,12 +95,88 @@
         cus.setTypeCustomer(typeCustomer);
         cus.setTypeService(typeService);
         cus.setTypeRoom(typeRoom);
-        cus.getDiscount(discount);
-        cus.getQuantityIncluded(quantityIncluded);
-        cus.getRentDays(rentDays);
+        cus.setDiscount(discount);
+        cus.setQuantityIncluded(quantityIncluded);
+        cus.setRentDays(rentDays);
         listCustomer.push(cus);
         alert("Bạn đã thêm thành công ");
         displayMainMenu();
+    }
+    function getDisplayListCustomer() {
+        let list = "";
+        for (let i = 0; i < listCustomer.length; i++) {
+            list += (1 + i) + ". " + listCustomer[i].getName() + "\n"
+        }
+        return list;
+    }
+    function getDisplayInfoCustomer() {
+        for (let i=0;i<listCustomer.length;i++) {
+            let cus = "1.Tên : " + listCustomer[i].getName() + "\n" +
+                "2.CMND : " + listCustomer[i].getCMND() + "\n" +
+                "3.Ngày sinh : " + listCustomer[i].getBirthday() + "\n" +
+                "4.Email : " + listCustomer[i].getEmail() + "\n" +
+                "5.Địa chỉ : " + listCustomer[i].getAddress() + "\n" +
+                "6.Loại dịch vụ : " + listCustomer[i].getTypeService() + "\n" +
+                "7.Loại phòng : " + listCustomer[i].getTypeRoom() + "\n" +
+                "8.Loại khách hàng : " + listCustomer[i].getTypeCustomer() + "\n" +
+                "9.Giảm giá : " + listCustomer[i].getDiscount() + "\n" +
+                "10.Số lượng đi kèm : " + listCustomer[i].getQuantityIncluded() + "\n" +
+                "11.Số Ngày : " + listCustomer[i].getRentDays();
+            return cus;
+        }
+        displayMainMenu();
+    }
+    function displayCustomers() {
+        let choose1 = prompt("Danh sách khách hàng  \n" +
+            getDisplayListCustomer());
+        let choose2=parseInt(prompt("Thông tin khách hàng \n" + getDisplayInfoCustomer(choose1 -1)));
+        displayMainMenu();
+    }
+    function editCustomer() {
+        let choose1 = prompt("Chọn khách hàng cần sửa \n" +
+            getDisplayListCustomer());
+        let choose2 = parseInt(prompt("Chọn thuộc tính cần sửa \n" +
+            getDisplayInfoCustomer(choose1 - 1)));
+        switch (choose2) {
+            case 1:
+                listCustomer[choose1 - 1].setName=prompt("Nhập tên");
+                break;
+            case 2:
+                listCustomer[choose1 - 1][1]=prompt("Nhập CMND");
+                break;
+            case 3:
+                listCustomer[choose1 - 1][2]=prompt("Nhập ngày sinh");
+                break;
+            case 4:
+                listCustomer[choose1 - 1][3]=prompt("Nhập Email");
+                break;
+            case 5:
+                listCustomer[choose1 - 1][4]=prompt("Nhập địa chỉ");
+                break;
+            case 6:
+               listCustomer[choose1 - 1][5]=prompt("Nhập Loại dịch vụ ");
+                break;
+            case 7:
+                listCustomer[choose1 - 1][6]=prompt("Nhập loại room ");
+                break;
+            case 8:
+                listCustomer[choose1 - 1][7]=prompt("Nhập loại khách hàng ");
+                break;
+            case 9:
+               listCustomer[choose1 - 1][8]=prompt("Giảm giá ");
+                break;
+            case 10:
+                listCustomer[choose1 - 1][9]=prompt("Số lượng đi kèm ");
+                break;
+            case 11:
+                listCustomer[choose1 - 1][10]=prompt("Số ngày ");
+                break;
+            default:
+                alert("Fail");
+
+        }
+        displayMainMenu();
+
     }
     displayMainMenu();
 </script>

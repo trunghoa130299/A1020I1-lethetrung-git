@@ -6,57 +6,59 @@
 </head>
 <body>
 <script>
-    let  inputname=prompt("Nhập vào tên : ");
-    inputname=inputname.trim();
-    inputname=inputname.toLocaleLowerCase();
-    let outputname="";
-    for(let i =0 ; i<inputname.length;i++){
-        if (inputname.charAt(i) !== " "){
-            if(outputname.charAt(outputname.length-1)===" " || i===0){
-                outputname +=inputname.charAt(i).toLocaleUpperCase();
-            }else {
-                outputname+=inputname.charAt(i);
+    let inputname = prompt("Nhập vào tên : ");
+    inputname = inputname.trim();
+    inputname = inputname.toLocaleLowerCase();
+    let outputname = "";
+    for (let i = 0; i < inputname.length; i++) {
+        if (inputname.charAt(i) !== " ") {
+            if (outputname.charAt(outputname.length - 1) === " " || i === 0) {
+                outputname += inputname.charAt(i).toLocaleUpperCase();
+            } else {
+                outputname += inputname.charAt(i);
             }
-        }else if (inputname.charAt(i) ===" "&&inputname.charAt(i-1) !==" ") {
-            outputname +=" "
+        } else if (inputname.charAt(i) === " " && inputname.charAt(i - 1) !== " ") {
+            outputname += " "
         }
     }
-        while (true){
-             email=prompt("Nhập vào email");
-            let re = /^[a-z\_\.\-]{2,20}\@[a-z\_\-]{2,20}\.[a-z]{2,9}$/;
-            if (re.test(email)){
-                break;
-            }else {
-                alert("Email is invalid . Please try again !")
-            }
+    while (true) {
+        email = prompt("Nhập vào email");
+        let re = /^[a-z\_\.\-]{2,20}\@[a-z\_\-]{2,20}\.[a-z]{2,9}$/;
+        if (re.test(email)) {
+            break;
+        } else {
+            alert("Email is invalid . Please try again !")
         }
-        while (true) {
-            cmnd = parseInt(prompt("Nhập vào CMND :"));
-            let re = RegExp("^([0-9]{8})$");
-            if (re.test(cmnd)) {
-                break;
-            } else {
-                alert("CMND is invalid . Please try again");
-            }
+    }
+    while (true) {
+        cmnd = parseInt(prompt("Nhập vào CMND :"));
+        let re = RegExp("^([0-9]{8})$");
+        if (re.test(cmnd)) {
+            break;
+        } else {
+            alert("CMND is invalid . Please try again");
         }
-        while (true){
-            birthday=prompt("Nhập vào ngày sinh (DD/MM/MMMM):");
-            let re=/^[0-31]{1,2}\/[0-12]{1,2}\/[1000-9999]{4}$/;
-            if (re.test(birthday)){
-                break;
-            }else alert("Birthday is invalid . Please try again !");
+    }
+    while (true) {
+        birthday = prompt("Nhập vào ngày sinh (DD/MM/MMMM):");
+        let re = /^[0-31]{1,2}\/[0-12]{1,2}\/[1000-9999]{4}$/;
+        if (re.test(birthday)) {
+            break;
+        } else {
+            alert("Birthday is invalid . Please try again !");
         }
-        while (true){
-            rentDays=parseInt(prompt("Nhập Số Ngày Thuê :"));
-            if (Number.isInteger(rentDays)){
-                break;
-            }else alert("Rentdays is invalid . Please try again !");
-        }
-        while (true){
-            quantityIncluded=parseInt(prompt("Nhập Số Người Đi Kèm :"));
-            if (Number.isInteger(quantityIncluded)){
-                break
-            }else alert("QuantityIncluded is invalid . Please try again !");
+    }
+    while (true) {
+        rentDays = parseInt(prompt("Nhập Số Ngày Thuê :"));
+        if (Number.isInteger(rentDays)) {
+            break;
+        } else alert("Rentdays is invalid . Please try again !");
+    }
+    while (true) {
+        quantityIncluded = parseInt(prompt("Nhập Số Người Đi Kèm :"));
+        if (Number.isInteger(quantityIncluded)) {
+            break
+        } else alert("QuantityIncluded is invalid . Please try again !");
     }
     alert(`Tên : ${outputname}
 Email : ${email}
