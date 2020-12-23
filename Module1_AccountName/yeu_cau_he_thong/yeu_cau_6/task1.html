@@ -70,14 +70,7 @@
             }
         } while (!check);
         check = false;
-        do {
-            email = prompt("Nhập Email :");
-            if (reEmail.test(email)) {
-                check = true;
-            } else {
-                alert("Email không hợp lệ , vui lòng nhập lại");
-            }
-        } while (!check);
+        email=inputCheckEmail("Nhập ");
         let address = prompt("Nhập địa chỉ :");
         let typeService = prompt("Nhập loại dịch vụ :");
         let typeRoom = prompt("Nhập loại room :");
@@ -152,7 +145,7 @@
                 listCustomer[choose1 - 1].setCMND(inputCheckCMND("Sửa "));
                 break;
             case 3:
-                listCustomer[choose1 - 1].setBirthday(prompt("Nhập ngày sinh"));
+                listCustomer[choose1 - 1].setBirthday(inputCheckEmail("Sửa "));
                 break;
             case 4:
                 listCustomer[choose1 - 1].setEmail(prompt("Nhập Email"));
@@ -207,6 +200,19 @@
             }
         } while (!check1);
         return cmnd;
+    }
+    function inputCheckEmail(thongtin) {
+        let email="";
+        let check1=false;
+        do {
+            email = prompt(thongtin+"Email :");
+            if (reEmail.test(email)) {
+                check1 = true;
+            } else {
+                alert("Email không hợp lệ , vui lòng nhập lại");
+            }
+        } while (!check1);
+        return email;
     }
     displayMainMenu();
 </script>
