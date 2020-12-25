@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=parseInt(prompt("nhap vao 1 so "));
+    isPrime(num);
+    function isPrime(number) {
+        let check=true;
+        if (num <2){
+            check=false;
+        }else {
+            for (let i =2;i<number;i++){
+                if (number%i===0){
+                    check=false;
+                }
+            }
+        }
+        if (check){
+            alert( " yes");
+        }else {
+            alert("no")
+        }
+    }
+</script>
+</body>
+</html>

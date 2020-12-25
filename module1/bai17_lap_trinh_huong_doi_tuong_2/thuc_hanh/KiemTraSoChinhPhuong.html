@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ktra(n) {
+        let i=0;
+        while(i*i<=n){
+            if (i*i==n){
+                alert( n+ "  la so chinh phuong");
+                return 0;
+            }
+            i++;
+        }
+        alert( n +" khong phai la so chinh phuong ")
+    }
+    let n =parseInt(prompt("nhap vao so n"));
+    ktra(n);
+</script>
+</body>
+</html>

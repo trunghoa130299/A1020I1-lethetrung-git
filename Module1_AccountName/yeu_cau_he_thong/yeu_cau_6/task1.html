@@ -48,7 +48,7 @@
         //     temp += i + ". Tên " + listCustomer[i].getName() + "\n";
         // }
         let chooseDisplay = parseInt(prompt(getDisplayListCustomer()));
-        alert("Tổng tiền phải trả : " + listCustomer[chooseDisplay].totalPays());
+        alert("Tổng tiền phải trả : " + listCustomer[chooseDisplay-1].totalPays());
         displayMainMenu();
     }
 
