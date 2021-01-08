@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isCheck(nam) {
+        return ((nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0);
+    }
+
+    function kiemtra(thang, nam) {
+        let kq;
+        switch (thang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                kq = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                kq = 30;
+                break;
+            case 2:
+                if (isCheck(nam)) {
+                    kq = 29;
+                } else {
+                    kq = 29;
+                }
+                break;
+            default :
+                alert("invalid");
+                break;
+        }
+        return kq;
+    }
+
+    alert(kiemtra(2, 2020));
+
+</script>
+</body>
+</html>

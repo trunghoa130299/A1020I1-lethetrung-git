@@ -52,13 +52,18 @@
         rentDays = parseInt(prompt("Nhập Số Ngày Thuê :"));
         if (Number.isInteger(rentDays)) {
             break;
-        } else alert("Rentdays is invalid . Please try again !");
+        } else
+        {
+            alert("Rentdays is invalid . Please try again !");
+        }
     }
     while (true) {
         quantityIncluded = parseInt(prompt("Nhập Số Người Đi Kèm :"));
         if (Number.isInteger(quantityIncluded)) {
-            break
-        } else alert("QuantityIncluded is invalid . Please try again !");
+            break;
+        } else {
+            alert("QuantityIncluded is invalid . Please try again !");
+        }
     }
     alert(`Tên : ${outputname}
 Email : ${email}

@@ -5,18 +5,32 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
-
+<div style="color: red"></div>
+<canvas id="canvasShape" width="1000" height="1000" style="border: 1px solid red;"></canvas>
 <script>
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    // Create gradient
-    var grd = ctx.createLinearGradient(0,0,200,0);
-    grd.addColorStop(0,"red");
-    grd.addColorStop(1,"white");
-    // Fill with gradient
-    ctx.fillStyle = grd;
-    ctx.fillRect(10,10,150,80);
+    let canvasObj = document.getElementById("canvasShape");
+    // canvasObj.style.transform = "rotate(90deg)";         // or -90 depending on need
+    let context = canvasObj.getContext("2d");
+    // context.arc(100, 100, 50, 0, Math.PI);
+    // context.stroke();
+    // context.fillStyle = "pink";
+    // context.fill();
+    // C1 hình chữ nhật
+    // context.rect(100, 200, 300, 500);
+    // context.stroke();
+    // context.fillStyle = "#79FF2C";
+    // context.fill();
+    // C2
+    // context.fillStyle = "#79FF2C";
+    // context.fillRect(100, 200, 300, 500);
+    // context.font = "italic 58px Cambria";
+    // context.fillText("C1120G1", 100, 100);
+    //hình tròn
+    // chú thích arc(toa do x, toa do y, ban kinh, diem bat dau, diem ket thuc)
+    context.arc(200, 200, 150, 0, 2 * Math.PI);
+    context.stroke();
+    context.fillStyle = "blue";
+    context.fill();
 </script>
 </body>
 </html>

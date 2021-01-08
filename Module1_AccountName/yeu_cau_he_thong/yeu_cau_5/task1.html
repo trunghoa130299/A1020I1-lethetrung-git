@@ -8,9 +8,7 @@
 <script>
     let arrListCustomer = [];
     displayMainMenu();
-
     function displayMainMenu() {
-        while (true) {
             let menu = parseInt(prompt("1.Add New Customer" + "\n" +
                 "2.Display Information Customer" + "\n" +
                 "3.Edit Information Customer" + "\n" +
@@ -34,12 +32,9 @@
                 default :
                     alert("Invalid");
             }
-        }
     }
 
     function addNewCustomer() {
-        let amount = parseInt(prompt("Nhập số lượng customer muốn thêm "));
-        for (let i = 0; i < amount; i++) {
             let customer = new Array();
             let name = prompt("Nhập vào tên :");
             let cmnd = prompt("Nhập cmnd :");
@@ -64,7 +59,7 @@
             customer[9] = quantityInclude;
             customer[10] = rentDays;
             arrListCustomer.push(customer);
-        }
+            displayMainMenu();
     }
     function getListCustomer() {
         let list = "";
@@ -91,7 +86,7 @@
 
     function displayCustomers() {
         let choose1 = prompt("Danh sách khách hàng  \n" +
-            getListCustomer() +(arrListCustomer.length +1) + "Back to menu ");
+            getListCustomer() +(arrListCustomer.length +1) + ".Back to menu ");
         if (choose1==arrListCustomer.length+1){
             displayMainMenu();
         }else {
@@ -143,16 +138,15 @@
                   alert("Fail");
 
         }
+        displayMainMenu();
 
     }
-
     function deleteCustomer() {
         let choose = parseInt(prompt(getListCustomer()));
         arrListCustomer.splice(choose - 1, 1);
         let string2 = "";
         for (let i = 0; i < arrListCustomer.length; i++) {
-            string2 += ("\n" + "-----------------" + "\n" +
-                (i + 1) + ".Tên : " + arrListCustomer[i][0] + "\n");
+            string2 += ((i + 1) + ".Tên : " + arrListCustomer[i][0] + "\n");
         }
         alert(string2);
         displayMainMenu();
