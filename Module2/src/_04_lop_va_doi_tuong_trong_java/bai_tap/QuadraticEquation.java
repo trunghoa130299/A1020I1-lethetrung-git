@@ -1,9 +1,7 @@
 package _04_lop_va_doi_tuong_trong_java.bai_tap;
 
-import java.util.Scanner;
-
 public class QuadraticEquation {
-    double a, b, c,delta ;
+    private double a, b, c;
 
     public QuadraticEquation(double a, double b, double c) {
         this.a = a;
@@ -15,40 +13,32 @@ public class QuadraticEquation {
         return a;
     }
 
-    public void setA(double a) {
-        this.a = a;
-    }
-
     public double getB() {
         return b;
     }
 
-    public void setB(double b) {
-        this.b = b;
-    }
-
     public double getC() {
+
         return c;
     }
 
-    public void setC(double c) {
-        this.c = c;
+    public double getDiscriminant() {
+        return b * b - (4 * a * c);
     }
 
-    public double getDiscriminant(double a,double b, double c) {
-        return delta =b * 2 - (4 * a * c);
+    public double getRoot1() {
+        if (this.getDiscriminant() < 0) {
+            return 0;
+        } else {
+            return ((-b + Math.sqrt(this.getDiscriminant())) / (2 * a));
+        }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nhap vao so a");
-        double a= scanner.nextDouble();
-        System.out.println("nhap vao so b");
-        double b = scanner.nextDouble();
-        System.out.println("nhap vao so c");
-        double c= scanner.nextDouble();
-        QuadraticEquation test = new QuadraticEquation(a,b,c);
-        test.setA(a);
-
+    public double getRoot2() {
+        if (this.getDiscriminant() < 0) {
+            return 0;
+        } else {
+            return ((-b - Math.sqrt(this.getDiscriminant())) / (2 * a));
+        }
     }
 }

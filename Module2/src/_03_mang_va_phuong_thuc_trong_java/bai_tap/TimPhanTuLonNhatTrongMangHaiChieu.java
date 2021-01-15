@@ -6,13 +6,13 @@ public class TimPhanTuLonNhatTrongMangHaiChieu {
     public static void main(String[] args) {
         int m, n;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập vào số dòng của ma trận: ");
+        System.out.println("nhap vao so dong cua ma tran : ");
         m = scanner.nextInt();
-        System.out.println("Nhập vào số cột của ma trận: ");
+        System.out.println("Nhap vao so cot cua ma tran : ");
         n = scanner.nextInt();
         int A[][] = new int[m][n];
 
-        System.out.println("Nhập các phần tử cho ma trận: ");
+        System.out.println("Nhap vao cac phan tu  ");
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print("A[" + i + "]["+ j + "] = ");
@@ -27,6 +27,6 @@ public class TimPhanTuLonNhatTrongMangHaiChieu {
                 }
             }
     }
-        System.out.println(max);
+        System.out.println("max la "+ max);
     }
 }
