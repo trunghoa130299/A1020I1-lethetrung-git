@@ -19,7 +19,7 @@ public class HienThiCacLoaiHinh {
                     System.out.println("Draw the triangle");
                     for (int i=7;i>=1;i--){
                         System.out.print("*");
-                        for (int j=1;j<i;j++){
+                        for (int j=1;j<=i;j++){
                             System.out.print("*");
                         }
                         System.out.println();
