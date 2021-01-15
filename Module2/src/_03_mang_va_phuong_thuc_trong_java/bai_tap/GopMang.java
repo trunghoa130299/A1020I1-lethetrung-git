@@ -20,8 +20,10 @@ public class GopMang {
         for (int i = 0; i<array1.length;i++){
             array3[i]=array1[i];
         }
-        for (int i= array2.length; i<array3.length;i++){
-            array3[i]=array2[i];
+        int index=0;
+        for (int i=array1.length; i<array3.length;i++){
+            array3[i]=array2[index];
+            index++;
         }
         System.out.println(Arrays.toString(array3));
     }
