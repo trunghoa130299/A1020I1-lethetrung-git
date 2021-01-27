@@ -42,7 +42,7 @@ public class MovablePoint extends LopPoint {
     @Override
     public String toString() {
         return "xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed + "," + this.x+ ","+ this.y + Arrays.toString(getSpeed());
+                ", ySpeed=" + ySpeed + "," + this.getX()+ ","+ this.getY() + Arrays.toString(getSpeed()) + super.toString();
     }
     public MovablePoint move(){
         this.setX(this.getX() + xSpeed);

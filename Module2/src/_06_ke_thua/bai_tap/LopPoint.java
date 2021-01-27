@@ -1,8 +1,8 @@
 package _06_ke_thua.bai_tap;
 
 public class LopPoint {
-    protected float x ;
-    protected float y ;
+    private float x ;
+    private float y ;
 
     public LopPoint() {
     }
