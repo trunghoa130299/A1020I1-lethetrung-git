@@ -64,7 +64,13 @@ public class ProductManager {
         System.out.println(showList());
     }
     public void searchSP(){
-
+        System.out.println("nhap ten muon tim kiem : ");
+        String search = scanner.nextLine();
+        for (Product d : products){
+            if ((d.getName() != null && d.getName().contains(search))){
+                System.out.println(d);
+            }
+        }
     }
     public void sapXepSP(){
 
