@@ -14,7 +14,8 @@ public class Main {
                 "5.Tìm kiếm sản phẩm theo tên\n" +
                 "6.Sắp xếp sản phẩm tăng dần, giảm dần theo giá");
         System.out.println("please choose : ");
-        int choose = Integer.parseInt(scanner.nextLine());
+        int choose = scanner.nextInt();
+        scanner.nextLine();
         switch (choose){
             case 1:
                 productManager.addSP();
