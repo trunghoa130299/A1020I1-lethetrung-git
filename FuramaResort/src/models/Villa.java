@@ -53,11 +53,11 @@ public class Villa extends Services {
     public String showInfo(){
         return "Villa{" +
                 "ID= " + this.getId() +
-                "name='" + this.getName() + '\'' +
-                ", area=" + this.getArea() +
-                ", amount=" + this.getAmount() +
-                ", cost=" + this.getCost() +
-                ", rentalType=" + this.getRentalType() +
+                ", name= " + this.getName() + '\'' +
+                ", area= " + this.getArea() +
+                ", amount= " + this.getAmount() +
+                ", cost= " + this.getCost() +
+                ", rentalType= " + this.getRentalType() +
                 ", standardRoom= " + standardRoom +
                 ", other= " + other +
                 ", areaLake= " + areaLake +

@@ -1,6 +1,8 @@
 package manager;
 
 import commons.FuncWriteAndRead;
+import models.House;
+import models.Room;
 import models.Villa;
 
 import java.util.Scanner;
@@ -8,37 +10,72 @@ import java.util.Scanner;
 public class ServiceManager {
     Scanner scanner = new Scanner(System.in);
     public void addVilla(){
-        System.out.println("Nhap ID :");
-        String id = scanner.nextLine();
-        System.out.println("Nhap ten :");
-        String name = scanner.nextLine();
-        System.out.println("Nhap area :");
-        double area = scanner.nextDouble();
-        System.out.println("Nhap amount : ");
-        int amount = scanner.nextInt();
-        System.out.println("Nhap cost : ");
-        int cost = scanner.nextInt();
-        System.out.println("Nhap rentaltype : ");
-        int rentaltype = scanner.nextInt();
-        System.out.println("Nhap standardroom : ");
-        String standardroom = scanner.nextLine();
-        System.out.println("Nhap other : ");
-        String other = scanner.nextLine();
-        System.out.println("Nhap arealake : ");
-        double arealake = scanner.nextDouble();
-        System.out.println("Nhap numberoffloor: ");
-        int numberoffloor = scanner.nextInt();
         Villa villa = new Villa();
-        villa.setId(id);
-        villa.setName(name);
-        villa.setArea(area);
-        villa.setAmount(amount);
-        villa.setCost(cost);
-        villa.setRentalType(rentaltype);
-        villa.setStandardRoom(standardroom);
-        villa.setOther(other);
-        villa.setAreaLake(arealake);
-        villa.setNumberOfFloors(numberoffloor);
+        System.out.println("Nhap ID :");
+        villa.setId(scanner.nextLine());
+        System.out.println("Nhap ten :");
+        villa.setName(scanner.nextLine());
+        System.out.println("Nhap area :");
+        villa.setArea(scanner.nextDouble());
+        System.out.println("Nhap amount : ");
+        villa.setAmount(scanner.nextInt());
+        System.out.println("Nhap cost : ");
+        villa.setCost(scanner.nextInt());
+        System.out.println("Nhap rentaltype : ");
+        villa.setRentalType(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Nhap standardroom : ");
+        villa.setStandardRoom(scanner.nextLine());
+        System.out.println("Nhap other : ");
+        villa.setOther(scanner.nextLine());
+        System.out.println("Nhap arealake : ");
+        villa.setAreaLake(scanner.nextDouble());
+        System.out.println("Nhap numberoffloor: ");
+        villa.setNumberOfFloors(scanner.nextInt());
+        scanner.nextLine();
         FuncWriteAndRead.writeVilla(villa);
+    }
+    public void addHouse(){
+        House house = new House();
+        System.out.println("Nhap ID :");
+        house.setId(scanner.nextLine());
+        System.out.println("Nhap ten :");
+        house.setName(scanner.nextLine());
+        System.out.println("Nhap area :");
+        house.setArea(scanner.nextDouble());
+        System.out.println("Nhap amount : ");
+        house.setAmount(scanner.nextInt());
+        System.out.println("Nhap cost : ");
+        house.setCost(scanner.nextInt());
+        System.out.println("Nhap rentaltype : ");
+        house.setRentalType(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Nhap standardroom : ");
+        house.setStandardRoom(scanner.nextLine());
+        System.out.println("Nhap other : ");
+        house.setOther(scanner.nextLine());
+        System.out.println("Nhap numberoffloor: ");
+        house.setNumberOfFloors(scanner.nextInt());
+        scanner.nextLine();
+        FuncWriteAndRead.writeHouse(house);
+    }
+    public void addRoom(){
+        Room room = new Room();
+        System.out.println("Nhap ID :");
+        room.setId(scanner.nextLine());
+        System.out.println("Nhap ten :");
+        room.setName(scanner.nextLine());
+        System.out.println("Nhap area :");
+        room.setArea(scanner.nextDouble());
+        System.out.println("Nhap amount : ");
+        room.setAmount(scanner.nextInt());
+        System.out.println("Nhap cost : ");
+        room.setCost(scanner.nextInt());
+        System.out.println("Nhap rentaltype : ");
+        room.setRentalType(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("nhap dich vu mien phi ");
+        room.setFreeService(scanner.nextLine());
+        FuncWriteAndRead.writeRoom(room);
     }
 }

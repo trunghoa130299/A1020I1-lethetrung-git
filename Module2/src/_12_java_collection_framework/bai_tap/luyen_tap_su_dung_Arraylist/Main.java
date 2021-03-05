@@ -12,7 +12,7 @@ public class Main {
                 "3.Xoá sản phẩm theo id\n" +
                 "4.Hiển thị danh sách sản phẩm\n" +
                 "5.Tìm kiếm sản phẩm theo tên\n" +
-                "6.Sắp xếp sản phẩm tăng dần, giảm dần theo giá");
+                "6. 1.Sắp xếp sản phẩm giảm dần, 2.tăng dần theo giá");
         System.out.println("please choose : ");
         int choose = scanner.nextInt();
         scanner.nextLine();

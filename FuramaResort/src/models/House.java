@@ -16,18 +16,43 @@ public class House extends Services{
         this.other = other;
         this.numberOfFloors = numberOfFloors;
     }
+
+    public String getStandardRoom() {
+        return standardRoom;
+    }
+
+    public void setStandardRoom(String standardRoom) {
+        this.standardRoom = standardRoom;
+    }
+
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+    }
+
+    public int getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
     @Override
     public String showInfo(){
         return "House{" +
                 "ID= " + this.getId() +
-                "name='" + this.getName() + '\'' +
-                ", area=" + this.getArea() +
-                ", amount=" + this.getAmount() +
-                ", cost=" + this.getCost() +
-                ", rentalType=" + this.getRentalType() +
-                ", standardRoom= " + standardRoom +
-                ", other= " + other +
-                ", numberOfFloors= " + numberOfFloors +
+                " ,name= " + this.getName() + '\'' +
+                ", area= " + this.getArea() +
+                ", amount= " + this.getAmount() +
+                ", cost= " + this.getCost() +
+                ", rentalType= " + this.getRentalType() +
+                ", standardRoom= " + this.getStandardRoom() +
+                ", other= " +this.getOther() +
+                ", numberOfFloors= " + this.getNumberOfFloors() +
                 '}';
     }
 }
