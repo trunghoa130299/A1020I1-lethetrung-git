@@ -13,7 +13,7 @@ public class TimChuoiLienTiepCoDoDaiLonNhat {
         for (int i = 0; i < string.length(); i++) {
             if (list.size() > 1 && string.charAt(i) <= list.getLast() &&
                     list.contains(string.charAt(i))) {
-                list.clear(); // Simple statement
+                list.clear(); 
             }
 
             list.add(string.charAt(i)); //

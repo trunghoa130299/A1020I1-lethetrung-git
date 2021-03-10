@@ -70,4 +70,7 @@ public class MainController {
                 System.out.println("Fail");
         }
     }
+    public void addCustomer(){
+
+    }
 }

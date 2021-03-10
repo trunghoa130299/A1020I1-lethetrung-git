@@ -25,6 +25,7 @@ public class Main {
                     main1.showServices();
                     break;
                 case 3:
+                    main1.addCustomer();
                 case 4:
                 case 5:
                 case 6:
