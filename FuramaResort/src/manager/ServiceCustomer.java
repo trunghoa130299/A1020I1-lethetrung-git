@@ -1,12 +1,14 @@
 package manager;
 
+import commons.Validate;
 import models.Customer;
 
 import java.util.Scanner;
 
 public class ServiceCustomer {
     Scanner scanner = new Scanner(System.in);
-    public void addCustomer(){
+
+    public void addCustomer() {
         Customer customer = new Customer();
         System.out.println("Nhập tên : ");
         customer.setNameCustomer(scanner.nextLine());
@@ -18,19 +20,20 @@ public class ServiceCustomer {
         customer.setCmnd(scanner.nextInt());
         System.out.println("Nhập sdt : ");
         customer.setSdt(scanner.nextInt());
+        scanner.nextLine();
         System.out.println("Nhập email : ");
-        customer.setEmail(scanner.nextLine());
-        System.out.println("Nhập loại khách ");
+        String email = scanner.nextLine();
+        do {
+            if (Validate.checkEmail(email)){
+                customer.setEmail(email);
+            }else {
+                System.out.println("email không hợp lệ ! Vui lòng nhập lại : ");
+                email = scanner.nextLine();
+            }
+        }while (!Validate.checkEmail(email));
+        System.out.println("Nhập loại khách  : ");
         customer.setTypeOfCustomer(scanner.nextLine());
         System.out.println("Nhập địa chỉ : ");
         customer.setAddress(scanner.nextLine());
-
-    }
-    public void checkNameCustomer(String name){
-        Boolean check = false;
-        do {
-
-
-        }while (!check);
     }
 }

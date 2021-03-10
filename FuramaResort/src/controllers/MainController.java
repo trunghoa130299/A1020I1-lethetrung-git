@@ -1,6 +1,7 @@
 package controllers;
 
 import commons.FuncWriteAndRead;
+import manager.ServiceCustomer;
 import manager.ServiceManager;
 
 import java.util.Arrays;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class MainController {
     Scanner scanner = new Scanner(System.in);
     ServiceManager villa1= new ServiceManager();
+    ServiceCustomer serviceCustomer= new ServiceCustomer();
     FuncWriteAndRead funcWriteAndRead = new FuncWriteAndRead();
     public void addNewServies() {
         System.out.println("1.\tAdd New Villa\n" +
@@ -71,6 +73,6 @@ public class MainController {
         }
     }
     public void addCustomer(){
-
+        serviceCustomer.addCustomer();
     }
 }

@@ -26,6 +26,7 @@ public class Main {
                     break;
                 case 3:
                     main1.addCustomer();
+                    break;
                 case 4:
                 case 5:
                 case 6:
