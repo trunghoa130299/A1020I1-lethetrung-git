@@ -72,7 +72,10 @@ public class MainController {
                 System.out.println("Fail");
         }
     }
-    public void addCustomer(){
+    public void addCustomer() throws Exception {
         serviceCustomer.addCustomer();
+    }
+    public void showInfoCustomer(){
+        FuncWriteAndRead.showInformationCustomer();
     }
 }

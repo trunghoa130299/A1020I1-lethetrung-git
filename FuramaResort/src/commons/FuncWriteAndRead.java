@@ -1,11 +1,14 @@
 package commons;
 
+import models.Customer;
 import models.House;
 import models.Room;
 import models.Villa;
-
+ 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class FuncWriteAndRead {
     public static void writeVilla(Villa villa){
@@ -138,6 +141,68 @@ public class FuncWriteAndRead {
         ArrayList<House> listHouse = readHouse();
         for (House h: listHouse) {
             System.out.println(h.showInfo());
+        }
+    }
+
+//    Customer
+    public static void writeCustomer(Customer customer){
+        FileWriter fileWriter =null;
+        BufferedWriter bufferedWriter =null;
+        try {
+            fileWriter= new FileWriter("src\\data\\customer.csv",true);
+            bufferedWriter =new BufferedWriter(fileWriter);
+            bufferedWriter.write(customer.getNameCustomer()+","+customer.getDayOfBirth()+","+customer.getGender()+
+                    ","+ customer.getCmnd()+ ","+customer.getSdt()+","+customer
+                    .getEmail()+","+ customer.getTypeOfCustomer()+","+ customer.getAddress());
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static ArrayList<Customer> readCustomer(){
+        ArrayList<Customer>  listCustomer = new ArrayList<>();
+        FileReader fileReader =null;
+        BufferedReader bufferedReader = null;
+        try {
+            fileReader = new FileReader("src\\data\\room.csv");
+            bufferedReader = new BufferedReader(fileReader);
+            String line="";
+            String[] array =null;
+            while ((line=bufferedReader.readLine())!=null){
+                array=line.split(",");
+                Customer customer= new Customer(array[0],array[1],array[2]
+                        ,Integer.parseInt(array[3]),
+                        Integer.parseInt(array[4]),array[5],array[6],array[7]);
+                listCustomer.add(customer);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listCustomer;
+    }
+    public  static void showInformationCustomer(){
+        ArrayList<Customer> listCustomer = readCustomer();
+        Collections.sort(listCustomer, new Comparator<Customer>() {
+            @Override
+            public int compare(Customer o1, Customer o2) {
+                if (o1.getNameCustomer() == o2.getNameCustomer()){
+                    return 0;
+                }else {
+                    if (o1.getDayOfBirth() == o2.getDayOfBirth()){
+                        return 0;
+                    }
+                    else {
+                        return -1;
+                    }
+                }
+            }
+        });
+        System.out.println("Danh sách customer : ");
+        for (Customer customer : listCustomer){
+            System.out.println(customer.showInfo());
         }
     }
 }

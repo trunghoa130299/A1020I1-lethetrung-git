@@ -3,7 +3,7 @@ package controllers;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         MainController main1 = new MainController();
         while (true) {
@@ -28,11 +28,13 @@ public class Main {
                     main1.addCustomer();
                     break;
                 case 4:
+                    main1.showInfoCustomer();
+                    break;
                 case 5:
                 case 6:
                 case 7:
                 default:
-                    System.out.println("Fail");
+                    System.out.println("Fail !");
             }
         }
     }
