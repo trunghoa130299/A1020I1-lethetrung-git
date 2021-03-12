@@ -165,7 +165,7 @@ public class FuncWriteAndRead {
         FileReader fileReader =null;
         BufferedReader bufferedReader = null;
         try {
-            fileReader = new FileReader("src\\data\\room.csv");
+            fileReader = new FileReader("src\\data\\customer.csv");
             bufferedReader = new BufferedReader(fileReader);
             String line="";
             String[] array =null;
@@ -188,15 +188,12 @@ public class FuncWriteAndRead {
         Collections.sort(listCustomer, new Comparator<Customer>() {
             @Override
             public int compare(Customer o1, Customer o2) {
-                if (o1.getNameCustomer() == o2.getNameCustomer()){
-                    return 0;
-                }else {
-                    if (o1.getDayOfBirth() == o2.getDayOfBirth()){
-                        return 0;
-                    }
-                    else {
-                        return -1;
-                    }
+                if (o2.getNameCustomer().compareTo(o1.getNameCustomer()) != 0) {
+                    return o2.getNameCustomer().compareTo(o1.getNameCustomer());
+                } else {
+                    int yearO1 = Integer.parseInt(o1.getDayOfBirth().substring(6, 10));
+                    int yearO2 = Integer.parseInt(o2.getDayOfBirth().substring(6, 10));
+                    return yearO1 - yearO2;
                 }
             }
         });

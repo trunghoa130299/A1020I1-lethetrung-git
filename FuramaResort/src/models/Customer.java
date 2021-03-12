@@ -123,8 +123,7 @@ public class Customer  {
                 ", sdt=" + sdt +
                 ", email='" + email + '\'' +
                 ", typeOfCustomer='" + typeOfCustomer + '\'' +
-                ", address='" + address + '\'' +
-                ", services=" + services +
+                ", address='" + address +
                 '}';
     }
 }

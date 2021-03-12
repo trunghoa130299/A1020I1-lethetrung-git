@@ -4,7 +4,9 @@ import commons.FuncWriteAndRead;
 import commons.Validate;
 import models.Customer;
 
+import java.util.Calendar;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import static commons.Validate.*;
 
@@ -13,25 +15,39 @@ public class ServiceCustomer {
 
     public void addCustomer() throws Exception {
         Customer customer = new Customer();
+        boolean check = true;
         System.out.println("Nhập tên : ");
         customer.setNameCustomer(scanner.nextLine());
         System.out.println("Nhập Ngày sinh : ");
-        customer.setDayOfBirth(scanner.nextLine());
-        System.out.println("Nhập giới tính : ");
-        String gender = scanner.nextLine();
+        String day ;
         do {
+            day = scanner.nextLine();
+            try {
+                if (Validate.checkDay(day)) {
+                    customer.setDayOfBirth(day);
+                    break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                System.out.println("Nhập lại ");
+            }
+
+        }while (true);
+
+        System.out.println("Nhập giới tính : ");
+        String gender;
+        do {
+            gender = scanner.nextLine();
             try {
                 if (Validate.genderException(gender)) {
                     customer.setGender(gender);
-                }else {
-                    throw new Exception();
+                    break;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("Nhập lại ");
-                gender = scanner.nextLine();
             }
-        } while (Validate.genderException(gender));
+        } while (check);
         customer.setGender(gender);
         System.out.println("Nhập số cmnd :");
         customer.setCmnd(scanner.nextInt());
@@ -39,20 +55,19 @@ public class ServiceCustomer {
         customer.setSdt(scanner.nextInt());
         scanner.nextLine();
         System.out.println("Nhập email : ");
-        String email = scanner.nextLine();
+        String email;
         do {
+            email = scanner.nextLine();
             try {
-                if (!checkEmail(email)) {
-                    throw new Exception();
-                } else {
+                if (checkEmail(email)) {
                     customer.setEmail(email);
+                    break;
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("Nhập lại ");
-                email= scanner.nextLine();
             }
-        }while (checkEmail(email));
+        } while (check);
         customer.setEmail(email);
         System.out.println("Nhập loại khách  : ");
         customer.setTypeOfCustomer(scanner.nextLine());
