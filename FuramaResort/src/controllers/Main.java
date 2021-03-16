@@ -31,8 +31,13 @@ public class Main {
                     main1.showInfoCustomer();
                     break;
                 case 5:
+                    main1.addNewBooking();
+                    break;
                 case 6:
+                    main1.showInfoEmployee();
+                    break;
                 case 7:
+
                 default:
                     System.out.println("Fail !");
             }

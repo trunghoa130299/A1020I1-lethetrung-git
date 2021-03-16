@@ -171,8 +171,7 @@ public class FuncWriteAndRead {
             String[] array =null;
             while ((line=bufferedReader.readLine())!=null){
                 array=line.split(",");
-                Customer customer= new Customer(array[0],array[1],array[2]
-                        ,Integer.parseInt(array[3]),
+                Customer customer= new Customer(array[0],array[1],array[2],array[3],
                         Integer.parseInt(array[4]),array[5],array[6],array[7]);
                 listCustomer.add(customer);
             }

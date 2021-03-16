@@ -77,5 +77,12 @@ public class MainController {
     }
     public void showInfoCustomer(){
         FuncWriteAndRead.showInformationCustomer();
+
+    }
+    public void addNewBooking(){
+
+    }
+    public void showInfoEmployee(){
+
     }
 }

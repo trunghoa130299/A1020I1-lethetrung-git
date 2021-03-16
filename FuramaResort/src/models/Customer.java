@@ -1,13 +1,10 @@
 package models;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Customer  {
     private String nameCustomer;
     private String dayOfBirth;
     private String gender;
-    private int cmnd;
+    private String cmnd;
     private int sdt;
     private String email;
     private String typeOfCustomer;
@@ -18,7 +15,7 @@ public class Customer  {
     }
 
     public Customer(String nameCustomer, String dayOfBirth, String gender,
-                    int cmnd, int sdt, String email, String typeOfCustomer, String address) {
+                    String cmnd, int sdt, String email, String typeOfCustomer, String address) {
         this.nameCustomer = nameCustomer;
         this.dayOfBirth = dayOfBirth;
         this.gender = gender;
@@ -29,7 +26,7 @@ public class Customer  {
         this.address = address;
     }
 
-    public Customer(String nameCustomer, String dayOfBirth, String gender, int cmnd, int sdt,
+    public Customer(String nameCustomer, String dayOfBirth, String gender, String cmnd, int sdt,
                     String email, String typeOfCustomer, String address, Services services) {
         this.nameCustomer = nameCustomer;
         this.dayOfBirth = dayOfBirth;
@@ -66,11 +63,11 @@ public class Customer  {
         this.gender = gender;
     }
 
-    public int getCmnd() {
+    public String getCmnd() {
         return cmnd;
     }
 
-    public void setCmnd(int cmnd) {
+    public void setCmnd(String cmnd) {
         this.cmnd = cmnd;
     }
 

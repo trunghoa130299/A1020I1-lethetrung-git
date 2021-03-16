@@ -4,9 +4,7 @@ import commons.FuncWriteAndRead;
 import commons.Validate;
 import models.Customer;
 
-import java.util.Calendar;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 import static commons.Validate.*;
 
@@ -17,7 +15,19 @@ public class ServiceCustomer {
         Customer customer = new Customer();
         boolean check = true;
         System.out.println("Nhập tên : ");
-        customer.setNameCustomer(scanner.nextLine());
+        String name ;
+        do {
+            name= scanner.nextLine();
+            try {
+                if (Validate.checkName(name)){
+                    customer.setNameCustomer(name);
+                    break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                System.out.println("Nhập lại : ");
+            }
+        }while (check);
         System.out.println("Nhập Ngày sinh : ");
         String day ;
         do {
@@ -32,7 +42,7 @@ public class ServiceCustomer {
                 System.out.println("Nhập lại ");
             }
 
-        }while (true);
+        }while (check);
 
         System.out.println("Nhập giới tính : ");
         String gender;
@@ -48,9 +58,21 @@ public class ServiceCustomer {
                 System.out.println("Nhập lại ");
             }
         } while (check);
-        customer.setGender(gender);
+
         System.out.println("Nhập số cmnd :");
-        customer.setCmnd(scanner.nextInt());
+        String cmnd;
+        do {
+            cmnd=scanner.nextLine();
+            try {
+                if (Validate.checkIDCard(cmnd)){
+                    customer.setCmnd(cmnd);
+                    break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                System.out.println("Nhập lại : ");
+            }
+        }while (check);
         System.out.println("Nhập sdt : ");
         customer.setSdt(scanner.nextInt());
         scanner.nextLine();
