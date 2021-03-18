@@ -1,5 +1,6 @@
 package controllers;
 
+import commons.AddBooking;
 import commons.FuncWriteAndRead;
 import manager.ServiceCustomer;
 import manager.ServiceManager;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 
 public class MainController {
     Scanner scanner = new Scanner(System.in);
+    AddBooking addBooking = new AddBooking();
     ServiceManager villa1= new ServiceManager();
     ServiceCustomer serviceCustomer= new ServiceCustomer();
     FuncWriteAndRead funcWriteAndRead = new FuncWriteAndRead();
@@ -80,7 +82,7 @@ public class MainController {
 
     }
     public void addNewBooking(){
-
+        addBooking.ShowCustomer();
     }
     public void showInfoEmployee(){
 

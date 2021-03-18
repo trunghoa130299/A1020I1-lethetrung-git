@@ -30,4 +30,12 @@ public class Room extends Services{
                 ", freeService= " + this.getFreeService() +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "ID= " + this.getId() +
+                ", name= " + this.getName() + '\''+
+                '}';
+    }
 }

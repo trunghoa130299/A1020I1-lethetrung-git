@@ -55,4 +55,12 @@ public class House extends Services{
                 ", numberOfFloors= " + this.getNumberOfFloors() +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "ID= " + this.getId() +
+                ", name= " + this.getName() + '\''+
+                '}';
+    }
 }

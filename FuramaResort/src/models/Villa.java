@@ -64,4 +64,12 @@ public class Villa extends Services {
                 ", numberOfFloors= " + numberOfFloors +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        return "Villa{" +
+                "ID= " + this.getId() +
+                ", name= " + this.getName() + '\''+
+                '}';
+    }
 }
