@@ -1,9 +1,12 @@
 package controllers;
 
 import commons.AddBooking;
+import commons.EmployeeMap;
 import commons.FuncWriteAndRead;
+import commons.ShowAllNameServiceDuplicate;
 import manager.ServiceCustomer;
 import manager.ServiceManager;
+import models.Employee;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +18,7 @@ public class MainController {
     ServiceManager villa1= new ServiceManager();
     ServiceCustomer serviceCustomer= new ServiceCustomer();
     FuncWriteAndRead funcWriteAndRead = new FuncWriteAndRead();
+    ShowAllNameServiceDuplicate showAllNameServiceDuplicate = new ShowAllNameServiceDuplicate();
     public void addNewServies() {
         System.out.println("1.\tAdd New Villa\n" +
                 "2.\tAdd New House\n" +
@@ -63,8 +67,14 @@ public class MainController {
                 funcWriteAndRead.showRoom();
                 break;
             case 4:
+                ShowAllNameServiceDuplicate.showNameVillaDuplicate();
+                break;
             case 5:
+                ShowAllNameServiceDuplicate.showNameHouseDuplicate();
+                break;
             case 6:
+                ShowAllNameServiceDuplicate.showNameRoomDuplicate();
+                break;
             case 7:
                 Main main = new Main();
                 break;
@@ -85,6 +95,6 @@ public class MainController {
         addBooking.ShowCustomer();
     }
     public void showInfoEmployee(){
-
+        EmployeeMap.showEmployee();
     }
 }

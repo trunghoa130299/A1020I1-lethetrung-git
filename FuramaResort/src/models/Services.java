@@ -1,6 +1,8 @@
 package models;
 
-public  abstract class Services {
+import java.util.Objects;
+
+public abstract class Services implements Comparable<Services> {
     private String id;
     private String name;
     private Double area;
@@ -77,5 +79,35 @@ public  abstract class Services {
                 ", cost=" + cost +
                 ", rentalType=" + rentalType +
                 '}';
+    }
+
+    @Override
+    public String toString() {
+        return "Services{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", area=" + area +
+                ", amount=" + amount +
+                ", cost=" + cost +
+                ", rentalType=" + rentalType +
+                '}';
+    }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Services services = (Services) o;
+//        return name.equals(services.name);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(name);
+//    }
+
+    @Override
+    public int compareTo(Services o) {
+        return this.getName().compareTo(o.getName());
     }
 }
