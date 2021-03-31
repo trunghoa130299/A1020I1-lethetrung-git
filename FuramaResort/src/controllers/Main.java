@@ -37,7 +37,7 @@ public class Main {
                     main1.showInfoEmployee();
                     break;
                 case 7:
-                    break;
+                    return;
                 default:
                     System.out.println("Fail !");
             }

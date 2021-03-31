@@ -1,14 +1,12 @@
 package commons;
 
-import models.Customer;
-import models.House;
-import models.Room;
-import models.Villa;
+import models.*;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class FuncWriteAndRead {
     public static void writeVilla(Villa villa) {
@@ -152,7 +150,6 @@ public class FuncWriteAndRead {
             System.out.println(h.showInfo());
         }
     }
-
 
     //    Customer
     public static void writeCustomer(Customer customer) {

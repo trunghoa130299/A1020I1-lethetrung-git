@@ -28,7 +28,7 @@ public class ServiceManager {
         System.out.println("Nhap ten : ");
         String name = scanner.nextLine();
         villa.setName(name);
-        System.out.println("Nhap area :");
+        System.out.println("Nhap area :( >30)");
         Double area ;
         do {
             area = scanner.nextDouble();
@@ -39,7 +39,7 @@ public class ServiceManager {
                 System.out.println("Nhập lại ");
             }
         }while (check);
-        System.out.println("Nhap amount : ");
+        System.out.println("Nhap amount : (0< amount<20");
         int amount;
         do {
             amount = scanner.nextInt();
@@ -109,7 +109,7 @@ public class ServiceManager {
         }while (check);
         System.out.println("Nhap ten :");
         house.setName(scanner.nextLine());
-        System.out.println("Nhap area :");
+        System.out.println("Nhap area : ( >30)");
         Double area ;
         do {
             area = scanner.nextDouble();
@@ -120,7 +120,7 @@ public class ServiceManager {
                 System.out.println("Nhập lại ");
             }
         }while (check);
-        System.out.println("Nhap amount : ");
+        System.out.println("Nhap amount : (0< amount<20");
         int amount;
         do {
             amount = scanner.nextInt();
@@ -190,7 +190,7 @@ public class ServiceManager {
                 System.out.println("Nhập lại ");
             }
         }while (check);
-        System.out.println("Nhap amount : ");
+        System.out.println("Nhap amount : (0< amount<20");
         int amount;
         do {
             amount = scanner.nextInt();
@@ -215,7 +215,7 @@ public class ServiceManager {
         System.out.println("Nhap rentaltype : ");
         room.setRentalType(scanner.nextInt());
         scanner.nextLine();
-        System.out.println("nhap dich vu mien phi ");
+        System.out.println("nhap dich vu mien phi : (massage/karaoke/food/drink/car)");
         String freeService;
         do {
             freeService = scanner.nextLine();
