@@ -58,7 +58,7 @@ create table dichvudikem(
 	iddichvudikem int not null primary key auto_increment,
     `tendichvudikem` varchar(45),
     gia int,
-    donvi int,
+    donvi varchar(45),
     trangthaikhadung varchar(45)
 );
 
@@ -109,69 +109,50 @@ create table hopdongchitiet(
     foreign key(idhopdong_hdct) references hopdong(idhopdong),
     foreign key(iddichvudikem_hdct) references dichvudikem(iddichvudikem)
 );
-insert into vitri
-values (1,'quản lí');
 
-insert into vitri (`tenvitri`)
-values ('nhân viên'),
-('nhân viên'),
-('nhân viên'),
-('nhân viên');
+INSERT INTO `vitri` VALUES (1,'quản lí'),(2,'nhân viên'),(3,'nhân viên'),(4,'nhân viên'),(5,'nhân viên');
 
-insert into trinhdo 
-values (1,'giỏi');
+INSERT INTO `trinhdo` VALUES (1,'giỏi'),(2,'khá'),(3,'trung bình'),(4,'yếu'),(5,'kém');
 
-insert into trinhdo (`trinhdo`)
-values ('khá'),
-('trung bình'),
-('yếu'),
-('kém');
+INSERT INTO `bophan` VALUES (1,'nhân sự'),(2,'bán hàng'),(3,'nhân sự'),(4,'bán hàng'),(5,'bán hàng');
 
-insert into bophan
-values (1,'nhân sự');
+INSERT INTO `nhanvien` VALUES (1,'Trần Văn A','2021-09-01','12345678','5000000','0123456789','a@abc.abc','Nghệ An',1,1,1),(2,'Nguyễn  H','2021-08-01','743924','6000000','43234324','b@abc.abc','Đà Nẵng',2,2,2),
+(3,'Nguyễn Văn C','2021-07-01','342234','4000000','234234432','c@abc.abc','Huế',3,3,3),(4,'Lê Văn T','2021-06-01','41245345','32000000','324432234',
+'d@abc.abc','Quảng trị',4,4,4),(5,'Hồ  K','2021-05-01','8437347','5000000','234432234','e@abc.abc','Hà Tĩnh',5,5,5);
 
-insert into bophan (`tenbophan`)
-values ('bán hàng'),
-('nhân sự'),
-('bán hàng'),
-('bán hàng');
+INSERT INTO `loaikhach` VALUES (1,'vip'),(2,'diamond'),(3,'vip'),(4,'thường'),(5,'thường'),(6,'vip'),(7,'vip');
 
-INSERT INTO `furama_resort_management`.`nhanvien` (`idnhanvien`, `hoten`, `ngaysinh`, `socmtnd`, `luong`, `sdt`, `email`, `diachi`, `idvitri_nv`, `idtrinhdo_nv`, `idbophan_nv`) VALUES ('1', 'Nguyễn Văn A', '2021-09-01', '12345678', '5000000', '0123456789', 'a@abc.abc', 'Nghệ An', '1', '1', '1');
-INSERT INTO `furama_resort_management`.`nhanvien` (`idnhanvien`, `hoten`, `ngaysinh`, `socmtnd`, `luong`, `sdt`, `email`, `diachi`, `idvitri_nv`, `idtrinhdo_nv`, `idbophan_nv`) VALUES ('2', 'Nguyễn Văn B', '2021-08-01', '743924', '6000000', '43234324', 'b@abc.abc', 'Đà Nẵng', '2', '2', '2');
-INSERT INTO `furama_resort_management`.`nhanvien` (`idnhanvien`, `hoten`, `ngaysinh`, `socmtnd`, `luong`, `sdt`, `email`, `diachi`, `idvitri_nv`, `idtrinhdo_nv`, `idbophan_nv`) VALUES ('3', 'Nguyễn Văn C', '2021-07-01', '342234', '4000000', '234234432', 'c@abc.abc', 'Huế', '3', '3', '3');
-INSERT INTO `furama_resort_management`.`nhanvien` (`idnhanvien`, `hoten`, `ngaysinh`, `socmtnd`, `luong`, `sdt`, `email`, `diachi`, `idvitri_nv`, `idtrinhdo_nv`, `idbophan_nv`) VALUES ('4', 'Nguyễn Văn D', '2021-06-01', '41245345', '32000000', '324432234', 'd@abc.abc', 'Quảng trị', '4', '4', '4');
-INSERT INTO `furama_resort_management`.`nhanvien` (`idnhanvien`, `hoten`, `ngaysinh`, `socmtnd`, `luong`, `sdt`, `email`, `diachi`, `idvitri_nv`, `idtrinhdo_nv`, `idbophan_nv`) VALUES ('5', 'Nguyễn Văn E', '2021-05-01', '8437347', '5000000', '234432234', 'e@abc.abc', 'Hà Tĩnh', '5', '5', '5');
+INSERT INTO `khachhang` VALUES (1,'Trung','1999-04-07','132123','432423','trung@trung.abc','Vinh',1),(2,'Khánh','1999-04-08','12312321','243423','khanh@khanh.abc','Đà Nẵng',2),
+(3,'Đạt','1999-04-09','43234','13212','dat@dat.abc','Quảng Ngãi',3),(4,'Thành','1999-04-10','341234','13123','thanh@thanh.abc','Đà Nẵng',4),(5,'Tuấn','1999-04-11','123123','123312','tuan@tuan.abc','Quảng Trị',5),(6,'Tài','1999-04-12',
+'131241','123123','tai@tai.abc','Quảng Nam',6),(7,'Trung','1999-02-13','435434','23243','trung@bc.abc','Nghệ An',7);
 
-INSERT INTO `furama_resort_management`.`loaikhach` (`idloaikhach`, `tenloaikhach`) VALUES ('1', 'vip');
-INSERT INTO `furama_resort_management`.`loaikhach` (`idloaikhach`, `tenloaikhach`) VALUES ('2', 'vip');
-INSERT INTO `furama_resort_management`.`loaikhach` (`idloaikhach`, `tenloaikhach`) VALUES ('3', 'vip');
-INSERT INTO `furama_resort_management`.`loaikhach` (`idloaikhach`, `tenloaikhach`) VALUES ('4', 'thường');
-INSERT INTO `furama_resort_management`.`loaikhach` (`idloaikhach`, `tenloaikhach`) VALUES ('5', 'thường');
-INSERT INTO `furama_resort_management`.`loaikhach` (`tenloaikhach`) VALUES ('vip');
+INSERT INTO `dichvudikem` VALUES (1,'Thức ăn',435,'usd','ok'),(2,'Đồ uống',324,'usd','ok'),(3,'Hồ Bơi',54345,'usd','ok'),
+(4,'Karaok',23443,'usd','ok'),(5,'Xe ôm',645,'usd','ok');
 
-INSERT INTO `furama_resort_management`.`loaidichvu` (`idloaidichvu`, `tenloaidichvu`) VALUES ('1', 'Room');
-INSERT INTO `furama_resort_management`.`loaidichvu` (`idloaidichvu`, `tenloaidichvu`) VALUES ('2', 'House');
-INSERT INTO `furama_resort_management`.`loaidichvu` (`idloaidichvu`, `tenloaidichvu`) VALUES ('3', 'Vip');
-INSERT INTO `furama_resort_management`.`loaidichvu` (`idloaidichvu`, `tenloaidichvu`) VALUES ('4', 'Vip');
-INSERT INTO `furama_resort_management`.`loaidichvu` (`idloaidichvu`, `tenloaidichvu`) VALUES ('5', 'House');
+INSERT INTO `loaidichvu` VALUES (1,'Room'),(2,'House'),(3,'Vip'),(4,'Vip'),(5,'House');
 
-INSERT INTO `furama_resort_management`.`kieuthue` (`idkieuthue`, `tenkieuthue`, `gia`) VALUES ('1', 'Ngắn hạn', '1213434');
-INSERT INTO `furama_resort_management`.`kieuthue` (`idkieuthue`, `tenkieuthue`, `gia`) VALUES ('2', 'Trung hạn', '32324');
-INSERT INTO `furama_resort_management`.`kieuthue` (`idkieuthue`, `tenkieuthue`, `gia`) VALUES ('3', 'Ngắn Hạn', '4556');
-INSERT INTO `furama_resort_management`.`kieuthue` (`idkieuthue`, `tenkieuthue`, `gia`) VALUES ('4', 'Ngắn Hạn', '34363');
-INSERT INTO `furama_resort_management`.`kieuthue` (`idkieuthue`, `tenkieuthue`, `gia`) VALUES ('5', 'Trung Hạn', '3434');
+INSERT INTO `kieuthue` VALUES (1,'Ngắn hạn',1213434),(2,'Trung hạn',32324),(3,'Ngắn Hạn',4556),(4,'Ngắn Hạn',34363),(5,'Trung Hạn',3434);
 
-INSERT INTO `furama_resort_management`.`khachhang` (`idkhachhang`, `hoten`, `ngaysinh`, `socmtnd`, `sdt`, `email`, `diachi`, `idloaikhach_kh`) VALUES ('1', 'Trung', '1999-04-07', '132123', '432423', 'trung@trung.abc', 'Nghệ An', '1');
-INSERT INTO `furama_resort_management`.`khachhang` (`idkhachhang`, `hoten`, `ngaysinh`, `socmtnd`, `sdt`, `email`, `diachi`, `idloaikhach_kh`) VALUES ('2', 'Khánh', '1999-04-08', '12312321', '243423', 'khanh@khanh.abc', 'Đà Nẵng', '2');
-INSERT INTO `furama_resort_management`.`khachhang` (`idkhachhang`, `hoten`, `ngaysinh`, `socmtnd`, `sdt`, `email`, `diachi`, `idloaikhach_kh`) VALUES ('3', 'Đạt', '1999-04-09', '43234', '13212', 'dat@dat.abc', 'Quảng Nam', '3');
-INSERT INTO `furama_resort_management`.`khachhang` (`idkhachhang`, `hoten`, `ngaysinh`, `socmtnd`, `sdt`, `email`, `diachi`, `idloaikhach_kh`) VALUES ('4', 'Thành', '1999-04-10', '341234', '13123', 'thanh@thanh.abc', 'Đà Nẵng', '4');
-INSERT INTO `furama_resort_management`.`khachhang` (`idkhachhang`, `hoten`, `ngaysinh`, `socmtnd`, `sdt`, `email`, `diachi`, `idloaikhach_kh`) VALUES ('5', 'Tuấn', '1999-04-11', '123123', '123312', 'tuan@tuan.abc', 'Quảng Trị', '5');
-INSERT INTO `furama_resort_management`.`khachhang` (`idkhachhang`, `hoten`, `ngaysinh`, `socmtnd`, `sdt`, `email`, `diachi`, `idloaikhach_kh`) VALUES ('6', 'Tài', '1999-04-12', '131241', '123123', 'tai@tai.abc', 'Quảng Nam', '6');
+INSERT INTO `dichvu` VALUES (1,'Lê A',243,4,'20','43423',1,1,'1'),(2,'Hồ B',43,5,'10','324',2,2,'2'),
+(3,'Khánh Trần',32,7,'11','324',3,3,'3'),(4,'Nguyễn D',65,6,'23','324',4,4,'4'),(5,'Trần E',54,8,'12','653',5,5,'5');
 
-INSERT INTO `furama_resort_management`.`dichvudikem` (`iddichvudikem`, `tendichvudikem`, `gia`, `donvi`, `trangthaikhadung`) VALUES ('1', 'aa', '435', '3433', 'ok');
-INSERT INTO `furama_resort_management`.`dichvudikem` (`iddichvudikem`, `tendichvudikem`, `gia`, `donvi`, `trangthaikhadung`) VALUES ('2', 'bb', '324', '4545', 'ok');
-INSERT INTO `furama_resort_management`.`dichvudikem` (`iddichvudikem`, `tendichvudikem`, `gia`, `donvi`, `trangthaikhadung`) VALUES ('3', 'cc', '54345', '34', 'ok');
-INSERT INTO `furama_resort_management`.`dichvudikem` (`iddichvudikem`, `tendichvudikem`, `gia`, `donvi`, `trangthaikhadung`) VALUES ('4', 'dd', '23443', '344', 'ok');
-INSERT INTO `furama_resort_management`.`dichvudikem` (`iddichvudikem`, `tendichvudikem`, `gia`, `donvi`, `trangthaikhadung`) VALUES ('5', 'ee', '645', '3443', 'ok');
+INSERT INTO `hopdong` VALUES (1,'2021-01-01','2021-01-05',100000,500000,1,1,1),(2,'2020-01-12','2020-01-15',3000000,4000000,2,2,2),(3,'2019-02-11','2019-02-15',1500000,2500000,3,3,4),
+(4,'2018-03-04','2018-03-10',2000000,3500000,4,4,4),(5,'2019-05-01','2019-05-07',5000000,6000000,5,5,5);
+
+INSERT INTO `hopdongchitiet` VALUES (1,234,1,1),(2,435,2,2),(3,43,3,3),(4,545,4,4),(5,32,5,5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
