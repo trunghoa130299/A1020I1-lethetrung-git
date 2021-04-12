@@ -91,18 +91,97 @@ where (`tenloaikhach` = 'diamond') and (diachi = 'Vinh' or diachi = 'Quảng Ng�
 -- Yêu cầu 12
 
 select hd.idhopdong,nv.`hoten`,kh.`hoten`,kh.sdt,dv.`tendichvu`,count(hdct.soluong) as soluongdichvudikem,hd.tiendatcoc,hd.ngaylamhopdong
-from dichvu dv
-left join hopdong hd on dv.iddichvu = hd.iddichvu_hd
+from hopdong hd
+left join dichvu dv on   hd.iddichvu_hd =dv.iddichvu
 inner join nhanvien nv on hd.idnhanvien_hd = nv.idnhanvien
 inner join khachhang kh on kh.idkhachhang = hd.idkhachhang_hd
 inner join hopdongchitiet hdct on hd.idhopdong = hdct.idhopdong_hdct
-where (year(hd.ngaylamhopdong) = 2019 and ( month(hd.ngaylamhopdong) between 10 and 12 ))  ;
+where not exists(
+	select hd.idhopdong
+    where hd.ngaylamhopdong between "2019-01-01" and  "2019-06-31")
+    and exists(
+    select hd.idhopdong
+    where hd.ngaylamhopdong between "2019-09-01" and "2019-12-31");
 
 -- Yêu cầu 13
 
-select kh.idkhachhang,kh.`hoten`, count(dvdk.tendichvudikem) as 'số lần sử dụng '
+select dvdk.iddichvudikem,dvdk.`tendichvudikem`, count(hdct.iddichvudikem_hdct) as 'số lần sử dụng '
+from dichvudikem dvdk
+inner join hopdongchitiet hdct on hdct.iddichvudikem_hdct = dvdk.iddichvudikem
+group by hdct.iddichvudikem_hdct;
+
+-- Yêu cầu 14
+
+select dvdk.tendichvudikem,hd.idhopdong,ldv.`tenloaidichvu`,count(hdct.iddichvudikem_hdct)as solansudung
+from hopdong hd
+	left join hopdongchitiet hdct on hd.idhopdong = hdct.idhopdong_hdct
+    left join dichvudikem dvdk  on hdct.iddichvudikem_hdct = dvdk.iddichvudikem
+    inner join dichvu dv on dv.iddichvu = hd.iddichvu_hd
+    inner join loaidichvu ldv on ldv.idloaidichvu = dv.idloaidichvu_dv
+group by dvdk.`tendichvudikem` having solansudung =1;
+
+-- Yêu cầu 15
+select nv.idnhanvien,nv.`hoten`,td.trinhdo,bp.tenbophan,nv.sdt,nv.diachi, count(hd.idnhanvien_hd) as so_lan_lap_hd
+from nhanvien nv
+inner join bophan bp on bp.idbophan = nv.idbophan_nv
+inner join trinhdo td on td.idtrinhdo = nv.idtrinhdo_nv
+inner join hopdong hd on hd.idnhanvien_hd = nv.idnhanvien
+where hd.ngaylamhopdong between "2018-01-01" and "2019-12-31"
+group by nv.idnhanvien
+having so_lan_lap_hd = 3
+order by nv.idnhanvien;
+
+-- Yêu cầu 16
+
+delete from nhanvien
+where not exists( select nhanvien.idnhanvien from hopdong hd
+where hd.ngaylamhopdong between '2017-01-01' and '2019-12-31' and hd.idnhanvien_hd = nhanvien.idnhanvien
+);
+    
+-- Yêu cầu 17
+ update khachhang,
+ (select hopdong.idkhachhang_hd as id, sum(hopdong.tongtien) as tong_tien
+ from hopdong
+ where year(hopdong.ngaylamhopdong)=2019
+ group by hopdong.idkhachhang_hd
+ having tong_tien>10000000)
+ as temp set khachhang.idloaikhach_kh =(
+ select loaikhach.idloaikhach
+ from loaikhach
+ where loaikhach.tenloaikhach = "diamond")
+ where khachhang.idkhachhang = (
+ select loaikhach.idloaikhach
+ from loaikhach
+ where loaikhach.tenloaikhach = "platinium")
+ and temp.id=khachhang.idkhachhang;
+
+-- Yêu cầu 18
+delete hd, kh,hopdongchitiet
 from khachhang kh
-left join hopdong hd on kh.idkhachhang = hd.idkhachhang_hd
-left join hopdongchitiet hdct on   hd.idhopdong= hdct.idhopdong_hdct
-left join dichvudikem dvdk on  hdct.iddichvudikem_hdct = dvdk.iddichvudikem 
-where (dvdk.tendichvudikem) >1;
+	left join hopdong hd on hd.idkhachhang_hd = kh.idkhachhang
+	inner join hopdongchitiet on hopdongchitiet.idhopdong_hdct = hd.idhopdong
+where not exists(
+	select hd.idhopdong 
+    where year(hd.ngaylamhopdong) > 2016 and kh.idkhachhang = hd.idkhachhang_hd
+);
+
+-- Yêu cầu 19
+
+update dichvudikem inner join (select dichvudikem.`tendichvudikem` as ten_dich_vu_di_kem
+from hopdongchitiet
+inner join dichvudikem on hopdongchitiet.iddichvudikem_hdct = dichvudikem.iddichvudikem
+inner join hopdong on hopdongchitiet.idhopdong_hdct = hopdong.idhopdong
+where year(hopdong.ngaylamhopdong) = 2019
+group by dichvudikem.`tendichvudikem`
+having count(hopdongchitiet.iddichvudikem_hdct) >10) as temp set dichvudikem.gia = dichvudikem.gia*2
+where dichvudikem.`tendichvudikem` = temp.ten_dich_vu_di_kem;
+
+-- Yêu cầu 20
+
+select kh.idkhachhang as id, kh.`hoten`,kh.email,kh.sdt,kh.ngaysinh,kh.diachi, "khachhang" as TypeTable
+from khachhang kh
+union all
+select nv.idnhanvien as id,nv.`hoten`,nv.email,nv.sdt,nv.ngaysinh,nv.diachi, "nhanvien" as TypeTable
+from nhanvien nv;
+
+
