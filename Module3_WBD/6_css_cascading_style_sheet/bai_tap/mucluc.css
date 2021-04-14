@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+}
+img{
+    margin-left: 470px;
+}
+body{
+    height: 2400px;
+}
+.p-1{
+    text-indent: 30px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+h3{
+    margin-left: 300px;
+}
+a:hover,h1:hover {
+    background-color: yellow;
+}
+#body-1{
+    border: 5px dashed red;
+    margin-right: 95% ;
+    position: fixed;
+}
