@@ -6,6 +6,7 @@ img{
 }
 body{
     height: 2400px;
+
 }
 .p-1{
     text-indent: 30px;
@@ -15,11 +16,11 @@ body{
 h3{
     margin-left: 300px;
 }
-a:hover,h1:hover {
-    background-color: yellow;
+a:hover,h1:hover,.p-1:hover{
+    color: green;
 }
 #body-1{
-    border: 5px dashed red;
-    margin-right: 95% ;
+    border: 5px solid red;
+    margin-right: 92% ;
     position: fixed;
 }
