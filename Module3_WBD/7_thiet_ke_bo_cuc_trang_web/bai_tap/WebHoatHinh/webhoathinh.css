@@ -52,20 +52,50 @@ body{
     text-align: center;
     border: 5px solid gray;
     background: #5f6062;
-    height: 50px;
-    padding-top: 15px;
+    height: 100px;
+    padding-top: 40px;
+    margin-bottom: auto;
 }
 #ip-1{
     border-radius: 20px;
     margin-top: 30px;
     margin-left: 20px;
     height: 50px;
-    width: 500px;
+    width: 700px;
     text-indent: 20px;
     outline: none;
 }
+#ip-1:hover{
+    box-shadow: 1px 1px 2px 2px #d61b06;
+}
 .header{
     border: 5px solid gray;
+}
+#bt-dn1{
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 10px;
+    height: 50px;
+    width: 150px;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+}
+#bt-dn1:hover{
+    background: #d61b06;
+}
+#bt-dn2{
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: -6em;
+    height: 50px;
+    width: 150px;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+}
+#bt-dn2:hover{
+    background: #c7254e;
 }
 .breadcrumb {
     padding: 8px 15px;
@@ -86,12 +116,13 @@ body{
     color: #777;
 }
 .marquee {
+    color: #4CAF50;
     width: 70%;
     margin: 0 auto;
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-    animation: marquee 20s linear infinite;
+    animation: marquee 10s linear infinite;
 }
 
 .marquee:hover {
