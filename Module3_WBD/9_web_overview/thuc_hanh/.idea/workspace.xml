@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7e9b77c7-838e-4db3-a5d1-cdd2c85ae818" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/anh/multilevel/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/anh/multilevel/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/anh/multilevel/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/anh/multilevel/.idea/multilevel.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/anh/multilevel/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/Galley/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/Galley/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/aa.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/aa.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../8_bootstrap/bai_tap/XayDungLandingPage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../js/jquery-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/jquery-3.6.0.min.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1rnZEG8bYEt1XVVmpq4w5QmOwLn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="WebHienThiThoiGian:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WebHienThiThoiGian_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WebHienThiThoiGian:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e9b77c7-838e-4db3-a5d1-cdd2c85ae818" name="Default Changelist" comment="" />
+      <created>1619613700541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619613700541</updated>
+      <workItem from="1619613705404" duration="273000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1619613731062">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1619613731062" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1619613941566">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1619613941566" />
+    <state x="209" y="0" key="new project wizard" timestamp="1619613978588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1619613978588" />
+  </component>
+</project>
