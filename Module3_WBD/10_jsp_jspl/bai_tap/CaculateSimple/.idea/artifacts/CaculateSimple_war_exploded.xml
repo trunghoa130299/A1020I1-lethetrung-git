@@ -1,11 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="caculator:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/caculator_war_exploded</output-path>
+  <artifact type="exploded-war" name="CaculateSimple:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/CaculateSimple_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="caculator/web/Web" />
+      <element id="javaee-facet-resources" facet="CaculateSimple/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="caculator" />
+          <element id="module-output" name="CaculateSimple" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="jstl-1.2" />

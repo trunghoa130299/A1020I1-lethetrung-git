@@ -1,5 +1,4 @@
 public class Caculator {
-    
     public static float caculate(float numberone , float numbertwo, char operator){
         switch (operator){
             case '+' :

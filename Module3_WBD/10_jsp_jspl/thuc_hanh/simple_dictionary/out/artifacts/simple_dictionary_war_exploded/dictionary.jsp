@@ -16,7 +16,6 @@
 <%!
     Map<String, String> dic = new HashMap<>();
 %>
-
 <%
     dic.put("hello", "Xin chào");
     dic.put("how", "Thế nào");
@@ -31,6 +30,5 @@
         out.println("Not found");
     }
 %>
-
 </body>
 </html>
