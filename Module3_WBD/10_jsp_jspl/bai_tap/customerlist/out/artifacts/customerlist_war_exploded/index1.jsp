@@ -20,7 +20,6 @@
       <td><c:out value="${customer.address}"/></td>
       <td><img src="${pageContext.request.contextPath}${customer.url}" style="width: 50px; height: 50px;"/></td>
     </tr>
-
   </c:forEach>
 </table>
 </body>
