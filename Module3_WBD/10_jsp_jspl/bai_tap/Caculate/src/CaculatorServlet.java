@@ -14,9 +14,10 @@ public class CaculatorServlet extends HttpServlet {
         char operator = request.getParameter("select").charAt(0);
         float result = Caculator.caculate(a,b,operator);
         request.setAttribute("resultnumber",result);
-        request.getRequestDispatcher("Caculate.jsp").forward(request,response);
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("Caculate.jsp").forward(request,response);
+
     }
 }

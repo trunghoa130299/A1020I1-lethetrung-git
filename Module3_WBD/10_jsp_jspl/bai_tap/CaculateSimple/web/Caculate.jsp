@@ -34,7 +34,7 @@
                 <td><input type="submit" value="caculate"/></td>
             </tr>
         </table>
-        <h2>Result</h2>
+        <h2>Result : </h2>
         <p><c:out value="${resultnumber}"/></p>
     </fieldset>
 </form>
