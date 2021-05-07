@@ -23,13 +23,13 @@ public class ProductServlet extends HttpServlet {
         }
         switch (action){
             case "create":
-                createCustomer(request, response);
+                createProduct(request, response);
                 break;
             case "edit":
-                updateCustomer(request, response);
+                updateProduct(request, response);
                 break;
             case "delete":
-                deleteCustomer(request, response);
+                deleteProduct(request, response);
                 break;
             default:
                 break;
@@ -52,14 +52,14 @@ public class ProductServlet extends HttpServlet {
                 showDeleteForm(request, response);
                 break;
             case "view":
-                viewCustomer(request, response);
+                viewCProduct(request, response);
                 break;
             default:
-                listCustomers(request, response);
+                listProducts(request, response);
                 break;
         }
     }
-    private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void createProduct(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         int amount = Integer.parseInt(request.getParameter("amount"));
         String url = request.getParameter("url");
@@ -77,7 +77,7 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         int amount = Integer.parseInt(request.getParameter("amount"));
@@ -103,7 +103,7 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
         this.productService.remove(id);
@@ -165,7 +165,7 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    private void viewCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void viewCProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
         RequestDispatcher dispatcher;
@@ -183,7 +183,7 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    private void listCustomers(HttpServletRequest request, HttpServletResponse response) {
+    private void listProducts(HttpServletRequest request, HttpServletResponse response) {
         List<Product> products = this.productService.findAll();
         request.setAttribute("products", products);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/list.jsp");
