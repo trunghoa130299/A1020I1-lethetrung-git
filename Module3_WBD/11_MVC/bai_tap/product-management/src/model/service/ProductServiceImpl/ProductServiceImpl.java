@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductServiceImpl implements ProductService {
-    private static Map<Integer, Product> products;
+    private static Map<Integer, Product> products = new HashMap<>();
     static {
-        products = new HashMap<>();
-        products.put(1, new Product(1, "John", 12, "Hanoi"));
+        products.put(1, new Product(1, "John", 12, "/images/trunghoa.jpg"));
         products.put(2, new Product(2, "Bill", 13, "Danang"));
         products.put(3, new Product(3, "Alex", 14, "Saigon"));
         products.put(4, new Product(4, "Adam", 15, "Beijin"));

@@ -21,7 +21,7 @@
         <tr>
             <td><a href="/products?action=view&id=${product.getId()}">${product.getName()}</a></td>
             <td>${product.getAmount()}</td>
-            <td>${product.getUrl}</td>
+            <td><img src="${product.getUrl()}"/></td>
             <td><a href="/products?action=edit&id=${product.getId()}">edit</a></td>
             <td><a href="/products?action=delete&id=${product.getId()}">delete</a></td>
         </tr>
