@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td>Address: </td>
-                <td>${requestScope["product"].getUrl()}</td>
+                <td>${requestScope["product"].getPrice()}</td>
             </tr>
             <tr>
                 <td><input type="submit" value="Delete product"></td>

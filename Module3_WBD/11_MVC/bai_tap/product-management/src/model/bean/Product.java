@@ -4,16 +4,16 @@ public class Product {
     private int id ;
     private String name ;
     private int amount;
-    private String url;
+    private String price;
 
     public Product() {
     }
 
-    public Product(int id, String name, int amount, String url) {
+    public Product(int id, String name, int amount, String price) {
         this.id = id;
         this.name = name;
         this.amount = amount;
-        this.url = url;
+        this.price = price;
     }
 
     public int getId() {
@@ -40,11 +40,11 @@ public class Product {
         this.amount = amount;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPrice() {
+        return price;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPrice(String url) {
+        this.price = price;
     }
 }

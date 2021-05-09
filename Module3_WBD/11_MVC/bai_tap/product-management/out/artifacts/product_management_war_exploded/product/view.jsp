@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td>Image: </td>
-        <td>${requestScope["product"].getUrl()}</td>
+        <td>${requestScope["product"].getPrice()}</td>
     </tr>
 </table>
 </body>

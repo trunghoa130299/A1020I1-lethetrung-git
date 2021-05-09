@@ -82,7 +82,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             product.setName(name);
             product.setAmount(amount);
-            product.setUrl(url);
+            product.setPrice(url);
             this.productService.update(id, product);
             request.setAttribute("product", product);
             request.setAttribute("message", "Product information was updated");

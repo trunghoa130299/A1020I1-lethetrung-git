@@ -11,12 +11,12 @@ import java.util.Map;
 public class ProductServiceImpl implements ProductService {
     private static Map<Integer, Product> products = new HashMap<>();
     static {
-        products.put(1, new Product(1, "John", 12, "/images/trunghoa.jpg"));
-        products.put(2, new Product(2, "Bill", 13, "Danang"));
-        products.put(3, new Product(3, "Alex", 14, "Saigon"));
-        products.put(4, new Product(4, "Adam", 15, "Beijin"));
-        products.put(5, new Product(5, "Sophia", 16, "Miami"));
-        products.put(6, new Product(6, "Rose", 17, "Newyork"));
+        products.put(1, new Product(1, "Mì Tôm", 12, "10000"));
+        products.put(2, new Product(2, "Sting", 13, "10000"));
+        products.put(3, new Product(3, "Redbull", 14, "10000"));
+        products.put(4, new Product(4, "Bia Larue", 15, "10000"));
+        products.put(5, new Product(5, "Bia Sài Gòn", 16, "10000"));
+        products.put(6, new Product(6, "Bia Hà Nội", 17, "10000"));
     }
     @Override
     public List<Product> findAll() {

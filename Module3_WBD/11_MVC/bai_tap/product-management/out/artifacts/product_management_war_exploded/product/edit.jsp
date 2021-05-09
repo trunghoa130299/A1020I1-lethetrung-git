@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td>Images: </td>
-                <td><input type="text" name="url" id="url" value="${requestScope["product"].getUrl()}"></td>
+                <td><input type="text" name="url" id="url" value="${requestScope["product"].getPrice()}"></td>
             </tr>
             <tr>
                 <td></td>
