@@ -23,20 +23,15 @@ public class UserServlet extends HttpServlet {
             case "create":
                 createUser(request,response);
                 break;
+            case "edit":
+                editUser(request,response);
+                break;
             default:
                 break;
         }
     }
 
-    private void createUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        String name = request.getParameter("name");
-        String email = (request.getParameter("email"));
-        String country = request.getParameter("country");
-        User user = new User( name, email, country);
-        this.userService.save(user);
-        request.getRequestDispatcher("user/create.jsp").forward(request,response);
-        request.setAttribute("message", "New product was created");
-    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        String action =request.getParameter("action");
@@ -47,10 +42,54 @@ public class UserServlet extends HttpServlet {
            case "create":
                showCreate(request,response);
                break;
+           case "edit":
+               showEdit(request,response);
+               break;
            default:
                listUsers(request,response);
                break;
        }
+    }
+    private void editUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = this.userService.findById(id);
+        String name = request.getParameter("name");
+        String email = (request.getParameter("email"));
+        String country = request.getParameter("country");
+        if (user == null) {
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        }
+        else {
+            user.setName(name);
+            user.setEmail(email);
+            user.setCountry(country);
+            this.userService.update(id,user);
+            request.setAttribute("user", user);
+            request.setAttribute("message", "User information was updated");
+            request.getRequestDispatcher("user/edit.jsp").forward(request,response);
+        }
+
+    }
+
+    private void createUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        String name = request.getParameter("name");
+        String email = (request.getParameter("email"));
+        String country = request.getParameter("country");
+        User user = new User( name, email, country);
+        this.userService.save(user);
+        request.getRequestDispatcher("user/create.jsp").forward(request,response);
+        request.setAttribute("message", "New user was created");
+    }
+    private void showEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id =Integer.parseInt(request.getParameter("id"));
+        User user =this.userService.findById(id);
+        if (user == null){
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        }
+        else {
+            request.setAttribute("user",user);
+            request.getRequestDispatcher("user/edit.jsp").forward(request,response);
+        }
     }
 
     private void showCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

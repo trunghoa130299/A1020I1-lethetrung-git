@@ -11,7 +11,7 @@ public interface UserReponsitory {
 
     User findById(int id);
 
-    void update(int id, User user);
+    boolean update( int id ,User user);
 
     void remote(int id);
 

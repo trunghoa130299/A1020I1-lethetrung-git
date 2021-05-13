@@ -24,8 +24,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(int id, User user) {
+    public boolean update( int id,User user) {
         this.userReponsitory.update(id,user);
+        return true;
     }
 
     @Override

@@ -154,5 +154,3 @@ INSERT INTO `hopdongchitiet` VALUES (1,10,1,1),(2,12,2,2),(3,20,3,3),(4,30,4,4),
 
 
 
-
-

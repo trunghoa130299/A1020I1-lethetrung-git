@@ -53,12 +53,43 @@ public class UserReponsitoryImpl implements UserReponsitory {
 
     @Override
     public User findById(int id) {
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("select * \n" +
+                    "from users where id =?");
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            User user = null;
+            while (resultSet.next()){
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+                return user;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return null;
+
     }
 
     @Override
-    public void update(int id, User user) {
-
+    public boolean update(int id ,User user) {
+        int row =0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("update users\n" +
+                    "set `name` = ? , email= ?,country =?\n" +
+                    "where id =?;");
+            preparedStatement.setString(1,user.getName());
+            preparedStatement.setString(2,user.getEmail());
+            preparedStatement.setString(3,user.getCountry());
+            preparedStatement.setInt(4,user.getId());
+            row = preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row > 0;
     }
 
     @Override
