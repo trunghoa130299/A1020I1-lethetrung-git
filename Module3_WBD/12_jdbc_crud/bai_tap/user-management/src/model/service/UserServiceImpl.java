@@ -30,7 +30,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void remote(int id) {
-        this.userReponsitory.remote(id);
+    public boolean delete(int id) {
+        this.userReponsitory.delete(id);
+        return true;
     }
+    @Override
+   public List<User> findByName(String name){
+        return this.userReponsitory.findByName(name);
+    }
+     public List<User> sortUser(){
+        return this.userReponsitory.sortUser();
+     }
 }

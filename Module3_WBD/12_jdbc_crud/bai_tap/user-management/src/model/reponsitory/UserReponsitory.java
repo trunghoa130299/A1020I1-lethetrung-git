@@ -13,6 +13,9 @@ public interface UserReponsitory {
 
     boolean update( int id ,User user);
 
-    void remote(int id);
+    boolean delete(int id);
+
+    List<User> findByName(String name);
+    List<User> sortUser();
 
 }

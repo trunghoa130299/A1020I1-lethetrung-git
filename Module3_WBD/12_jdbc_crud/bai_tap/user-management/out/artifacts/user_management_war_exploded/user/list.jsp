@@ -8,6 +8,7 @@
 <body>
 <div class="container">
     <div class="col-md-12">
+
         <h2>User Management</h2>
         <a href="/users?action=create">Create new product</a>
         <form>
@@ -17,6 +18,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Country</th>
+                    <th colspan="2"></th>
                 </tr>
                 <c:forEach items="${listusers}" var="user">
                     <tr>
@@ -30,6 +32,11 @@
                 </c:forEach>
             </table>
         </form>
+        <form method="post" action="/users?action=search">
+            <input type="text" name="search" id="search"/>
+            <input type="submit" value="Search">
+        </form>
+        <a href="/users?action=sort"> <input value="sort" type="submit" /></a>
     </div>
 
 </div>

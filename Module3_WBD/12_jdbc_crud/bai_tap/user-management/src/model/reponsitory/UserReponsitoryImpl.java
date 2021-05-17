@@ -93,8 +93,61 @@ public class UserReponsitoryImpl implements UserReponsitory {
     }
 
     @Override
-    public void remote(int id) {
+    public boolean delete(int id) {
+        int row =0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("delete  from users where id=?");
+            preparedStatement.setInt(1,id);
+            row=preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row > 0;
+    }
+    @Override
+    public List<User> findByName(String name) {
+        List<User> userList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("select * \n" +
+                    "from users where name =?");
+            preparedStatement.setString(1,name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            User user = null;
+            while (resultSet.next()){
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+                userList.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return userList;
 
+    }
+    public List<User> sortUser() {
+        List<User> userList = new ArrayList<>();
+        try {
+            Statement statement = this.baseRepository.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery("select * \n" +
+                    "from users\n" +
+                    "order by `name`");
+            User user = null;
+            while (resultSet.next()){
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+                userList.add(user);
+            }
+            return userList;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return  null;
+        }
     }
 
 }

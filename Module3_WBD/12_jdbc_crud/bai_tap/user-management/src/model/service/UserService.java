@@ -11,7 +11,11 @@ public interface UserService {
 
     User findById(int id);
 
-    boolean update(int id , User user);
+    boolean update(int id, User user);
 
-    void remote(int id);
+    boolean delete(int id);
+
+    List<User> findByName(String name);
+
+    List<User> sortUser();
 }
