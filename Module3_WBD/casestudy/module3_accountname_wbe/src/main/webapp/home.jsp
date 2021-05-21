@@ -37,7 +37,7 @@
                             <a class="nav-link" href="employee.jsp">Employee</a>
                         </li>
                         <li class="nav-item active pl-3">
-                            <a class="nav-link" href="customer.jsp">Customer</a>
+                            <a class="nav-link" href="?action=showcustomer">Customer</a>
                         </li>
                         <li class="nav-item active pl-3">
                             <a class="nav-link" href="#">Service</a>
@@ -53,7 +53,6 @@
             </nav>
         </div>
     </div>
-
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

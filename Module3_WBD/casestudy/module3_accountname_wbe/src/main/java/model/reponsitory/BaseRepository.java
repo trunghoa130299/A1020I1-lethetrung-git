@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class BaseRepository {
     private Connection connection;
-    private String jdbcURL = "jdbc:mysql://localhost:3306/codegym_management";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/furama_resort_management";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "12345678";
+    private String jdbcPassword = "trung123";
 
     public BaseRepository() {
         try {
