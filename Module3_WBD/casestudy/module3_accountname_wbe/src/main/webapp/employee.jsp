@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="home.jsp" />
+<jsp:include page="header.jsp" />
 <div class="container">
     <div class="row">
         <div class="col-lg-3 bg-light">

@@ -15,34 +15,122 @@ import java.util.List;
 @WebServlet(name = "FuramaServlet", urlPatterns = "/")
 public class FuramaServlet extends HttpServlet {
     FuramaService furamaService = new FuramaServiceImpl();
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "createCustomer":
+                CreateCustomer(request, response);
+                break;
+            case "editCustomer":
+                EditCustomer(request,response);
+                break;
+            default:
+                break;
+        }
     }
+
+
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String action = request.getParameter("action");
-    if (action== null){
-        action = "";
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "showCustomer":
+                showListCustomer(request, response);
+                break;
+            case "createCustomer":
+                showCreateCustomer(request, response);
+                break;
+            case "editCustomer":
+                showEditCustomer(request,response);
+                break;
+            case "deleteCustomer":
+                showDeleteCustomer(request,response);
+                break;
+            default:
+                home(request, response);
+                break;
+        }
     }
-    switch (action){
-        case "showcustomer":
-            showListCustomer(request,response);
-            break;
-        default:
-            home(request,response);
-            break;
+
+    private void showDeleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id =Integer.parseInt(request.getParameter("id"));
+        this.furamaService.deleteCustomer(id);
+        response.sendRedirect("/?action=showCustomer");
     }
+
+    private void EditCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Customer customer =this.furamaService.findById(id);
+        String hoten = request.getParameter("hoten");
+        String ngaysinh = (request.getParameter("ngaysinh"));
+        String cmtnd = request.getParameter("cmtnd");
+        String sdt = request.getParameter("sdt");
+        String email = request.getParameter("email");
+        String diachi = request.getParameter("diachi");
+        int idloaikhach_kh = Integer.parseInt(request.getParameter("idloaikhach_kh"));
+        if(customer == null){
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        }else {
+            customer.setHoten(hoten);
+            customer.setNgaySinh(ngaysinh);
+            customer.setCmnd(cmtnd);
+            customer.setSdt(sdt);
+            customer.setEmail(email);
+            customer.setDiaChi(diachi);
+            customer.setIdLoaiKhach_kh(idloaikhach_kh);
+            this.furamaService.updateCustomer(id,customer);
+            request.setAttribute("customer",customer);
+            request.setAttribute("message","Customer was updated");
+            request.getRequestDispatcher("EditCustomer.jsp").forward(request,response);
+        }
+    }
+
+    private void showEditCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id =Integer.parseInt(request.getParameter("id"));
+        Customer customer =this.furamaService.findById(id);
+        if (customer == null){
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        }
+        else {
+            request.setAttribute("customer",customer);
+            request.getRequestDispatcher("EditCustomer.jsp").forward(request,response);
+        }
+    }
+
+    private void CreateCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String hoten = request.getParameter("hoten");
+        String ngaysinh = (request.getParameter("ngaysinh"));
+        String cmtnd = request.getParameter("cmtnd");
+        String sdt = request.getParameter("sdt");
+        String email = request.getParameter("email");
+        String diachi = request.getParameter("diachi");
+        int idloaikhach_kh = Integer.parseInt(request.getParameter("idloaikhach_kh"));
+        Customer customer = new Customer( hoten, ngaysinh, cmtnd,sdt,email,diachi,idloaikhach_kh);
+        this.furamaService.createCustomer(customer);
+        request.setAttribute("message", "New Customer was created");
+        request.getRequestDispatcher("CreateCustomer.jsp").forward(request,response);
+    }
+
+    private void showCreateCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("CreateCustomer.jsp").forward(request, response);
     }
 
     private void showListCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Customer> customerList = this.furamaService.findAll();
-        request.setAttribute("listCustomer",this.furamaService.findAll());
-        request.getRequestDispatcher("customer.jsp").forward(request,response);
+        request.setAttribute("listCustomer", this.furamaService.findAll());
+        request.getRequestDispatcher("customer.jsp").forward(request, response);
     }
 
     private void home(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("home.jsp").forward(request,response);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

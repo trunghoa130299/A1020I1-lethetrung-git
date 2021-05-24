@@ -73,13 +73,14 @@ public class UserReponsitoryImpl implements UserReponsitory {
     public boolean update(int id , User user) {
         int row =0;
         try {
-            CallableStatement callableStatement = this.baseRepository.getConnection().
-                    prepareCall("call update_user_by_id(?,?,?,?)");
-            callableStatement.setString(1,user.getName());
-            callableStatement.setString(2,user.getEmail());
-            callableStatement.setString(3,user.getCountry());
-            callableStatement.setInt(4,user.getId());
-            row = callableStatement.executeUpdate();
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("update users\n" +
+                    "set `name` = ? , email= ?,country =?\n" +
+                    "where id =?;");
+            preparedStatement.setString(1,user.getName());
+            preparedStatement.setString(2,user.getEmail());
+            preparedStatement.setString(3,user.getCountry());
+            preparedStatement.setInt(4,user.getId());
+            row = preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -5,55 +5,35 @@
     <title>Title</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
-        .header-1{
-            padding-top: 5%;
-            float: right;
-        }
-        .ul-1{
-            margin-left: 10%;
+        #footer {
+            background-color: #003366;
+            height: auto;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid #CCCCCC;
+            border-top: 1px solid #DDDDDD;
+            margin-top: 17.8%;
         }
     </style>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <div class="container">
     <div class="row">
-            <div class="col-lg-3">
-                <img src="https://phamkhoi.com/Editor/blog/nhat%20ky/logo%20hoa/nghe-thua-thiet-ke-logo-theo-dang-canh-hoa%205.jpg" class="img-fluid img-thumbnail">
-            </div>
-            <div class="col-lg-9">
-                <div class="text-danger header-1">
-                    <h3>Lê Thế Trung</h3>
-                </div>
-            </div>
-    </div>
-    <div class="row">
         <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <ul class="navbar-nav ul-1">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="home.jsp">Home</a>
-                        </li>
-                        <li class="nav-item active pl-3">
-                            <a class="nav-link" href="employee.jsp">Employee</a>
-                        </li>
-                        <li class="nav-item active pl-3">
-                            <a class="nav-link" href="?action=showcustomer">Customer</a>
-                        </li>
-                        <li class="nav-item active pl-3">
-                            <a class="nav-link" href="#">Service</a>
-                        </li>
-                        <li class="nav-item active pl-3">
-                            <a class="nav-link" href="#">Contract</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0 form-1 pl-5">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-            </nav>
+            <h1 class="text-secondary text-center" style="padding-top: 15%">WellCome To Website</h1>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="text-center text-light"> @Copyright 2021 by Lê Thế Trung. All Rights Reserved.</p>
+            </div>
         </div>
     </div>
 </div>
+
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

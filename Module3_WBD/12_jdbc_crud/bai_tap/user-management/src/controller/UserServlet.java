@@ -59,11 +59,25 @@ public class UserServlet extends HttpServlet {
            case "sort":
                sortUser(request,response);
                break;
+           case "view":
+               viewUser(request,response);
+               break;
            default:
                listUsers(request,response);
                break;
        }
 
+    }
+
+    private void viewUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = this.userService.findById(id);
+        if(user == null){
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        } else {
+            request.setAttribute("user", user);
+            request.getRequestDispatcher("user/view.jsp").forward(request,response);
+        }
     }
 
     private void sortUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -13,8 +13,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int idKhachHang, String hoten, String ngaySinh, String cmnd, String sdt,
-                    String email, String diaChi, int idLoaiKhach_kh) {
+    public Customer(int idKhachHang, String hoten, String ngaySinh, String cmnd, String sdt, String email,
+                    String diaChi, int idLoaiKhach_kh) {
         this.idKhachHang = idKhachHang;
         this.hoten = hoten;
         this.ngaySinh = ngaySinh;
@@ -25,17 +25,17 @@ public class Customer {
         this.idLoaiKhach_kh = idLoaiKhach_kh;
     }
 
-    public Customer(int idKhachHang, String hoten, String ngaySinh, String cmnd, String sdt, String email, String diaChi) {
-        this.idKhachHang = idKhachHang;
+    public Customer(String hoten, String ngaySinh, String cmnd, String sdt, String email, String diaChi, int idLoaiKhach_kh) {
         this.hoten = hoten;
         this.ngaySinh = ngaySinh;
         this.cmnd = cmnd;
         this.sdt = sdt;
         this.email = email;
         this.diaChi = diaChi;
+        this.idLoaiKhach_kh = idLoaiKhach_kh;
     }
 
-    public int getIdKhachHang(int idKhachhang) {
+    public int getIdKhachHang() {
         return idKhachHang;
     }
 
