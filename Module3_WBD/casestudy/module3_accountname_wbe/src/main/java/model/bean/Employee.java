@@ -38,6 +38,17 @@ public class Employee {
         this.email = email;
     }
 
+    public Employee(String hoTen, String ngaySinh, String cmnd, String luong, String sdt, String email, int idVitri_nv, int idTrinhDo_nv) {
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.cmnd = cmnd;
+        this.luong = luong;
+        this.sdt = sdt;
+        this.email = email;
+        this.idVitri_nv = idVitri_nv;
+        this.idTrinhDo_nv = idTrinhDo_nv;
+    }
+
     public int getIdNhanVien() {
         return idNhanVien;
     }

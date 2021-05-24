@@ -48,7 +48,13 @@
                         </tr>
                         <tr>
                             <td>ID loại khách :</td>
-                            <td><input type="text" name="idloaikhach_kh" id="idloaikhach_kh"></td>
+                            <td><select name="idloaikhach_kh">
+                                <option value="1">Diamond</option>
+                                <option value="2">Platinium</option>
+                                <option value="3">Gold</option>
+                                <option value="4">Silver</option>
+                                <option value="5">Member</option>
+                            </select></td>
                         </tr>
                         <tr>
                             <td></td>

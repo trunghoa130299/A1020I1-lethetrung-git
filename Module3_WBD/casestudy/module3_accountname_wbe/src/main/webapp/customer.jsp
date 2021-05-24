@@ -10,12 +10,12 @@
 <jsp:include page="header.jsp" />
 <div class="container">
     <div class="row">
-        <div class="col-lg-3 bg-light">
+        <div class="col-lg-2 bg-light">
             <ul class="nav flex-column">
                 <li class="nav-item"><a class="nav-link" href="?action=createCustomer">Create New Customer</a></li>
             </ul>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-10">
             <h2 class="text-center">Customer List</h2>
             <table id="tableCustomer" class="table table-striped table-bordered" style="width: 100%">
                 <thead>

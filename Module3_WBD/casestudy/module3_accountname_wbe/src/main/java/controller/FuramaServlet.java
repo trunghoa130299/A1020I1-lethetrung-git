@@ -1,6 +1,7 @@
 package controller;
 
 import model.bean.Customer;
+import model.bean.Employee;
 import model.service.FuramaService;
 import model.service.impl.FuramaServiceImpl;
 
@@ -28,6 +29,12 @@ public class FuramaServlet extends HttpServlet {
             case "editCustomer":
                 EditCustomer(request,response);
                 break;
+            case "deleteCustomer":
+                DeleteCustomer(request,response);
+                break;
+            case "createEmployee":
+                CreateEmployee(request,response);
+                break;
             default:
                 break;
         }
@@ -54,13 +61,54 @@ public class FuramaServlet extends HttpServlet {
             case "deleteCustomer":
                 showDeleteCustomer(request,response);
                 break;
+            case "showEmployee":
+                showListEmployee(request,response);
+                break;
+            case "createEmployee":
+                showCreateEmployee(request,response);
+                break;
             default:
                 home(request, response);
                 break;
         }
     }
+    private void CreateEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String hoten = request.getParameter("hoten");
+        String ngaysinh = (request.getParameter("ngaysinh"));
+        String cmtnd = request.getParameter("cmtnd");
+        String luong = request.getParameter("luong");
+        String sdt = request.getParameter("sdt");
+        String email = request.getParameter("email");
+        int idVitri_nv = Integer.parseInt(request.getParameter("idVitri_nv"));
+        int idTrinhDo_nv = Integer.parseInt(request.getParameter("idTrinhDo_nv"));
+        Employee employee = new Employee( hoten, ngaysinh, cmtnd,luong,sdt,email,idVitri_nv,idTrinhDo_nv);
+        this.furamaService.createEmployee(employee);
+        request.setAttribute("message", "New Employee was created");
+        request.getRequestDispatcher("CreateEmployee.jsp").forward(request,response);
+    }
+
+    private void showCreateEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("CreateEmployee.jsp").forward(request,response);
+    }
+
+    private void showListEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("listEmployee", this.furamaService.findListEmployee());
+        request.getRequestDispatcher("employee.jsp").forward(request, response);
+    }
 
     private void showDeleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id =Integer.parseInt(request.getParameter("id"));
+        Customer customer =this.furamaService.findById(id);
+        if (customer == null){
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        }
+        else {
+            request.setAttribute("customer",customer);
+            request.getRequestDispatcher("DeleteCustomer.jsp").forward(request,response);
+        }
+    }
+
+    private void DeleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id =Integer.parseInt(request.getParameter("id"));
         this.furamaService.deleteCustomer(id);
         response.sendRedirect("/?action=showCustomer");

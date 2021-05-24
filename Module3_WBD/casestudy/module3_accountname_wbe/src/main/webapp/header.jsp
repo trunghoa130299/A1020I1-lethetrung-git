@@ -34,7 +34,7 @@
                         <a class="nav-link" href="?action">Home</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="employee.jsp">Employee</a>
+                        <a class="nav-link" href="?action=showEmployee">Employee</a>
                     </li>
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="?action=showCustomer">Customer</a>

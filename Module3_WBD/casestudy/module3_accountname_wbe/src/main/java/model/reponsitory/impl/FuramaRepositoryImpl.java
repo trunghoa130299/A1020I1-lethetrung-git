@@ -1,6 +1,7 @@
 package model.reponsitory.impl;
 
 import model.bean.Customer;
+import model.bean.Employee;
 import model.reponsitory.BaseRepository;
 import model.reponsitory.FuramaRepository;
 
@@ -120,5 +121,53 @@ public class FuramaRepositoryImpl implements FuramaRepository {
             throwables.printStackTrace();
         }
         return row > 0;
+    }
+
+    @Override
+    public List<Employee> findListEmployee() {
+        List<Employee> employeeList = new ArrayList<>();
+        try {
+            Statement statement = this.baseRepository.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from nhanvien");
+            Employee employee = null;
+            while (resultSet.next()) {
+                employee = new Employee();
+                employee.setIdNhanVien(resultSet.getInt("idnhanvien"));
+                employee.setHoTen(resultSet.getString("hoten"));
+                employee.setNgaySinh(resultSet.getString("ngaysinh"));
+                employee.setCmnd(resultSet.getString("socmtnd"));
+                employee.setLuong(resultSet.getString("luong"));
+                employee.setSdt(resultSet.getString("sdt"));
+                employee.setEmail(resultSet.getString("email"));
+                employee.setIdVitri_nv(resultSet.getInt("idvitri_nv"));
+                employee.setIdTrinhDo_nv(resultSet.getInt("idtrinhdo_nv"));
+                employeeList.add(employee);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employeeList;
+    }
+
+    @Override
+    public boolean createEmployee(Employee employee) {
+        int row = 0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement
+                    ("insert into nhanvien (`hoten`,ngaysinh,socmtnd,luong,sdt,email,idVitri_nv,idTrinhDo_nv) values \n" +
+                            "(?,?,?,?,?,?,?,?);");
+            preparedStatement.setString(1,employee.getHoTen());
+            preparedStatement.setString(2,employee.getNgaySinh());
+            preparedStatement.setString(3,employee.getCmnd());
+            preparedStatement.setString(4,employee.getLuong());
+            preparedStatement.setString(5,employee.getSdt());
+            preparedStatement.setString(6,employee.getEmail());
+            preparedStatement.setInt(7,employee.getIdVitri_nv());
+            preparedStatement.setInt(8,employee.getIdTrinhDo_nv());
+            row = preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row >0;
     }
 }
