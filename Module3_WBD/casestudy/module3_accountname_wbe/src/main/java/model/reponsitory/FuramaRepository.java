@@ -13,4 +13,8 @@ public interface FuramaRepository {
     boolean deleteCustomer(int id);
     List<Employee> findListEmployee();
     boolean createEmployee(Employee employee);
+    Employee findByIdEmployee(int id);
+    boolean updateEmployee(int id,Employee employee);
+    List<Customer> findNameCustomer(String name);
+    List<Employee> findNameEmployee(String name);
 }

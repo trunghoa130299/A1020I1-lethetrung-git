@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-2 bg-light">
             <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="?action=createCustomer">Create New Customer</a></li>
+                <li class="nav-item"><a class="nav-link" href="?action=createCustomer">New Customer</a></li>
             </ul>
         </div>
         <div class="col-lg-10">

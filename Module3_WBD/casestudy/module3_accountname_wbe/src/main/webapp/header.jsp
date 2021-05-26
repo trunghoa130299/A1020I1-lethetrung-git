@@ -40,14 +40,16 @@
                         <a class="nav-link" href="?action=showCustomer">Customer</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="#">Service</a>
+                        <a class="nav-link" href="?action=showService">Service</a>
                     </li>
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="#">Contract</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 form-1 pl-5">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">
+                    <input type="hidden" name="action" value="search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                           aria-label="Search" name="value">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </nav>

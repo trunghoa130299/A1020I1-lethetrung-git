@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css" />
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<jsp:include page="header1.jsp" />
 <div class="container">
     <div class="row">
         <div class="col-lg-2 bg-light">
             <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="?action=createEmployee">Create New Employee</a></li>
+                <li class="nav-item"><a class="nav-link" href="?action=createEmployee">New Employee</a></li>
             </ul>
         </div>
         <div class="col-lg-10">

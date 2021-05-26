@@ -45,4 +45,24 @@ public class FuramaServiceImpl implements FuramaService {
     public boolean createEmployee(Employee employee) {
         return this.furamaRepository.createEmployee(employee);
     }
+
+    @Override
+    public Employee findByIdEmployee(int id) {
+        return this.furamaRepository.findByIdEmployee(id);
+    }
+
+    @Override
+    public boolean updateEmployee(int id, Employee employee) {
+        return this.furamaRepository.updateEmployee(id,employee);
+    }
+
+    @Override
+    public List<Customer> findNameCustomer(String name) {
+        return this.furamaRepository.findNameCustomer(name);
+    }
+
+    @Override
+    public List<Employee> findNameEmployee(String name) {
+        return this.furamaRepository.findNameEmployee(name);
+    }
 }

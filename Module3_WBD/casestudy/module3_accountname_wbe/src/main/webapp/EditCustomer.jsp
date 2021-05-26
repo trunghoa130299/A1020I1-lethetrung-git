@@ -56,12 +56,13 @@
                         </tr>
                         <tr>
                             <td>ID loại khách :</td>
-                            <td><input type="text" name="idloaikhach_kh" id="idloaikhach_kh"
-                                       value="<c:choose><c:when test="${customer.getIdLoaiKhach_kh() ==1}">Diamond</c:when>
-<c:when test="${customer.getIdLoaiKhach_kh() ==2}">Platinium</c:when>
-<c:when test="${customer.getIdLoaiKhach_kh() ==3}">Gold</c:when>
-<c:when test="${customer.getIdLoaiKhach_kh() ==4}">Silver</c:when>
-<c:when test="${customer.getIdLoaiKhach_kh() ==5}">Member</c:when></c:choose>"></td>
+                            <td><select name="idloaikhach_kh" id="type">
+                                <option value="1" id="Diamond">Diamond</option>
+                                <option value="2" id="Platinium">Platinium</option>
+                                <option value="3" id="Gold">Gold</option>
+                                <option value="4" Silver>Silver</option>
+                                <option value="5" id="Member">Member</option>
+                            </select></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -73,5 +74,32 @@
         </div>
     </div>
 </div>
+<script>
+    function editSelect(){
+        let id = ${customer.getIdLoaiKhach_kh()};
+        let type = "";
+        switch (id) {
+            case 1:
+                type = "Diamond";
+                break;
+            case 2:
+                type = "Platinium";
+                break;
+            case 3:
+                type = "Gold";
+                break;
+            case 4:
+                type = "Silver";
+                break;
+            case 5:
+                type = "Member";
+                break;
+        }
+        document.getElementById(type).selected = true;
+    }
+    $(window).on('load', function () {
+        editSelect();
+    });
+</script>
 </body>
 </html>
