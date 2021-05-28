@@ -56,13 +56,15 @@
                         </tr>
                         <tr>
                             <td>ID loại khách :</td>
-                            <td><select name="idloaikhach_kh" id="type">
-                                <option value="1" id="Diamond">Diamond</option>
-                                <option value="2" id="Platinium">Platinium</option>
-                                <option value="3" id="Gold">Gold</option>
-                                <option value="4" Silver>Silver</option>
-                                <option value="5" id="Member">Member</option>
-                            </select></td>
+                            <td>
+                                <select name="idloaikhach_kh" id="idloaikhach_kh" required>
+                                    <option value="1" id="Diamond">Diamond</option>
+                                    <option value="2" id="Platinium">Platinium</option>
+                                    <option value="3" id="Gold">Gold</option>
+                                    <option value="4" id="Silver">Silver</option>
+                                    <option value="5" id="Member">Member</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
@@ -75,8 +77,8 @@
     </div>
 </div>
 <script>
-    function editSelect(){
-        let id = ${customer.getIdLoaiKhach_kh()};
+    function editSelect() {
+        let id = ${requestScope["customer"].getIdLoaiKhach_kh()};
         let type = "";
         switch (id) {
             case 1:
@@ -97,6 +99,7 @@
         }
         document.getElementById(type).selected = true;
     }
+
     $(window).on('load', function () {
         editSelect();
     });

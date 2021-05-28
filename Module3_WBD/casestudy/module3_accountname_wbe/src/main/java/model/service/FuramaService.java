@@ -2,6 +2,7 @@ package model.service;
 
 import model.bean.Customer;
 import model.bean.Employee;
+import model.bean.Service;
 
 import java.util.List;
 
@@ -23,4 +24,8 @@ public interface FuramaService {
     List<Customer> findNameCustomer(String name);
 
     List<Employee> findNameEmployee(String name);
+
+    boolean createService(Service service);
+
+    boolean deleteEmployee(int id);
 }

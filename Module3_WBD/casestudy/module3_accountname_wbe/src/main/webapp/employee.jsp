@@ -11,11 +11,14 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-2 bg-light">
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="?action=createEmployee">New Employee</a></li>
-            </ul>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
+                Create Employee
+            </button>
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-10"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
             <h2 class="text-center">Employee List</h2>
             <table id="tableEmployee" class="table table-striped table-bordered" style="width: 100%">
                 <thead>
@@ -45,8 +48,12 @@
                         <td><c:out value="${employees.getEmail()}"/></td>
                         <td><c:out value="${employees.getIdVitri_nv()}"/></td>
                         <td><c:out value="${employees.getIdTrinhDo_nv()}"/></td>
-                        <td><a  class="nav-link" href="/?action=editEmployee&id=${employees.getIdNhanVien()}" >edit</a></td>
-                        <td><a  class="nav-link" href="/?action=deleteEmployee&id=${employees.getIdNhanVien()}">delete</a></td>
+                        <td><a  class="nav-link rounded btn-danger" href="/?action=editEmployee&id=${employees.getIdNhanVien()}">
+                            Edit</a></td>
+                        <td>
+                            <a class="btn btn-danger" href="#" onclick="customerSetId('${employees.idNhanVien}','${employees.hoTen}')"
+                               data-toggle="modal" data-target="#deleteModal">Delete</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -54,7 +61,104 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="?action=createEmployee">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Employee Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <fieldset>
+                        <legend></legend>
+                        <table>
+                            <tr>
+                                <td>Họ Tên :</td>
+                                <td><input type="text" name="hoten" id="name"></td>
+                            </tr>
+                            <tr>
+                                <td>Ngày Sinh :</td>
+                                <td><input type="date" name="ngaysinh" id="ngaySinh"></td>
+                            </tr>
+                            <tr>
+                                <td>CMND :</td>
+                                <td><input type="text" name="cmtnd" id="cmtnd"></td>
+                            </tr>
+                            <tr>
+                                <td>Lương :</td>
+                                <td><input type="text" name="luong" id="luong"></td>
+                            </tr>
+                            <tr>
+                                <td>Số Điện Thoại   :</td>
+                                <td><input type="text" name="sdt" id="sdt"></td>
+                            </tr>
+                            <tr>
+                                <td>Email :</td>
+                                <td><input type="text" name="email" id="email"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Vị Trí :</td>
+                                <td><select name="idVitri_nv">
+                                    <option value="1">Lễ Tân</option>
+                                    <option value="2">Phục Vụ</option>
+                                    <option value="3">Chuyên Viên</option>
+                                    <option value="4">Giám Sát</option>
+                                    <option value="5">Quản Lý</option>
+                                    <option value="6">Giám Đốc</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Trình Độ :</td>
+                                <td><select name="idTrinhDo_nv">
+                                    <option value="1">Trung Cấp</option>
+                                    <option value="2">Cao Đẳng</option>
+                                    <option value="3">Đại Học</option>
+                                    <option value="4">Sau Đại Học</option>
+                                </select></td>
+                            </tr>
+                        </table>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" value="Save" class="btn btn-primary">
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Delete Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="modelId" size="50" disabled style="border: none;background: white; color: red">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="submitDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form action="/" method="post" id="deleteEmployee">
+    <input type="hidden" name="action" value="deleteEmployee">
+    <input type="hidden" name="idEmployee" id="idEmployee">
+</form>
 <script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap4.min.js"></script>
 <script >
@@ -65,6 +169,15 @@
             "pageLength" : 5
         });
     });
+    function customerSetId(id, name) {
+        document.getElementById("idEmployee").value = id;
+        document.getElementById("modelId").value = "Do you want delete employee name: " + name;
+    }
+
+    function submitDelete() {
+        <!-- để submit form delete  -->
+        document.getElementById("deleteEmployee").submit();
+    }
 </script>
 </body>
 </html>

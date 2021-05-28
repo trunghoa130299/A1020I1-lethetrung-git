@@ -1,7 +1,9 @@
 package model.reponsitory.impl;
 
+import common.FuramaValidate;
 import model.bean.Customer;
 import model.bean.Employee;
+import model.bean.Service;
 import model.reponsitory.BaseRepository;
 import model.reponsitory.FuramaRepository;
 
@@ -274,5 +276,38 @@ public class FuramaRepositoryImpl implements FuramaRepository {
             throwables.printStackTrace();
         }
         return employeeList;
+    }
+
+    @Override
+    public boolean createService(Service service) {
+        int row =0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.
+                    getConnection().
+                    prepareStatement("insert into dichvu(`tendichvu`,dientich,songuoitoida,chiphuthue,idkieuthue_dv) value (?,?,?,?,?) ");
+            preparedStatement.setString(1,service.getTendichvu());
+            preparedStatement.setInt(2,service.getDientich());
+            preparedStatement.setString(3,service.getSonguoitoida());
+            preparedStatement.setString(4,service.getChiphithue());
+            preparedStatement.setInt(5,service.getIdkieuthue_dv());
+            row = preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row >0;
+    }
+
+    @Override
+    public boolean deleteEmployee(int id) {
+        int row = 0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().
+                    prepareStatement("delete  from nhanvien where idnhanvien=?");
+            preparedStatement.setInt(1, id);
+            row = preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row > 0;
     }
 }

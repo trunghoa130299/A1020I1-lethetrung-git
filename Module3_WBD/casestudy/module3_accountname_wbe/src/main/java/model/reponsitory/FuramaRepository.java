@@ -2,6 +2,7 @@ package model.reponsitory;
 
 import model.bean.Customer;
 import model.bean.Employee;
+import model.bean.Service;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface FuramaRepository {
     boolean updateEmployee(int id,Employee employee);
     List<Customer> findNameCustomer(String name);
     List<Employee> findNameEmployee(String name);
+    boolean createService(Service service);
+    boolean deleteEmployee(int id);
 }

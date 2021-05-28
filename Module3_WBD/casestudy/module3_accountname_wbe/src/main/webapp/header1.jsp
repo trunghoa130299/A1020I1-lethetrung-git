@@ -40,10 +40,10 @@
                         <a class="nav-link" href="?action=showCustomer">Customer</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="#">Service</a>
+                        <a class="nav-link" href="?action=showService">Service</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="#">Contract</a>
+                        <a class="nav-link" href="?action=showContract">Contract</a>
                     </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">
