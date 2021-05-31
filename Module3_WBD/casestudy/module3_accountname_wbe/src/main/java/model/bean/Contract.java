@@ -25,6 +25,16 @@ public class Contract {
         this.iddichvu_hd = iddichvu_hd;
     }
 
+    public Contract(String ngaylamhopdong, String ngayketthuc, int tiendatcoc, int tongtien, int idnhanvien_hd, int idkhachhang_hd, int iddichvu_hd) {
+        this.ngaylamhopdong = ngaylamhopdong;
+        this.ngayketthuc = ngayketthuc;
+        this.tiendatcoc = tiendatcoc;
+        this.tongtien = tongtien;
+        this.idnhanvien_hd = idnhanvien_hd;
+        this.idkhachhang_hd = idkhachhang_hd;
+        this.iddichvu_hd = iddichvu_hd;
+    }
+
     public int getIdhopdong() {
         return idhopdong;
     }

@@ -1,5 +1,6 @@
 package model.reponsitory;
 
+import model.bean.Contract;
 import model.bean.Customer;
 import model.bean.Employee;
 import model.bean.Service;
@@ -20,4 +21,5 @@ public interface FuramaRepository {
     List<Employee> findNameEmployee(String name);
     boolean createService(Service service);
     boolean deleteEmployee(int id);
+    boolean createContract(Contract contract);
 }

@@ -1,6 +1,7 @@
 package controller;
 
 import common.FuramaValidate;
+import model.bean.Contract;
 import model.bean.Customer;
 import model.bean.Employee;
 import model.bean.Service;
@@ -24,7 +25,7 @@ public class FuramaServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
-        switch (action) {
+        switch (action) {           
             case "createCustomer":
                 CreateCustomer(request, response);
                 break;
@@ -46,13 +47,13 @@ public class FuramaServlet extends HttpServlet {
             case "deleteEmployee":
                 DeleteEmployee(request,response);
                 break;
+            case "createContract":
+                CreateContract(request,response);
+                break;
             default:
                 break;
         }
     }
-
-
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -68,9 +69,6 @@ public class FuramaServlet extends HttpServlet {
                 break;
             case "editCustomer":
                 showEditCustomer(request, response);
-                break;
-            case "deleteCustomer":
-                showDeleteCustomer(request, response);
                 break;
             case "showEmployee":
                 showListEmployee(request, response);
@@ -93,10 +91,29 @@ public class FuramaServlet extends HttpServlet {
             case "showContract":
                 showContract(request,response);
                 break;
+            case "createContract":
+                showCreateContract(request,response);
+                break;
             default:
                 home(request, response);
                 break;
         }
+    }
+    private void CreateContract(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ngaylamhopdong = request.getParameter("ngaylamhopdong");
+        String ngayketthuc = (request.getParameter("ngayketthuc"));
+        int tiendatcoc = Integer.parseInt(request.getParameter("tiendatcoc"));
+        int tongtien = Integer.parseInt(request.getParameter("tongtien"));
+        int idnhanvien_hd = Integer.parseInt(request.getParameter("idnhanvien_hd"));
+        int idkhachhang_hd = Integer.parseInt(request.getParameter("idkhachhang_hd"));
+        int iddichvu_hd = Integer.parseInt(request.getParameter("iddichvu_hd"));
+        Contract contract = new Contract(ngaylamhopdong,ngayketthuc,tiendatcoc,tongtien,idnhanvien_hd,idkhachhang_hd,iddichvu_hd);
+        this.furamaService.createContract(contract);
+        request.setAttribute("message","Contract was created");
+        request.getRequestDispatcher("createContract.jsp").forward(request, response);
+    }
+    private void showCreateContract(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("createContract.jsp").forward(request,response);
     }
     private void DeleteEmployee(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("idEmployee"));
@@ -118,7 +135,6 @@ public class FuramaServlet extends HttpServlet {
         request.setAttribute("message","Service was created");
         request.getRequestDispatcher("service.jsp").forward(request,response);
     }
-
 
     private void showService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("service.jsp").forward(request,response);
@@ -202,17 +218,6 @@ public class FuramaServlet extends HttpServlet {
     private void showListEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("listEmployee", this.furamaService.findListEmployee());
         request.getRequestDispatcher("employee.jsp").forward(request, response);
-    }
-
-    private void showDeleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Customer customer = this.furamaService.findById(id);
-        if (customer == null) {
-            request.getRequestDispatcher("error-404.jsp").forward(request, response);
-        } else {
-            request.setAttribute("customer", customer);
-            request.getRequestDispatcher("DeleteCustomer.jsp").forward(request, response);
-        }
     }
 
     private void DeleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

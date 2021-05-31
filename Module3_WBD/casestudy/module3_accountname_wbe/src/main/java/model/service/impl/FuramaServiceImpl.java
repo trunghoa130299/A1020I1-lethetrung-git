@@ -1,5 +1,6 @@
 package model.service.impl;
 
+import model.bean.Contract;
 import model.bean.Customer;
 import model.bean.Employee;
 import model.bean.Service;
@@ -75,5 +76,10 @@ public class FuramaServiceImpl implements FuramaService {
     @Override
     public boolean deleteEmployee(int id) {
         return this.furamaRepository.deleteEmployee(id);
+    }
+
+    @Override
+    public boolean createContract(Contract contract) {
+        return this.furamaRepository.createContract(contract);
     }
 }
