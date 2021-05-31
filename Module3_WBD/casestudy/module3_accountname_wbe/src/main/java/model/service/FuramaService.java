@@ -1,9 +1,6 @@
 package model.service;
 
-import model.bean.Contract;
-import model.bean.Customer;
-import model.bean.Employee;
-import model.bean.Service;
+import model.bean.*;
 
 import java.util.List;
 
@@ -31,4 +28,6 @@ public interface FuramaService {
     boolean deleteEmployee(int id);
 
     boolean createContract(Contract contract);
+
+    boolean createContractDetail(ContractDetail contractDetail);
 }

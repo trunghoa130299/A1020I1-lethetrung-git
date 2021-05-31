@@ -13,6 +13,12 @@ public class ContractDetail {
         this.idhopdong_hdct = idhopdong_hdct;
     }
 
+    public ContractDetail(int soluong, int iddichvudikem_hdct, int idhopdong_hdct) {
+        this.soluong = soluong;
+        this.iddichvudikem_hdct = iddichvudikem_hdct;
+        this.idhopdong_hdct = idhopdong_hdct;
+    }
+
     public int getIdhopdongchitiet() {
         return idhopdongchitiet;
     }

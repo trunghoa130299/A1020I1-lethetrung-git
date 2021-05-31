@@ -45,7 +45,14 @@
                         <td><c:out value="${customers.getSdt()}"/></td>
                         <td><c:out value="${customers.getEmail()}"/></td>
                         <td><c:out value="${customers.getDiaChi()}"/></td>
-                        <td><c:out value="${customers.getIdLoaiKhach_kh()}"/></td>
+<%--                        <td><c:out value="${customers.getIdLoaiKhach_kh()}"/></td>--%>
+                        <td><c:choose>
+                            <c:when test="${customers.getIdLoaiKhach_kh() ==1}">Diamond</c:when>
+                            <c:when test="${customers.getIdLoaiKhach_kh() ==2}">Platinium</c:when>
+                            <c:when test="${customers.getIdLoaiKhach_kh() ==3}">Gold</c:when>
+                            <c:when test="${customers.getIdLoaiKhach_kh() ==4}">Silver</c:when>
+                            <c:otherwise>Member</c:otherwise>
+                        </c:choose></td>
                         <td>
                             <a class="nav-link rounded btn-danger" href="/?action=editCustomer&id=${customers.getIdKhachHang()}">
                                 Edit

@@ -1,10 +1,6 @@
 package model.reponsitory.impl;
 
-import common.FuramaValidate;
-import model.bean.Contract;
-import model.bean.Customer;
-import model.bean.Employee;
-import model.bean.Service;
+import model.bean.*;
 import model.reponsitory.BaseRepository;
 import model.reponsitory.FuramaRepository;
 
@@ -326,6 +322,23 @@ public class FuramaRepositoryImpl implements FuramaRepository {
             preparedStatement.setInt(5,contract.getIdnhanvien_hd());
             preparedStatement.setInt(6,contract.getIdkhachhang_hd());
             preparedStatement.setInt(7,contract.getIddichvu_hd());
+            row = preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row >0;
+    }
+
+    @Override
+    public boolean createContractDetail(ContractDetail contractDetail) {
+        int row =0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.
+                    getConnection().
+                    prepareStatement("insert into hopdongchitiet(`soluong`,iddichvudikem_hdct,idhopdong_hdct) value (?,?,?) ");
+            preparedStatement.setInt(1,contractDetail.getSoluong());
+            preparedStatement.setInt(2,contractDetail.getIddichvudikem_hdct());
+            preparedStatement.setInt(3,contractDetail.getIdhopdong_hdct());
             row = preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
