@@ -345,4 +345,31 @@ public class FuramaRepositoryImpl implements FuramaRepository {
         }
         return row >0;
     }
+
+    @Override
+    public List<UserService> findUserService() {
+        List<UserService> userServices = new ArrayList<>();
+        try {
+            Statement statement = this.baseRepository.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery("select kh.idkhachhang,kh.hoten, hd.idhopdong,hdct.idhopdongchitiet, dvdk.tendichvudikem\n" +
+                    "from khachhang kh\n" +
+                    "inner join hopdong hd on hd.idkhachhang_hd = kh.idkhachhang\n" +
+                    "inner join hopdongchitiet hdct on hdct.idhopdong_hdct = hd.idhopdong\n" +
+                    "inner join dichvudikem dvdk on dvdk.iddichvudikem = hdct.iddichvudikem_hdct\n" +
+                    "group by kh.idkhachhang;");
+            UserService service = null;
+            while (resultSet.next()) {
+                service = new UserService();
+                service.setIdkhachhang(resultSet.getInt("kh.idkhachhang"));
+                service.setHoten(resultSet.getString("kh.hoten"));
+                service.setIdhopdong(resultSet.getInt("hd.idhopdong"));
+                service.setIdhopdongchitiet(resultSet.getInt("hdct.idhopdongchitiet"));
+                service.setTendichvudikem(resultSet.getString("dvdk.tendichvudikem"));
+                userServices.add(service);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return userServices;
+    }
 }

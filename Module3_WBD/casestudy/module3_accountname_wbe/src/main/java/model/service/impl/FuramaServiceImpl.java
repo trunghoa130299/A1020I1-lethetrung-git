@@ -84,4 +84,9 @@ public class FuramaServiceImpl implements FuramaService {
     public boolean createContractDetail(ContractDetail contractDetail) {
         return this.furamaRepository.createContractDetail(contractDetail);
     }
+
+    @Override
+    public List<UserService> findUserService() {
+        return this.furamaRepository.findUserService();
+    }
 }

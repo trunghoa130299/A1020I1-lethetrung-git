@@ -1,6 +1,5 @@
 package controller;
 
-import common.FuramaValidate;
 import model.bean.*;
 import model.service.FuramaService;
 import model.service.impl.FuramaServiceImpl;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "FuramaServlet", urlPatterns = "/")
 public class FuramaServlet extends HttpServlet {
@@ -54,8 +52,6 @@ public class FuramaServlet extends HttpServlet {
                 break;
         }
     }
-
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -98,11 +94,20 @@ public class FuramaServlet extends HttpServlet {
             case "createContractDetail":
                 showCreateContractDetail(request,response);
                 break;
+            case "showUserService":
+                showUserService(request,response);
+                break;
             default:
                 home(request, response);
                 break;
         }
     }
+
+    private void showUserService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("listUserService",this.furamaService.findUserService());
+        request.getRequestDispatcher("UserService.jsp").forward(request,response);
+    }
+
     private void CreateContractDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int soluong = Integer.parseInt(request.getParameter("soluong"));
         int iddichvudikem_hdct = Integer.parseInt(request.getParameter("iddichvudikem_hdct"));
@@ -112,11 +117,9 @@ public class FuramaServlet extends HttpServlet {
         request.setAttribute("message","ContractDetail was created");
         request.getRequestDispatcher("createContractDetail.jsp").forward(request, response);
     }
-
     private void showCreateContractDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("createContractDetail.jsp").forward(request,response);
     }
-
     private void CreateContract(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ngaylamhopdong = request.getParameter("ngaylamhopdong");
         String ngayketthuc = (request.getParameter("ngayketthuc"));

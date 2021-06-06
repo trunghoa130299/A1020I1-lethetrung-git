@@ -48,7 +48,7 @@
                         <td><c:out value="${employees.getEmail()}"/></td>
                         <td><c:out value="${employees.getIdVitri_nv()}"/></td>
                         <td><c:out value="${employees.getIdTrinhDo_nv()}"/></td>
-                        <td><a  class="nav-link rounded btn-danger" href="/?action=editEmployee&id=${employees.getIdNhanVien()}">
+                        <td><a  class="nav-link rounded btn-secondary" href="/?action=editEmployee&id=${employees.getIdNhanVien()}">
                             Edit</a></td>
                         <td>
                             <a class="btn btn-danger" href="#" onclick="customerSetId('${employees.idNhanVien}','${employees.hoTen}')"

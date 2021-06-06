@@ -14,6 +14,7 @@
             border-bottom: 1px solid #CCCCCC;
             border-top: 1px solid #DDDDDD;
             margin-top: 17.8%;
+            clear: both;
         }
     </style>
 </head>

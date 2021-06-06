@@ -54,7 +54,7 @@
                             <c:otherwise>Member</c:otherwise>
                         </c:choose></td>
                         <td>
-                            <a class="nav-link rounded btn-danger" href="/?action=editCustomer&id=${customers.getIdKhachHang()}">
+                            <a class="nav-link rounded btn-secondary" href="/?action=editCustomer&id=${customers.getIdKhachHang()}">
                                 Edit
                             </a>
                         </td>

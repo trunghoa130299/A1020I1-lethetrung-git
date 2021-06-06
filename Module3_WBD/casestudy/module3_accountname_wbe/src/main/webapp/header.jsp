@@ -45,6 +45,9 @@
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="?action=showContract">Contract</a>
                     </li>
+                    <li class="nav-item active pl-3">
+                        <a class="nav-link" href="?action=showUserService">UserService</a>
+                    </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">
                     <input type="hidden" name="action" value="search">
@@ -58,5 +61,28 @@
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+
+    function customerSetId(id, name) {
+        document.getElementById("idCustomer").value = id;
+        document.getElementById("modelId").value = "Do you want delete customer name: " + name;
+    }
+
+    function submitDelete() {
+        <!-- để submit form delete  -->
+        document.getElementById("deleteCustomer").submit();
+    }
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#customer').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        })
+    })
+</script>
 </body>
 </html>

@@ -45,6 +45,9 @@
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="?action=showContract">Contract</a>
                     </li>
+                    <li class="nav-item active pl-3">
+                        <a class="nav-link" href="?action=showUserService">UserService</a>
+                    </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">
                     <input type="hidden" name="action" value="search1">

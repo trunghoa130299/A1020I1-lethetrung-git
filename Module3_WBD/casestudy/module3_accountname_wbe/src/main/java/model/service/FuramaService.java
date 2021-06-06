@@ -30,4 +30,6 @@ public interface FuramaService {
     boolean createContract(Contract contract);
 
     boolean createContractDetail(ContractDetail contractDetail);
+
+    List<UserService> findUserService();
 }
