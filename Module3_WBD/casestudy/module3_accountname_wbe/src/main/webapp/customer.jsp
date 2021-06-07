@@ -54,7 +54,7 @@
                             <c:otherwise>Member</c:otherwise>
                         </c:choose></td>
                         <td>
-                            <a class="nav-link rounded btn-secondary" href="/?action=editCustomer&id=${customers.getIdKhachHang()}">
+                            <a class="nav-link rounded btn-secondary" href="/a?action=editCustomer&id=${customers.getIdKhachHang()}">
                                 Edit
                             </a>
                         </td>
@@ -83,19 +83,19 @@
                         <table>
                             <tr>
                                 <td>Họ Tên :</td>
-                                <td><input type="text" name="hoten" id="name"></td>
+                                <td><input type="text" name="hoten" id="name" required></td>
                             </tr>
                             <tr>
                                 <td>Ngày Sinh :</td>
-                                <td><input type="date" name="ngaysinh" id="ngaySinh"></td>
+                                <td><input type="date" name="ngaysinh" id="ngaySinh" required></td>
                             </tr>
                             <tr>
                                 <td>CMND :</td>
-                                <td><input type="text" name="cmtnd" id="cmtnd"></td>
+                                <td><input type="text" name="cmtnd" id="cmtnd" required></td>
                             </tr>
                             <tr>
                                 <td>Số Điện Thoại :</td>
-                                <td><input type="text" name="sdt" id="sdt"></td>
+                                <td><input type="text" name="sdt" id="sdt" required></td>
                                 <p>
                                     <c:if test='${requestScope["msg"] != null}'>
                                         <span class="message text-primary">${requestScope["msg"]}</span>
@@ -104,11 +104,11 @@
                             </tr>
                             <tr>
                                 <td>Email :</td>
-                                <td><input type="text" name="email" id="email"></td>
+                                <td><input type="text" name="email" id="email" required></td>
                             </tr>
                             <tr>
                                 <td>Địa Chỉ :</td>
-                                <td><input type="text" name="diachi" id="diachi"></td>
+                                <td><input type="text" name="diachi" id="diachi" required></td>
                             </tr>
                             <tr>
                                 <td>ID loại khách :</td>

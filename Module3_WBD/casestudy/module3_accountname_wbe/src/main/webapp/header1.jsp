@@ -22,7 +22,8 @@
         </div>
         <div class="col-lg-9">
             <div class="text-danger header-1">
-                <h3>Lê Thế Trung</h3>
+                <input class="text-center btn btn-outline-success" type="text" name="abc" value="${sessionScope["abc"]}">
+                <a href="/a?action=login"><button class="btn badge-success">Log out</button></a>
             </div>
         </div>
     </div>
@@ -31,7 +32,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <ul class="navbar-nav ul-1">
                     <li class="nav-item active">
-                        <a class="nav-link" href="?action">Home</a>
+                        <a class="nav-link" href="?action=home">Home</a>
                     </li>
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="?action=showEmployee">Employee</a>
@@ -44,9 +45,6 @@
                     </li>
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="?action=showContract">Contract</a>
-                    </li>
-                    <li class="nav-item active pl-3">
-                        <a class="nav-link" href="?action=showUserService">UserService</a>
                     </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">

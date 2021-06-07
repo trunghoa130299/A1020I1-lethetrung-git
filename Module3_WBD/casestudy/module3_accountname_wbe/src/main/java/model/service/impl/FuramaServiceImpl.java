@@ -89,4 +89,14 @@ public class FuramaServiceImpl implements FuramaService {
     public List<UserService> findUserService() {
         return this.furamaRepository.findUserService();
     }
+
+    @Override
+    public Login checkLogin(String username, String password) {
+        return this.furamaRepository.checkLogin(username,password);
+    }
+
+    @Override
+    public boolean createUser(Login login) {
+        return this.furamaRepository.createUser(login);
+    }
 }

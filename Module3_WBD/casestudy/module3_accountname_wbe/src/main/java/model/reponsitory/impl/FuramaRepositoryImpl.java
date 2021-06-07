@@ -372,4 +372,39 @@ public class FuramaRepositoryImpl implements FuramaRepository {
         }
         return userServices;
     }
+
+    @Override
+    public Login checkLogin(String username, String password) {
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.
+                    getConnection().
+                    prepareStatement("select * from login where `user` =? and pass=?");
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2,password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+              Login login = new Login(resultSet.getString(1),resultSet.getString(2));
+              return login;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public boolean createUser(Login login) {
+        int row = 0;
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement
+                    ("insert into login (`user`,pass) values \n" +
+                            "(?,?);");
+            preparedStatement.setString(1, login.getUsername());
+            preparedStatement.setString(2, login.getPassword());
+            row = preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return row > 0;
+    }
 }

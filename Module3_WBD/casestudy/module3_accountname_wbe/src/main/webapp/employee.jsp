@@ -48,7 +48,7 @@
                         <td><c:out value="${employees.getEmail()}"/></td>
                         <td><c:out value="${employees.getIdVitri_nv()}"/></td>
                         <td><c:out value="${employees.getIdTrinhDo_nv()}"/></td>
-                        <td><a  class="nav-link rounded btn-secondary" href="/?action=editEmployee&id=${employees.getIdNhanVien()}">
+                        <td><a  class="nav-link rounded btn-secondary" href="/a?action=editEmployee&id=${employees.getIdNhanVien()}">
                             Edit</a></td>
                         <td>
                             <a class="btn btn-danger" href="#" onclick="customerSetId('${employees.idNhanVien}','${employees.hoTen}')"
@@ -79,32 +79,32 @@
                         <table>
                             <tr>
                                 <td>Họ Tên :</td>
-                                <td><input type="text" name="hoten" id="name"></td>
+                                <td><input type="text" name="hoten" id="name" required ></td>
                             </tr>
                             <tr>
                                 <td>Ngày Sinh :</td>
-                                <td><input type="date" name="ngaysinh" id="ngaySinh"></td>
+                                <td><input type="date" name="ngaysinh" id="ngaySinh" required></td>
                             </tr>
                             <tr>
                                 <td>CMND :</td>
-                                <td><input type="text" name="cmtnd" id="cmtnd"></td>
+                                <td><input type="text" name="cmtnd" id="cmtnd" required></td>
                             </tr>
                             <tr>
                                 <td>Lương :</td>
-                                <td><input type="text" name="luong" id="luong"></td>
+                                <td><input type="text" name="luong" id="luong" required></td>
                             </tr>
                             <tr>
                                 <td>Số Điện Thoại   :</td>
-                                <td><input type="text" name="sdt" id="sdt"></td>
+                                <td><input type="text" name="sdt" id="sdt" required></td>
                             </tr>
                             <tr>
                                 <td>Email :</td>
-                                <td><input type="text" name="email" id="email"></td>
+                                <td><input type="text" name="email" id="email" required></td>
                             </tr>
 
                             <tr>
                                 <td>Vị Trí :</td>
-                                <td><select name="idVitri_nv">
+                                <td><select name="idVitri_nv" required>
                                     <option value="1">Lễ Tân</option>
                                     <option value="2">Phục Vụ</option>
                                     <option value="3">Chuyên Viên</option>
@@ -115,7 +115,7 @@
                             </tr>
                             <tr>
                                 <td>Trình Độ :</td>
-                                <td><select name="idTrinhDo_nv">
+                                <td><select name="idTrinhDo_nv" required>
                                     <option value="1">Trung Cấp</option>
                                     <option value="2">Cao Đẳng</option>
                                     <option value="3">Đại Học</option>

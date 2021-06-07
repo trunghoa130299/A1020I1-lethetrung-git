@@ -32,4 +32,7 @@ public interface FuramaService {
     boolean createContractDetail(ContractDetail contractDetail);
 
     List<UserService> findUserService();
+    Login checkLogin(String username , String password);
+
+    boolean createUser(Login login);
 }

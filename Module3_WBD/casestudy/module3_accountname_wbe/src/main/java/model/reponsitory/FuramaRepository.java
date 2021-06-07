@@ -21,4 +21,6 @@ public interface FuramaRepository {
     boolean createContract(Contract contract);
     boolean createContractDetail(ContractDetail contractDetail);
     List<UserService> findUserService();
+    Login checkLogin(String username , String password);
+    boolean createUser(Login login);
 }
