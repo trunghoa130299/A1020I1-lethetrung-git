@@ -5,11 +5,12 @@
     <title>Title</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
-        .header-1{
+        .header-1 {
             padding-top: 5%;
             float: right;
         }
-        .ul-1{
+
+        .ul-1 {
             margin-left: 10%;
         }
     </style>
@@ -18,12 +19,16 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <img src="https://phamkhoi.com/Editor/blog/nhat%20ky/logo%20hoa/nghe-thua-thiet-ke-logo-theo-dang-canh-hoa%205.jpg" class="img-fluid img-thumbnail">
+            <img src="https://phamkhoi.com/Editor/blog/nhat%20ky/logo%20hoa/nghe-thua-thiet-ke-logo-theo-dang-canh-hoa%205.jpg"
+                 class="img-fluid img-thumbnail border-success">
         </div>
         <div class="col-lg-9">
-            <div class="text-danger header-1">
-                <input class="text-center btn btn-outline-success" type="text" name="abc" value="${sessionScope["abc"]}">
-                <a href="/a?action=login"><button class="btn badge-success">Log out</button></a>
+            <div class="header-1">
+                <h4 class="text-danger border border-success">Hello : <span
+                        class="text-center">${sessionScope["abc"]}</span></h4>
+                <a href="/a?action=login">
+                    <button class="btn badge-success float-lg-right">Log out</button>
+                </a>
             </div>
         </div>
     </div>
