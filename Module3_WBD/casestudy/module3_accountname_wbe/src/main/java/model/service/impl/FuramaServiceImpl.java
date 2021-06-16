@@ -1,8 +1,8 @@
 package model.service.impl;
 
 import model.bean.*;
-import model.reponsitory.FuramaRepository;
-import model.reponsitory.impl.FuramaRepositoryImpl;
+import model.repository.FuramaRepository;
+import model.repository.impl.FuramaRepositoryImpl;
 import model.service.FuramaService;
 
 import java.util.List;

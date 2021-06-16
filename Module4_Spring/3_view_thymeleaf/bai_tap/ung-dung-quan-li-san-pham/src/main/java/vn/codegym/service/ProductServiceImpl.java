@@ -1,16 +1,14 @@
 package vn.codegym.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import vn.codegym.model.Product;
-import vn.codegym.reponsitory.ProductReponsitory;
-import vn.codegym.reponsitory.ProductReponsitoryImpl;
+import vn.codegym.repository.ProductRepository;
+import vn.codegym.repository.ProductRepositoryImpl;
 
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
 
-    ProductReponsitory productReponsitory = new ProductReponsitoryImpl();
+    ProductRepository productReponsitory = new ProductRepositoryImpl();
     @Override
     public List<Product> findAll() {
         return this.productReponsitory.findAll();
