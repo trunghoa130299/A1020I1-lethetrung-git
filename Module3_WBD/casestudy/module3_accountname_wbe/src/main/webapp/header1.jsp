@@ -24,6 +24,9 @@
         </div>
         <div class="col-lg-9">
             <div class="header-1">
+                <div style="padding-left: 35px">
+                    <img src="img/vku.png" class="img-fluid img-thumbnail" style="width: 70px;height: 40px">
+                </div>
                 <h4 class="text-danger border border-success">Hello : <span
                         class="text-center">${sessionScope["abc"]}</span></h4>
                 <a href="/a?action=login">
@@ -46,10 +49,10 @@
                         <a class="nav-link" href="?action=showCustomer">Customer</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="?action=showService">Service</a>
+                        <a class="nav-link" href="#"></a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="?action=showContract">Contract</a>
+                        <a class="nav-link" href="#"></a>
                     </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">

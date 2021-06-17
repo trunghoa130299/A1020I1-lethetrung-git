@@ -152,7 +152,7 @@
         </div>
     </div>
 </div>
-<form action="/" method="post" id="deleteCustomer">
+<form action="/a" method="post" id="deleteCustomer">
     <input type="hidden" name="action" value="deleteCustomer">
     <input type="hidden" name="idCustomer" id="idCustomer">
 </form>

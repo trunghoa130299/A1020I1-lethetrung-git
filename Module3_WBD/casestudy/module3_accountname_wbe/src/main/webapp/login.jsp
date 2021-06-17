@@ -40,7 +40,7 @@
         }
 
         body {
-            background: url("img/bg.jpg");
+            background:#7abaff;
         }
     </style>
 </head>
