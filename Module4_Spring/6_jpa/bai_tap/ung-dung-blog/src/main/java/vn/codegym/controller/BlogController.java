@@ -14,7 +14,6 @@ import java.util.List;
 
 @Controller
 public class BlogController {
-
     @Autowired
     BlogService blogService;
 
@@ -78,7 +77,7 @@ public class BlogController {
         return modelAndView;
     }
     @GetMapping(value = "/view-blog/{id}")
-    public ModelAndView viewBlog(@PathVariable("id") int id){
+    public ModelAndView viewBlog(@PathVariable("id") long id){
         Blog blog1=  blogService.findById(id);
         ModelAndView modelAndView = new ModelAndView("view");
         modelAndView.addObject("blog", blog1);

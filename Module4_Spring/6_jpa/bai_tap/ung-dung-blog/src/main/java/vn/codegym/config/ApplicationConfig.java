@@ -45,17 +45,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-    @Bean
-    public BlogRepository customerRepository(){
-        return new BlogRepositoryImpl();
-    }
-
-    @Bean
-    public BlogService customerService(){
-        return new BlogServiceImpl();
-    }
-
-
     //Thymeleaf Configuration
     @Bean
     public SpringResourceTemplateResolver templateResolver(){

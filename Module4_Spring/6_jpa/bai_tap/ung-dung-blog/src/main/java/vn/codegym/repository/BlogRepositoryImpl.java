@@ -1,14 +1,17 @@
 package vn.codegym.repository;
 
+import org.springframework.stereotype.Service;
 import vn.codegym.model.Blog;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Transactional
+@Service
 public class BlogRepositoryImpl implements BlogRepository {
-
     @PersistenceContext
     private EntityManager entityManager;
     @Override
@@ -16,7 +19,6 @@ public class BlogRepositoryImpl implements BlogRepository {
         TypedQuery<Blog> query =entityManager.createQuery("select c from Blog c", Blog.class);
         return query.getResultList();
     }
-
     @Override
     public Blog findById(long id) {
         TypedQuery<Blog> query = entityManager.createQuery("select c from Blog c where c.id=:id", Blog.class);
@@ -25,6 +27,7 @@ public class BlogRepositoryImpl implements BlogRepository {
     }
     @Override
     public void save(Blog blog) {
+        System.out.println(blog);
         entityManager.persist(blog);
     }
     @Override
