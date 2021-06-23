@@ -45,7 +45,7 @@
                         <td><c:out value="${customers.getSdt()}"/></td>
                         <td><c:out value="${customers.getEmail()}"/></td>
                         <td><c:out value="${customers.getDiaChi()}"/></td>
-<%--                        <td><c:out value="${customers.getIdLoaiKhach_kh()}"/></td>--%>
+                            <%--                        <td><c:out value="${customers.getIdLoaiKhach_kh()}"/></td>--%>
                         <td><c:choose>
                             <c:when test="${customers.getIdLoaiKhach_kh() ==1}">Diamond</c:when>
                             <c:when test="${customers.getIdLoaiKhach_kh() ==2}">Platinium</c:when>
@@ -54,11 +54,13 @@
                             <c:otherwise>Member</c:otherwise>
                         </c:choose></td>
                         <td>
-                            <a class="nav-link rounded btn-secondary" href="/a?action=editCustomer&id=${customers.getIdKhachHang()}">
+                            <a class="nav-link rounded btn-secondary"
+                               href="/a?action=editCustomer&id=${customers.getIdKhachHang()}">
                                 Edit
                             </a>
                         </td>
-                        <td><a class="btn btn-danger" href="#" onclick="customerSetId('${customers.idKhachHang}','${customers.hoten}')"
+                        <td><a class="btn btn-danger" href="#"
+                               onclick="customerSetId('${customers.idKhachHang}','${customers.hoten}')"
                                data-toggle="modal" data-target="#deleteModal">Delete</a></td>
                     </tr>
                 </c:forEach>
@@ -168,6 +170,7 @@
             "pageLength": 5
         });
     });
+
     function customerSetId(id, name) {
         document.getElementById("idCustomer").value = id;
         document.getElementById("modelId").value = "Do you want delete customer name: " + name;

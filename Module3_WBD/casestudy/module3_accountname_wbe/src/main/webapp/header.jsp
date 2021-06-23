@@ -13,6 +13,42 @@
         .ul-1 {
             margin-left: 10%;
         }
+        .breadcrumb {
+            padding: 8px 15px;
+            margin-bottom: 20px;
+            list-style: none;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .breadcrumb > li {
+            display: inline-block;
+        }
+        .breadcrumb > li + li:before {
+            padding: 0 5px;
+            color: #ccc;
+            content: "/\00a0";
+        }
+        .breadcrumb > .active {
+            color: #777;
+        }
+        .marquee {
+            color: darkorange;
+            width: 70%;
+            margin: 0 auto;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: marquee 10s linear infinite;
+        }
+
+        .marquee:hover {
+            animation-play-state: paused
+        }
+
+        @keyframes marquee {
+            0%   { text-indent: 27.5em }
+            100% { text-indent: -105em }
+        }
     </style>
 </head>
 <body>
@@ -42,9 +78,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="?action=home">Home</a>
                     </li>
-                    <li class="nav-item active pl-3">
-                        <a class="nav-link" href="?action=showEmployee">Employee</a>
-                    </li>
+<%--                    <li class="nav-item active pl-3">--%>
+<%--                        <a class="nav-link" href="?action=showEmployee">Employee</a>--%>
+<%--                    </li>--%>
                     <li class="nav-item active pl-3">
                         <a class="nav-link" href="?action=showCustomer">Customer</a>
                     </li>
@@ -63,6 +99,11 @@
                 </form>
             </nav>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><div class="breadcrumb">
+            <p class=" marquee">CHÀO MỪNG BẠN ĐẾN VỚI VKU @Design by Lê Thế Trung</p>
+        </div></div>
     </div>
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>

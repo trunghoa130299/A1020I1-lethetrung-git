@@ -11,6 +11,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         .login-form {
             width: 340px;
@@ -40,38 +44,40 @@
         }
 
         body {
-            background:#7abaff;
+            background: #7abaff;
         }
     </style>
 </head>
 <body>
 <div class="login-form">
     <form action="?action=login" method="post">
-        <h2 class="text-center">Log in</h2>
+        <h2 class="text-center">Log In</h2>
         <p>
             <c:if test='${requestScope["message"] != null}'>
                 <span class="message text-danger">${requestScope["message"]}</span>
             </c:if>
         </p>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required" name="us">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required" name="pw">
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
-        </div>
-        <div class="clearfix">
-            <label class="float-left form-check-label">
-                <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#createUser">
-                    Sign Up
-                </button>
-            </label>
-            <a href="#" class="float-right">Forgot Password?</a>
+        <input type="hidden" name="type" value="login">
+        <input type="text" name="us" id="userName" class="form-control input-sm chat-input"
+               placeholder=" username" required/>
+        <br><br>
+        <input type="password" name="pw" id="userPassword" class="form-control input-sm chat-input"
+               placeholder=" password" required/>
+        <br>
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Remember me</label>
+        <br><br>
+        <div class="wrapper">
+            <span class="group-btn">
+                <button type="submit" class="btn btn-danger btn-md">login <i class="fa fa-sign-in"></i></button>
+            </span>
+            <span class="wrapper float-lg-right">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createUser">
+                Create User <i class="fa fa-user-circle-o"></i>
+            </button>
+            </span>
         </div>
     </form>
-
 </div>
 <div class="modal fade" id="createUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
