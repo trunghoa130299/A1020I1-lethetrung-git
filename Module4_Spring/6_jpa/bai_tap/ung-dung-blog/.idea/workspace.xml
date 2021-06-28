@@ -20,24 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d830d5c-7044-467a-ab6d-6131a9c5ad4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/vn/codegym/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/vn/codegym/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/vn/codegym/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/vn/codegym/repository/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/vn/codegym/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/vn/codegym/service/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/codegym/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/codegym/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/codegym/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/codegym/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/codegym/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/codegym/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/codegym/repository/BlogRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/codegym/repository/BlogRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/codegym/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/codegym/service/BlogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../7_java_data_repository/bai_tap/mo-rong-ung-dung-blog/src/main/java/vn/codegym/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../7_java_data_repository/bai_tap/mo-rong-ung-dung-blog/src/main/java/vn/codegym/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../7_java_data_repository/bai_tap/mo-rong-ung-dung-blog/src/main/java/vn/codegym/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../7_java_data_repository/bai_tap/mo-rong-ung-dung-blog/src/main/java/vn/codegym/repository/BlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../7_java_data_repository/bai_tap/mo-rong-ung-dung-blog/src/main/java/vn/codegym/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../7_java_data_repository/bai_tap/mo-rong-ung-dung-blog/src/main/java/vn/codegym/service/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan-li-kh-phan-trang/src/main/java/vn/codegym/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan-li-kh-phan-trang/src/main/java/vn/codegym/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan-li-kh-phan-trang/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan-li-kh-phan-trang/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan_li_tinh/src/main/java/vn/codegym/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan_li_tinh/src/main/java/vn/codegym/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan_li_tinh/src/main/java/vn/codegym/model/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7_java_data_repository/thuc_hanh/quan_li_tinh/src/main/java/vn/codegym/model/Province.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +170,7 @@
       <workItem from="1624449650185" duration="4175000" />
       <workItem from="1624453883543" duration="5109000" />
       <workItem from="1624469089874" duration="187000" />
+      <workItem from="1624884375101" duration="711000" />
     </task>
     <servers />
   </component>
