@@ -1,6 +1,5 @@
 package vn.codegym.controller;
 
-import com.oracle.jrockit.jfr.ValueDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,11 +21,10 @@ public class UserController {
         return "index";
     }
     @PostMapping(value = "/create")
-    public String createUser(@Validated @ModelAttribute User user, BindingResult bindingResult, Model model){
+    public String createUser(@Validated @ModelAttribute User user, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "index";
         }else {
-            model.addAttribute("message","Create done");
             this.repository.save(user);
             return "result";
         }

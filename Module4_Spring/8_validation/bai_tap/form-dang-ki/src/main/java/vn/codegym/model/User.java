@@ -9,6 +9,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull(message = "Không được để trống")
     @Size(min = 5, max = 45, message = "Tối thiểu 5 kí tự và tối đa 45 kí tự")
     private String firstName;
     @NotNull(message = "Không được để trống")
