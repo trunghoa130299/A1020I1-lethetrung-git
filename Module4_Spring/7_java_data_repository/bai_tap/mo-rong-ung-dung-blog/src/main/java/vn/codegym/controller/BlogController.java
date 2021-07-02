@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.model.Blog;
+import vn.codegym.model.Category;
 import vn.codegym.service.BlogService;
 import vn.codegym.service.CategoryService;
 
@@ -19,6 +20,13 @@ public class BlogController {
 
     @Autowired
     BlogService blogService;
+
+    @Autowired
+    CategoryService categoryService;
+    @ModelAttribute("categories")
+    public Iterable<Category> provinces(){
+        return categoryService.findAll();
+    }
 
     @GetMapping("/create-blog")
     public ModelAndView showCreateForm() {
