@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.model.Blog;
@@ -45,7 +46,7 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public ModelAndView showBlogList(@RequestParam("s") Optional<String> s, @PageableDefault(value = 2) Pageable pageable) {
+    public ModelAndView showBlogList(@RequestParam("s") Optional<String> s, @PageableDefault(value = 10) Pageable pageable) {
         Page<Blog> blogs ;
         if (s.isPresent()){
             blogs = blogService.findAllByNameContaining(s.get(),pageable);
@@ -89,12 +90,11 @@ public class BlogController {
     }
 
     @PostMapping("/edit-blog")
-    public ModelAndView updateCustomer(@ModelAttribute("blog") Blog blog) {
+    public String updateCustomer(@ModelAttribute("blog") Blog blog, Model model) {
         blogService.update(blog);
-        ModelAndView modelAndView = new ModelAndView("blog/edit");
-        modelAndView.addObject("blog", blog);
-        modelAndView.addObject("message", "Blog updated successfully");
-        return modelAndView;
+        model.addAttribute("blog", blog);
+        model.addAttribute("message", "Blog updated successfully");
+        return "redirect:/blogs";
     }
 
     @GetMapping(value = "/view-blog/{id}")
