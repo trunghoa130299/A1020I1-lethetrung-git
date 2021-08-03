@@ -48,11 +48,12 @@ public class CustomerController {
 
     @PostMapping(value = "/addCustomer")
     public String createCustomer(@Valid @ModelAttribute Customer customer, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()){
-            model.addAttribute("customer", customer);
+        if (bindingResult.hasErrors()) {
+            return "customer/CreateCustomer";
         }
         customerService.save(customer);
-        return "customer/CreateCustomer";
+        model.addAttribute("customer", customer);
+        return "redirect:/customer";
     }
 
     @GetMapping(value = "/editCustomer/{id}")
@@ -66,17 +67,19 @@ public class CustomerController {
     public String editCustomer(@ModelAttribute("customer") Customer customer, Model model) {
         customerService.update(customer);
         model.addAttribute("customer", customer);
-        return "redirect:/customer";
+        return "customer/EditCustomer";
     }
+
     @PostMapping(value = "/delete")
-    public String deleteCustomer(@RequestParam(name = "idCustomer") String id){
+    public String deleteCustomer(@RequestParam(name = "idCustomer") String id) {
         customerService.delete(id);
         return "redirect:/customer";
     }
+
     @GetMapping(value = "/viewCustomer/{id}")
-    public String viewCustomer(@PathVariable("id") String id,Model model){
+    public String viewCustomer(@PathVariable("id") String id, Model model) {
         Customer customer = customerService.findById(id);
-        model.addAttribute("customer",customer);
+        model.addAttribute("customer", customer);
         return "customer/View";
     }
 }

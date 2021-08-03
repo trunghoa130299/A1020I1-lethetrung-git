@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Title</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
         .header-1 {
             padding-top: 5%;
@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-3">
             <img src="https://phamkhoi.com/Editor/blog/nhat%20ky/logo%20hoa/nghe-thua-thiet-ke-logo-theo-dang-canh-hoa%205.jpg"
@@ -68,10 +68,12 @@
         </div>
         <div class="col-lg-9">
             <div class="header-1">
-                <h4 class="text-danger border border-success">Hello :</h4>
-                <a th:href="@{/logout}">
-                    <button class="btn badge-success float-lg-right">Log out</button>
-                </a>
+                <div sec:authorize="isAuthenticated()">
+                    <h4 class="text-danger border border-success">Hello : <span sec:authentication="name"></span></h4>
+                    <a th:href="@{/logout}">
+                        <button class="btn badge-success float-lg-right">Log out</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -112,7 +114,7 @@
         </div>
     </div>
 </div>
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -10,25 +10,21 @@
     <div class="row">
         <div class="col-lg-3">
             <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" th:href="@{/customer}">Back To List Customer</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/employee}">Back To List Employee</a></li>
             </ul>
         </div>
         <div class="col-lg-9">
-            <h1 class="text-center">Create Customer</h1>
+            <h1 class="text-center">Create Employee</h1>
             <!--            <p>-->
             <!--                <c:if test='${requestScope["message"] != null}'>-->
             <!--                    <span class="message text-primary">${requestScope["message"]}</span>-->
             <!--                </c:if>-->
             <!--            </p>-->
-           <!-- <p th:if="${message}" th:text="$#{message}"></p>-->
-            <form method="post" th:object="${customer}" th:action="@{/addCustomer}" class="form-group">
+            <!-- <p th:if="${message}" th:text="$#{message}"></p>-->
+            <form method="post" th:object="${employee}" th:action="@{/addEmployee}" class="form-group">
                 <fieldset>
                     <table>
-                        <tr>
-                            <td>ID:</td>
-                            <td><input type="text" name="id" id="id1" th:field="*{id}"/></td>
-                            <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red"></td>
-                        </tr>
+                        <input type="hidden" th:field="*{id}"/>
                         <tr>
                             <td>Họ Tên :</td>
                             <td><input type="text" name="name" id="name" th:field="*{name}"/></td>
@@ -44,6 +40,11 @@
                             <td>CMND :</td>
                             <td><input type="text" name="idCard" id="idCard" th:field="*{idCard}"></td>
                             <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red"></td>
+                        </tr>
+                        <tr>
+                            <td>Lương :</td>
+                            <td><input type="text" name="salary" id="salary" th:field="*{salary}"></td>
+                            <td th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" style="color: red"></td>
                         </tr>
                         <tr>
                             <td>Số Điện Thoại :</td>
@@ -63,17 +64,36 @@
                             <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red"></td>
                         </tr>
                         <tr>
-                            <td>ID loại khách :</td>
+                            <td>Vị Trí :</td>
                             <td>
-                                <select name="customerType" id="customerType" th:field="*{customerType}" equired>
-                                    <option th:each="c : ${customerTypies}" th:value="${c.id}"
-                                            th:text="${c.name}"></option>
+                                <select name="position" id="position" th:field="*{position}" equired>
+                                    <option th:each="p : ${positions}" th:value="${p.id}"
+                                            th:text="${p.positionName}"></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Trình Độ :</td>
+                            <td>
+                                <select name="educationDegree" id="educationDegree" th:field="*{educationDegree}"
+                                        equired>
+                                    <option th:each="e : ${educationDegrees}" th:value="${e.id}"
+                                            th:text="${e.name}"></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bộ Phận :</td>
+                            <td>
+                                <select name="division" id="division" th:field="*{division}" equired>
+                                    <option th:each="d : ${divisions}" th:value="${d.id}"
+                                            th:text="${d.divisionName}"></option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="Create customer" class="btn btn-outline-success"></td>
+                            <td><input type="submit" value="Create Employee" class="btn btn-outline-success"></td>
                         </tr>
                     </table>
                 </fieldset>

@@ -2,17 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap4.min.css"/>
 </head>
 <body>
 <th:block th:include="fragments/header"></th:block>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 bg-light">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">
-                Create Employee
-            </button>
+            <a th:href="@{/createEmployee}">
+                <button type="button" class="btn btn-primary">
+                    Create Employee
+                </button>
+            </a>
         </div>
         <div class="col-lg-10"></div>
     </div>
@@ -29,105 +31,41 @@
                     <th>Lương</th>
                     <th>Số Điện Thoại</th>
                     <th>Email</th>
+                    <th>Địa Chỉ</th>
                     <th>Vị Trí</th>
                     <th>Trình Độ</th>
+                    <th>Bộ Phận</th>
                     <th></th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="employees : ${employeeList}">
-                        <td th:text="${employees.id}"></td>
-                        <td th:text="${employees.name}"></td>
-                        <td th:text="${employees.dateOfBirth}"></td>
-                        <td th:text="${employees.idCard}"></td>
-                        <td th:text="${employees.salary}"></td>
-                        <td th:text="${employees.phoneNumber}"></td>
-                        <td th:text="${employees.email}"></td>
-                        <td th:text="${employees.position.positionName}"></td>
-                        <td th:text="${employees.educationDegree.name}"></td>
-                        <td><button class=" btn btn-secondary" id="editEP">Edit</button>
-                            <input type="hidden" th:value="${employees.id}">
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" href="#" onclick="customerSetId('${employees.idNhanVien}','${employees.hoTen}')"
-                               data-toggle="modal" data-target="#deleteModal">Delete</a>
-                        </td>
-                    </tr>
+                <tr th:each="employees,index : ${employeeList}">
+                    <td th:text="${employees.id}" th:id="'employeeId' + ${index.index}"></td>
+                    <td th:text="${employees.name}" th:id="'employeeName' + ${index.index}"></td>
+                    <td th:text="${employees.dateOfBirth}"></td>
+                    <td th:text="${employees.idCard}"></td>
+                    <td th:text="${employees.salary}"></td>
+                    <td th:text="${employees.phoneNumber}"></td>
+                    <td th:text="${employees.email}"></td>
+                    <td th:text="${employees.address}"></td>
+                    <td th:text="${employees.position.positionName}"></td>
+                    <td th:text="${employees.educationDegree.name}"></td>
+                    <td th:text="${employees.division.divisionName}"></td>
+                    <td>
+                        <a th:href="@{/editEmployee/__${employees.id}__}"> <button class=" btn btn-secondary" id="editEP">Edit</button></a>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" id="deleteEP"
+                                th:onclick="'javascript:employeeSetId(' + ${index.index} + ')'">Delete</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary view">View</button>
+                        <input type="hidden" th:value="${employees.id}">
+                    </td>
+                </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form method="post" action="?action=createEmployee">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Employee Information</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <fieldset>
-                        <legend></legend>
-                        <table>
-                            <tr>
-                                <td>Họ Tên :</td>
-                                <td><input type="text" name="hoten" id="name" required ></td>
-                            </tr>
-                            <tr>
-                                <td>Ngày Sinh :</td>
-                                <td><input type="date" name="ngaysinh" id="ngaySinh" required></td>
-                            </tr>
-                            <tr>
-                                <td>CMND :</td>
-                                <td><input type="text" name="cmtnd" id="cmtnd" required></td>
-                            </tr>
-                            <tr>
-                                <td>Lương :</td>
-                                <td><input type="text" name="luong" id="luong" required></td>
-                            </tr>
-                            <tr>
-                                <td>Số Điện Thoại   :</td>
-                                <td><input type="text" name="sdt" id="sdt" required></td>
-                            </tr>
-                            <tr>
-                                <td>Email :</td>
-                                <td><input type="text" name="email" id="email" required></td>
-                            </tr>
-
-                            <tr>
-                                <td>Vị Trí :</td>
-                                <td><select name="idVitri_nv" required>
-                                    <option value="1">Lễ Tân</option>
-                                    <option value="2">Phục Vụ</option>
-                                    <option value="3">Chuyên Viên</option>
-                                    <option value="4">Giám Sát</option>
-                                    <option value="5">Quản Lý</option>
-                                    <option value="6">Giám Đốc</option>
-                                </select></td>
-                            </tr>
-                            <tr>
-                                <td>Trình Độ :</td>
-                                <td><select name="idTrinhDo_nv" required>
-                                    <option value="1">Trung Cấp</option>
-                                    <option value="2">Cao Đẳng</option>
-                                    <option value="3">Đại Học</option>
-                                    <option value="4">Sau Đại Học</option>
-                                </select></td>
-                            </tr>
-                        </table>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" value="Save" class="btn btn-primary">
-                        </div>
-                    </fieldset>
-                </div>
-            </form>
         </div>
     </div>
 </div>
@@ -151,25 +89,30 @@
         </div>
     </div>
 </div>
-<form action="/a" method="post" id="deleteEmployee">
+<form th:action="@{/deleteEp}" method="post" id="deleteEmployee">
     <input type="hidden" name="action" value="deleteEmployee">
     <input type="hidden" name="idEmployee" id="idEmployee">
 </form>
-<script src="jquery/jquery-3.5.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="datatables/js/jquery.dataTables.min.js"></script>
-<script src="datatables/js/dataTables.bootstrap4.min.js"></script>
-<script >
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
     $(document).ready(function () {
         $('#tableEmployee').dataTable({
-            "dom" : 'lrtip',
-            "lengthChange" : false,
-            "pageLength" : 5
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
         });
     });
-    function customerSetId(id, name) {
+
+    function employeeSetId(index) {
+        let name = document.getElementById("employeeName"+index).innerHTML;
+        let id = document.getElementById("employeeId"+index).innerHTML;
         document.getElementById("idEmployee").value = id;
+        console.log(id);
         document.getElementById("modelId").value = "Do you want delete employee name: " + name;
+        $('#deleteModal').modal('show');
     }
 
     function submitDelete() {

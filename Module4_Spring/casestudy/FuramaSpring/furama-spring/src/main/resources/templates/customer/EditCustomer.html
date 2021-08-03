@@ -7,7 +7,7 @@
 </head>
 <body>
 <th:block th:include="fragments/header"></th:block>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-3">
             <ul class="nav flex-column">
@@ -23,38 +23,47 @@
             <!--            </p>-->
             <form method="post" th:object="${customer}" th:action="@{/edit}">
                 <fieldset>
-                    <input type="hidden" th:field="*{id}">
                     <table>
+                        <input type="hidden" name="id" id="id" th:field="*{id}"/>
                         <tr>
                             <td>Họ Tên :</td>
                             <td><input type="text" name="name" id="name" th:field="*{name}"/></td>
+                            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></td>
                         </tr>
                         <tr>
                             <td>Ngày Sinh :</td>
                             <td><input type="date" name="dateOfBirth" id="ngaySinh" th:field="*{dateOfBirth}"></td>
+                            <td th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"
+                                style="color: red"></td>
                         </tr>
                         <tr>
                             <td>CMND :</td>
-                            <td><input type="text" name="idCard" id="idCard" th:field="*{idCard}" ></td>
+                            <td><input type="text" name="idCard" id="idCard" th:field="*{idCard}"></td>
+                            <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red"></td>
                         </tr>
                         <tr>
                             <td>Số Điện Thoại :</td>
                             <td><input type="text" name="phoneNumber" id="phoneNumber" th:field="*{phoneNumber}">
+                            <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"
+                                style="color: red"></td>
                             </td>
                         </tr>
                         <tr>
                             <td>Email :</td>
                             <td><input type="text" name="email" id="email" th:field="*{email}"></td>
+                            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red"></td>
                         </tr>
                         <tr>
                             <td>Địa Chỉ :</td>
                             <td><input type="text" name="address" id="address" th:field="*{address}"></td>
+                            <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red"></td>
                         </tr>
                         <tr>
                             <td>ID loại khách :</td>
                             <td>
-                                <select name="customerType" id="customerType"  th:field="*{customerType}" equired>
-                                    <option th:each="c : ${customerTypies}" th:value="${c.id}" th:text="${c.name}"></option>
+                                <select name="customerType" id="customerType" th:field="*{customerType}" equired>
+                                    <option th:each="c : ${customerTypies}" th:value="${c.id}"
+                                            th:text="${c.name}"></option>
                                 </select>
                             </td>
                         </tr>

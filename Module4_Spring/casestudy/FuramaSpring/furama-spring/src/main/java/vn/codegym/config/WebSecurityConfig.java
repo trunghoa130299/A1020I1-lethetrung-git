@@ -32,9 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().defaultSuccessUrl("/home").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/home").permitAll()
-                .antMatchers("/customer").hasRole("ADMIN")
-                .antMatchers("/employee").hasRole("ADMIN")
-//                .antMatchers("/createCustomer,/editCustomer,/delete,/view").hasRole("ADMIN")
-                .anyRequest().authenticated();
+                .antMatchers("/customer/**","/employee/**").hasRole("ADMIN");
+//                .anyRequest().authenticated();
     }
 }
