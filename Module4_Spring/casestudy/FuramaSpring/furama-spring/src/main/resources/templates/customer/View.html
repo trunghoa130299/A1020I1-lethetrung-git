@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:object="${customer}">
+    <fieldset>
+        <input type="hidden" th:field="*{id}">
+        <table>
+            <tr>
+                <td>Họ Tên :</td>
+                <td><input type="text" name="name" id="name" th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td>Ngày Sinh :</td>
+                <td><input type="date" name="dateOfBirth" id="ngaySinh" th:field="*{dateOfBirth}"></td>
+            </tr>
+            <tr>
+                <td>CMND :</td>
+                <td><input type="text" name="idCard" id="idCard" th:field="*{idCard}" ></td>
+            </tr>
+            <tr>
+                <td>Số Điện Thoại :</td>
+                <td><input type="text" name="phoneNumber" id="phoneNumber" th:field="*{phoneNumber}">
+                </td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td><input type="text" name="email" id="email" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>Địa Chỉ :</td>
+                <td><input type="text" name="address" id="address" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <td>ID loại khách :</td>
+                <td>
+                    <select name="customerType" id="customerType"  th:field="*{customerType}" equired>
+                        <option th:each="c : ${customerTypies}" th:value="${c.id}" th:text="${c.name}"></option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

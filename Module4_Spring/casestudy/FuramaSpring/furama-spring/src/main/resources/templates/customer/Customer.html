@@ -32,6 +32,7 @@
                     <th>ID Loại Khách</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,6 +51,10 @@
                     <td>
                         <button class="btn btn-danger" id="deleteCS"
                                 th:onclick="'javascript:customerSetId(' + ${index.index} + ')'">Delete</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" id="view">View</button>
+                        <input type="hidden" th:value="${customers.id}">
                     </td>
                 </tr>
                 </tbody>
@@ -83,12 +88,12 @@
     <input type="hidden" name="idCustomer" id="idCustomer">
 </form>
 
-<div class="modal fade" id="CSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title1 text-center" id="exampleModalLabel"></h3>
+                <h3 class="modal-title1 text-center" id="exampleModalLabel">View Customer</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -109,11 +114,23 @@
             "lengthChange": false,
             "pageLength": 5
         });
+        $('#view').click(function () {
+            $.ajax({
+                type :"GET",
+                url: "/viewCustomer/" + $(this).next().val(),
+                dataType:"HTML",
+                success : function (data) {
+                    $('.modal-body1').html(data);
+                    $('#viewModal').modal('show');
+                }
+            })
+        })
     });
     function customerSetId(index) {
         let name = document.getElementById("customerName"+index).innerHTML;
         let id = document.getElementById("customerId"+index).innerHTML;
         document.getElementById("idCustomer").value = id;
+        console.log(id);
         document.getElementById("modelId").value = "Do you want delete customer name: " + name;
         $('#deleteModal').modal('show');
     }

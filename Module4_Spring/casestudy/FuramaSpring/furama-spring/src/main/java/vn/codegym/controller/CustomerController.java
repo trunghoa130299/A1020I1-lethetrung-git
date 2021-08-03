@@ -1,13 +1,11 @@
 package vn.codegym.controller;
 
+import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import vn.codegym.model.Customer;
 import vn.codegym.model.CustomerType;
 import vn.codegym.service.CustomerService;
@@ -71,8 +69,14 @@ public class CustomerController {
         return "redirect:/customer";
     }
     @PostMapping(value = "/delete")
-    public String deleteCustomer(@PathVariable("idCustomer") String id,Model model){
+    public String deleteCustomer(@RequestParam(name = "idCustomer") String id){
         customerService.delete(id);
         return "redirect:/customer";
+    }
+    @GetMapping(value = "/viewCustomer/{id}")
+    public String viewCustomer(@PathVariable("id") String id,Model model){
+        Customer customer = customerService.findById(id);
+        model.addAttribute("customer",customer);
+        return "customer/View";
     }
 }
