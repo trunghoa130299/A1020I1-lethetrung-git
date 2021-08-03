@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import vn.codegym.model.User;
 @Service
-public interface UserRepository  extends JpaRepository<User,String > {
-    User findByUserName(String name);
+public interface UserRepository extends JpaRepository<User,String > {
+    User findByName(String name);
 }
