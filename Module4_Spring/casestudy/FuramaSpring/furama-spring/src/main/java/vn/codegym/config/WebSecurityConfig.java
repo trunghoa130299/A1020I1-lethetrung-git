@@ -29,10 +29,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .formLogin().defaultSuccessUrl("/home")
-                .and().authorizeRequests().antMatchers("/home").permitAll().
-                antMatchers("/customer").hasAnyRole("ADMIN","USER").
-                antMatchers("/employee").hasAnyRole("ADMIN","USER")
+                .formLogin().defaultSuccessUrl("/home").permitAll()
+                .and()
+                .authorizeRequests().antMatchers("/home").permitAll()
+                .antMatchers("/customer").hasRole("ADMIN")
+                .antMatchers("/employee").hasRole("ADMIN")
+//                .antMatchers("/createCustomer,/editCustomer,/delete,/view").hasRole("ADMIN")
                 .anyRequest().authenticated();
     }
 }
