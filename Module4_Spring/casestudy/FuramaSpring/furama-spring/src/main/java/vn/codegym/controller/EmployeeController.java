@@ -4,14 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import vn.codegym.model.Division;
-import vn.codegym.model.EducationDegree;
-import vn.codegym.model.Employee;
-import vn.codegym.model.Position;
+import org.springframework.web.bind.annotation.*;
+import vn.codegym.model.*;
 import vn.codegym.service.DivisionService;
 import vn.codegym.service.EducationDegreeService;
 import vn.codegym.service.EmployeeService;
@@ -63,9 +57,9 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/addEmployee")
-    public String createEmployee(@Valid @ModelAttribute Employee employee, Model model, BindingResult bindingResult) {
+    public String createEmployee(@Valid @ModelAttribute Employee employee, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "redirect:/createEmployee";
+            return "employee/CreateEmployee";
         }
         employeeService.save(employee);
         return "redirect:/employee";
@@ -75,6 +69,25 @@ public class EmployeeController {
     public String deleteEmployee(@RequestParam(name = "idEmployee") int id) {
         employeeService.remove(id);
         return "redirect:/employee";
+    }
+    @GetMapping(value = "/editEmployee/{id}")
+    public String showEdit(@PathVariable("id") int id, Model model) {
+        Employee employee = employeeService.findById(id);
+        model.addAttribute("employee", employee);
+        return "employee/EditEmployee";
+    }
+
+    @PostMapping(value = "/editEp")
+    public String editCustomer(@ModelAttribute("employee") Employee employee, Model model) {
+        employeeService.save(employee);
+        model.addAttribute("employee", employee);
+        return "employee/EditEmployee";
+    }
+    @GetMapping(value = "/viewEmployee/{id}")
+    public String viewCustomer(@PathVariable("id") int id, Model model) {
+        Employee employee = employeeService.findById(id);
+        model.addAttribute("employee", employee);
+        return "employee/view";
     }
 
 }

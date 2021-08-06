@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <br>
+    <form method="get" th:object="${employee}" class="form-group">
+        <!--                <div class="form-group row">-->
+        <!--                    <label class="col-form-label col-2">ID</label>-->
+        <!--                    <label class="col-lg-4">-->
+        <!--                        <input type="text" name="id" id="id" class="form-control" th:field="*{id}"/>-->
+        <!--                        <label th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red"></label>-->
+        <!--                    </label>-->
+        <!--                </div>-->
+        <input type="hidden" th:field="*{id}">
+        <div class="form-group row">
+            <label class="col-form-label col-3">Họ Tên</label>
+            <label class="col-lg-8">
+                <input type="text" name="name" id="name" class="form-control text-center" th:field="*{name}"/>
+                <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Ngày Sinh</label>
+            <label class="col-lg-8">
+                <input type="text" name="dateOfBirth" id="dateOfBirth" class="form-control text-center" th:field="*{dateOfBirth}"/>
+                <label th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"
+                       style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">CMND</label>
+            <label class="col-lg-8">
+                <input type="text" name="idCard" id="idCard" class="form-control text-center" th:field="*{idCard}"/>
+                <label th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Lương</label>
+            <label class="col-lg-8">
+                <input type="text" name="idCard" id="salary" class="form-control text-center" th:field="*{salary}"/>
+                <label th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Điện Thoại</label>
+            <label class="col-lg-8">
+                <input type="text" name="idCard" id="phoneNumber" class="form-control text-center" th:field="*{phoneNumber}"/>
+                <label th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"
+                       style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Email</label>
+            <label class="col-lg-8">
+                <input type="text" name="email" id="email" th:field="*{email}" class="form-control text-center">
+                <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Địa Chỉ</label>
+            <label class="col-lg-8">
+                <input type="text" name="address" id="address" th:field="*{address}" class="form-control text-center">
+                <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Vị Trí</label>
+            <label class="col-lg-8">
+                <label class="form-control" th:text="${employee.position.positionName}"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Trình Độ</label>
+            <label class="col-lg-8">
+                <label class="form-control" th:text="${employee.educationDegree.name}"></label>
+            </label>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-3">Bộ Phận</label>
+            <label class="col-lg-8">
+                <label class="form-control" th:text="${employee.division.divisionName}"></label>
+            </label>
+        </div>
+    </form>
+</div>
+</body>
+</html>

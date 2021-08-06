@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:include="fragments/header"></th:block>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" th:href="@{/employee}">Back To List Employee</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <h1 class="text-center">Edit Employee</h1>
+            <!--            <p>-->
+            <!--                <c:if test='${requestScope["message"] != null}'>-->
+            <!--                    <span class="message text-primary">${requestScope["message"]}</span>-->
+            <!--                </c:if>-->
+            <!--            </p>-->
+            <!-- <p th:if="${message}" th:text="$#{message}"></p>-->
+            <form method="post" th:object="${employee}" th:action="@{/editEp}" class="form-group">
+                <!--                <div class="form-group row">-->
+                <!--                    <label class="col-form-label col-2">ID</label>-->
+                <!--                    <label class="col-lg-4">-->
+                <!--                        <input type="text" name="id" id="id" class="form-control" th:field="*{id}"/>-->
+                <!--                        <label th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red"></label>-->
+                <!--                    </label>-->
+                <!--                </div>-->
+                <input type="hidden" th:field="*{id}">
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Họ Tên</label>
+                    <label class="col-lg-4">
+                        <input type="text" name="name" id="name" class="form-control" th:field="*{name}"/>
+                        <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Ngày Sinh</label>
+                    <label class="col-lg-4">
+                        <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control" th:field="*{dateOfBirth}"/>
+                        <label th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">CMND</label>
+                    <label class="col-lg-4">
+                        <input type="text" name="idCard" id="idCard" class="form-control" th:field="*{idCard}"/>
+                        <label th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Lương</label>
+                    <label class="col-lg-4">
+                        <input type="text" name="idCard" id="salary" class="form-control" th:field="*{salary}"/>
+                        <label th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Điện Thoại</label>
+                    <label class="col-lg-4">
+                        <input type="text" name="idCard" id="phoneNumber" class="form-control" th:field="*{phoneNumber}"/>
+                        <label th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Email</label>
+                    <label class="col-lg-4">
+                        <input type="text" name="email" id="email" th:field="*{email}" class="form-control" >
+                        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Địa Chỉ</label>
+                    <label class="col-lg-4">
+                        <input type="text" name="address" id="address" th:field="*{address}" class="form-control">
+                        <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red"></label>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Vị Trí</label>
+                    <label class="col-lg-4">
+                        <select name="position" id="position" th:field="*{position}" class="form-control" equired>
+                            <option th:each="p : ${positions}" th:value="${p.id}"
+                                    th:text="${p.positionName}"></option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Trình Độ</label>
+                    <label class="col-lg-4">
+                        <select name="educationDegree" id="" th:field="*{educationDegree}" class="form-control" equired>
+                            <option th:each="e : ${educationDegrees}" th:value="${e.id}"
+                                    th:text="${e.name}"></option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-2">Bộ Phận</label>
+                    <label class="col-lg-4">
+                        <select name="division" id="division" th:field="*{division}" class="form-control" equired>
+                            <option th:each="d : ${divisions}" th:value="${d.id}"
+                                    th:text="${d.divisionName}"></option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <input type="submit" value="Update employee" class="btn btn-outline-success">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    // $(document).ready(function () {
+    //     $("#create").click(function () {
+    //         alert("Đăng Kí Thành Công !");
+    //     })
+    // })
+</script>
+</body>
+</html>

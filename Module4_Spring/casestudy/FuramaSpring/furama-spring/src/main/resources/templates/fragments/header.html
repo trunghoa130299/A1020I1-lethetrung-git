@@ -4,15 +4,9 @@
     <title>Title</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
-        .header-1 {
-            padding-top: 5%;
-            float: right;
-        }
-
         .ul-1 {
             margin-left: 10%;
         }
-
         .breadcrumb {
             padding: 8px 15px;
             margin-bottom: 20px;
@@ -57,24 +51,50 @@
                 text-indent: -105em
             }
         }
+
+        .header .logo {
+            width: 312px;
+            height: 191px;
+            float: left;
+            transition-duration: .1s;
+        }
+
+        .header .logo:hover {
+            transform: scale(1.05)
+        }
+
+        .header .logo img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            animation: example 5s infinite ease-in-out;
+        }
+
+        /* Standard syntax */
+        @keyframes example {
+            35%, 100% {
+                transform: scale(1);
+            }
+            10% {
+                transform: rotateX(360deg) scale(1.15);
+            }
+        }
+        .icon{
+            padding-left: 200px;
+        }
     </style>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-3">
-            <img src="https://phamkhoi.com/Editor/blog/nhat%20ky/logo%20hoa/nghe-thua-thiet-ke-logo-theo-dang-canh-hoa%205.jpg"
-                 class="img-fluid img-thumbnail border-success">
+        <div class="col-lg-3 header">
+            <div class="logo">
+                <img src="/img/logo4.png"
+                     class="border-success">
+            </div>
         </div>
         <div class="col-lg-9">
-            <div class="header-1">
-                <div sec:authorize="isAuthenticated()">
-                    <h4 class="text-danger border border-success">Hello : <span sec:authentication="name"></span></h4>
-                    <a th:href="@{/logout}">
-                        <button class="btn badge-success float-lg-right">Log out</button>
-                    </a>
-                </div>
-            </div>
+            <img src="img/Banner650x260.gif" style="width: 1000px;height: 171px;margin-top: 10px">
         </div>
     </div>
     <div class="row">
@@ -91,10 +111,10 @@
                         <a class="nav-link" th:href="@{/customer}">Customer</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="#">Service</a>
                     </li>
                     <li class="nav-item active pl-3">
-                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="#">Contract</a>
                     </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0 form-1 pl-5">
@@ -103,13 +123,27 @@
                            aria-label="Search" name="value">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
+                <div sec:authorize="isAuthenticated()">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd"
+                              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>&nbsp; &nbsp;<span sec:authentication="name" style="color: red"></span> &nbsp;
+                    <a href="/logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg></a>
+                    </div>
+                </div>
             </nav>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="breadcrumb">
-                <p class=" marquee">CHÀO MỪNG BẠN ĐẾN VỚI Codegym @Design by Lê Thế Trung</p>
+                <p class=" marquee">Chào mừng bạn đến với Codegym Đà Nẵng @Design by Lê Thế Trung</p>
             </div>
         </div>
     </div>

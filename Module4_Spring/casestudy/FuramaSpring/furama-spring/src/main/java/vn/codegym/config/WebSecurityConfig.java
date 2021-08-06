@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import vn.codegym.service.impl.MyUserDetailServiceImpl;
 
 @Configuration
@@ -17,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private MyUserDetailServiceImpl myUserDetailService;
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -29,10 +31,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .formLogin().defaultSuccessUrl("/home").permitAll()
+                .formLogin().loginPage("/login")
+                .defaultSuccessUrl("/home").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/home").permitAll()
-                .antMatchers("/customer/**","/employee/**").hasRole("ADMIN");
+                .antMatchers("/customer/**", "/employee/**").hasRole("ADMIN");
 //                .anyRequest().authenticated();
+        http.authorizeRequests().and().rememberMe().tokenRepository(this.persistentTokenRepository()).
+                tokenValiditySeconds(60 * 60 * 10);
+    }
+
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        InMemoryTokenRepositoryImpl inMemoryTokenRepository = new InMemoryTokenRepositoryImpl();
+        return inMemoryTokenRepository;
     }
 }

@@ -9,4 +9,8 @@ public class FuramaController {
     public String showHome(){
         return "home";
     }
+    @GetMapping("/login")
+    public String showLogin(){
+        return "login";
+    }
 }

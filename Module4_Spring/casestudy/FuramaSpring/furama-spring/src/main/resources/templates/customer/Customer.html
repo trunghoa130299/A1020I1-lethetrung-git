@@ -49,7 +49,7 @@
                         <a th:href="@{/editCustomer/__${customers.id}__}"> <button class=" btn btn-secondary" id="editCS">Edit</button></a>
                     </td>
                     <td>
-                        <button class="btn btn-danger" id="deleteCS"
+                        <button class="btn btn-danger"
                                 th:onclick="'javascript:customerSetId(' + ${index.index} + ')'">Delete</button>
                     </td>
                     <td>
@@ -130,7 +130,6 @@
         let name = document.getElementById("customerName"+index).innerHTML;
         let id = document.getElementById("customerId"+index).innerHTML;
         document.getElementById("idCustomer").value = id;
-        console.log(id);
         document.getElementById("modelId").value = "Do you want delete customer name: " + name;
         $('#deleteModal').modal('show');
     }
